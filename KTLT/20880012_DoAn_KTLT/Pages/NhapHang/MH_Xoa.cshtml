@@ -1,0 +1,14 @@
+﻿@page
+@model _20880012_DoAn_KTLT.Pages.NhapHang.MH_XoaModel
+@{
+    Layout = "_LayoutNH";
+}
+
+@Model.Ketqua
+@if (Model.checkid)
+{
+    <form method="POST">
+        <input type="submit" value="Chác chắn XÓA" />
+    </form>  
+}
+

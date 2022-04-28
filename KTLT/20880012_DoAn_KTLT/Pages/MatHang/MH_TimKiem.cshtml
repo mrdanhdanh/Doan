@@ -1,0 +1,46 @@
+﻿@page
+@model _20880012_DoAn_KTLT.Pages.MatHang.MH_TimKiemModel
+@using _20880012_DoAn_KTLT.Entities;
+@{
+    Layout = "_LayoutMH";
+}
+
+<form method="POST">
+    <label for="malh">Nhập mã hoặc tên loại hàng cần tìm:</label><br />
+    <input type="text" name="keyword" value="" />
+    <input type="submit" value="Tìm kiếm" />
+</form>
+@Model.Ketqua
+<br />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Mã mặt hàng</th>
+            <th>Tên mặt hàng</th>
+            <th>Công ty sản xuất</th>
+            <th>Loại hàng</th>
+            <th>Năm sản xuất</th>
+            <th>Hạn sử dụng (năm)</th>
+            <th>Chức năng</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Mathang m in Model.DSMH)
+        {
+        <tr>
+            <td>@m.MaMatHang</td>
+            <td>@m.TenMatHang</td>
+            <td>@m.CongTySanXuat</td>
+            <td>@m.LoaiHang</td>
+            <td>@m.NamSanXuat</td>
+            <td>@m.HanSuDung</td>
+            <td>
+                <a href="/MatHang/MH_Sua?id=@m.MaMatHang" class="btn btn-info" role="button">Sửa</a>
+                <a href="/MatHang/MH_Xoa?id=@m.MaMatHang" class="btn btn-danger" role="button">Xóa</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

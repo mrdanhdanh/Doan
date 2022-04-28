@@ -1,0 +1,31 @@
+﻿@page
+@model _20880012_DoAn_KTLT.Pages.MatHang.MH_ThemModel
+@using _20880012_DoAn_KTLT.Entities; 
+@{
+    Layout = "_LayoutMH";
+}
+
+<form method="POST">
+    <label for="mamh">Mã mặt hàng:</label><br />
+    <input type="text" name="mamh" value="" required/><br />
+    <label for="tenmh">Tên mặt hàng:</label><br />
+    <input type="text" name="tenmh" value="" required/><br />
+    <label for="ctysx">Công ty sản xuất:</label><br />
+    <input type="text" name="ctysx" value="" required/><br />
+    <label for="tenlh">Loại hàng:</label><br />
+    <select name="tenlh" required>
+        @foreach (Loaihang l in Model.DSLH)
+        {
+            <option value="@l.TenLoaiHang">@l.TenLoaiHang</option>
+        }
+    </select><br />
+    <label for="namsx">Năm sản xuất:</label><br />
+    <input type="number" name="namsx" value="" min="1900" max="2022" required/><br />
+    <label for="namsx">Hạn sử dụng (đơn vị: năm):</label><br />
+    <input type="number" name="hansd" value="" required/><br />
+    <br />
+    <input type="submit" value="Thêm mặt hàng" />
+    <input type="reset" value="Reset">
+</form>
+
+@Model.Ketqua

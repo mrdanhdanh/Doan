@@ -1,0 +1,16 @@
+﻿@page
+@model _20880012_DoAn_KTLT.Pages.MatHang.MH_XoaModel
+@using _20880012_DoAn_KTLT.Entities;
+@{
+    Layout = "_LayoutMH";
+}
+
+@if (Model.kiemtraID)
+{
+    <form method="POST">
+        <p>Bạn có chắc chắn muốn xóa mã mặt hàng @Model.id không, dữ liệu sẽ không thể khôi phục</p>
+        <input type="submit" value="Chắc chắn XÓA" />
+    </form>
+}
+
+@Model.Ketqua

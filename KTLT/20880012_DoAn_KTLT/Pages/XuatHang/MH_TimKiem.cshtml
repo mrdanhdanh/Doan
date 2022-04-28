@@ -1,0 +1,52 @@
+﻿@page
+@model _20880012_DoAn_KTLT.Pages.XuatHang.MH_TimKiemModel
+@using _20880012_DoAn_KTLT.Entities;
+@{
+    Layout = "_LayoutXH";
+}
+
+<form method="POST">
+    <label>Nhập thông tin hóa đơn cần tìm:</label><br />
+    <input type="text" name="keyword" value="" />
+    <input type="date" name="keydate" value="" />
+    <input type="submit" value="Tìm kiếm" />
+</form>
+@Model.Ketqua
+<br />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Mã hóa đơn bán</th>
+            <th>Ngày bán</th>
+            <th>Mặt hàng</th>
+            <th>Số lượng</th>
+            <th>Chức năng</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (HDxuat x in Model.DSHD)
+        {
+            <tr>
+                <td>@x.MaHD</td>
+                <td>@x.NgayXuat</td>
+                @{
+                    Model.MatHang = "Error";
+                    foreach (Mathang m in Model.DSMH)
+                    {
+                        if (m.MaMatHang == x.MaMH)
+                        {
+                            Model.MatHang = m.TenMatHang + " (" + m.MaMatHang + ")";
+                        }
+                    }
+                }
+                <td>@Model.MatHang</td>
+                <td>@x.SoLuong</td>
+                <td>
+                    <a href="/XuatHang/MH_Sua?id=@x.MaHD" class="btn btn-info" role="button">Sửa</a>
+                    <a href="/XuatHang/MH_Xoa?id=@x.MaHD" class="btn btn-danger" role="button">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

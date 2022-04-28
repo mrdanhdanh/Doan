@@ -1,0 +1,43 @@
+﻿@page
+@model _20880012_DoAn_KTLT.Pages.MatHang.MH_SuaModel
+@using _20880012_DoAn_KTLT.Entities;
+@{
+    Layout = "_LayoutMH";
+}
+
+@if (Model.KiemtraID)
+{
+
+<form method="POST">
+    <label for="mamh">Mã mặt hàng:</label><br />
+    <input type="text" name="mamh" value="@Model.MaMH" required /><br />
+    <label for="tenmh">Tên mặt hàng:</label><br />
+    <input type="text" name="tenmh" value="@Model.TenMH" required /><br />
+    <label for="ctysx">Công ty sản xuất:</label><br />
+    <input type="text" name="ctysx" value="@Model.CtySX" required /><br />
+    <label for="tenlh">Loại hàng:</label><br />
+        <select name="tenlh" required>
+            @foreach (Loaihang l in Model.DSLH)
+            {
+                if (l.TenLoaiHang == Model.TenLH)
+                {
+                    <option value="@l.TenLoaiHang" selected>@l.TenLoaiHang</option>
+                }
+                else
+                {
+                    <option value="@l.TenLoaiHang">@l.TenLoaiHang</option>
+                }
+
+            }
+        </select><br />
+    <label for="namsx">Năm sản xuất:</label><br />
+    <input type="number" name="namsx" value="@Model.NamSX" min="1900" max="2022" required /><br />
+    <label for="namsx">Hạn sử dụng (đơn vị: năm):</label><br />
+    <input type="number" name="hansd" value="@Model.HanSD" required /><br />
+    <br />
+    <input type="submit" value="Sửa mặt hàng" />
+    <input type="reset" value="Reset">
+</form>
+
+}
+@Model.Ketqua

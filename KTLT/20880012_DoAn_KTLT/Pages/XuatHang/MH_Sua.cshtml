@@ -1,0 +1,43 @@
+﻿@page
+@model _20880012_DoAn_KTLT.Pages.XuatHang.MH_SuaModel
+@using _20880012_DoAn_KTLT.Entities
+@{
+    Layout = "_LayoutXH";
+}
+
+@if (Model.MaHD != null)
+{
+<form method="POST">
+    <label for="mahd">Nhập mã hóa đơn:</label><br />
+    <input type="text" name="mahd" value="@Model.MaHD" required /><br />
+    <label for="ngayxuat">Ngày bán hàng:</label><br />
+    <input type="date" name="ngayxuat" value="@Model.NgayXuat" required /><br />
+    <label for="mamh">Chọn mặt hàng:</label><br />
+    <select name="mamh" required>
+        @foreach (Tonkho t in Model.DSTK)
+        {
+            Model.MatHang = "Error";
+            foreach (Mathang m in Model.DSMH)
+            {
+                if (m.MaMatHang == t.MaMH)
+                {
+                    Model.MatHang = m.TenMatHang + " (" + m.MaMatHang + ") - Tồn kho: " + t.SL;
+                }
+            }
+            if (t.MaMH == Model.MaMH)
+            {
+                <option value="@t.MaMH" selected>@Model.MatHang</option>
+            } else
+            {
+                <option value="@t.MaMH">@Model.MatHang</option>
+
+            }
+        }
+    </select><br />
+    <label for="sl">Số lượng bán:</label><br />
+    <input type="number" name="sl" value="@Model.SL" min="1" required /><br />
+    <input type="submit" value="Bán hàng" />
+</form>
+}
+
+@Model.Ketqua

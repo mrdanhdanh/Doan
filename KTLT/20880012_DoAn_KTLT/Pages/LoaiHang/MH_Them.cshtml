@@ -1,0 +1,15 @@
+﻿@page
+@model _20880012_DoAn_KTLT.Pages.LoaiHang.MH_ThemModel
+@{
+    Layout = "_LayoutLH";
+}
+
+<form method="POST">
+    <label for="malh">Nhập mã loại hàng:</label><br />
+    <input type="text" name="malh" value="" /><br />
+    <label for="tenlh">Nhập tên loại hàng:</label><br />
+    <input type="text" name="tenlh" value="" /><br />
+    <input type="submit" value="Thêm loại hàng" />
+</form>
+
+@Model.Chuoi

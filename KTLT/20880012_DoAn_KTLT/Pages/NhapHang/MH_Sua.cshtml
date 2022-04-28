@@ -1,0 +1,35 @@
+﻿@page
+@model _20880012_DoAn_KTLT.Pages.NhapHang.MH_SuaModel
+@using _20880012_DoAn_KTLT.Entities
+@{
+    Layout = "_LayoutNH";
+}
+
+@if (Model.MaHD != null)
+{
+<form method="POST">
+    <label for="mahd">Nhập mã hóa đơn:</label><br />
+    <input type="text" name="mahd" value="@Model.MaHD" required /><br />
+    <label for="ngaynhap">Ngày nhập hàng:</label><br />
+    <input type="date" name="ngaynhap" value="@Model.NgayNhap" required /><br />
+    <label for="mamh">Chọn mặt hàng:</label><br />
+    <select name="mamh" required>
+        @foreach (Mathang m in Model.DSMH)
+        {
+            if (m.MaMatHang == Model.MaMH)
+            {
+                <option value="@m.MaMatHang" selected>@m.TenMatHang (@m.MaMatHang)</option>
+            }
+            else
+            {
+                <option value="@m.MaMatHang">@m.TenMatHang (@m.MaMatHang)</option>
+            }
+        }
+    </select><br />
+    <label for="sl">Số lượng nhập:</label><br />
+    <input type="number" name="sl" value="@Model.SL" min="1" required /><br />
+    <input type="submit" value="Sửa hóa đơn" />
+</form>
+}
+
+@Model.Ketqua
