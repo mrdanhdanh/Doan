@@ -42,10 +42,10 @@ namespace _20880012_DoAn_KTLT.Pages.XuatHang
                 var target = DSTK.FirstOrDefault(hd => hd.MaMH == x.MaMH);
                 if (target == null)
                 {
-                    Ketqua = " hết";
-                } else
-                {
-                    Ketqua = "còn";
+                    Tonkho t = new Tonkho();
+                    t.MaMH = x.MaMH;
+                    t.SL = 0;
+                    DSTK.Add(t);
                 }
                 MaHD = x.MaHD;
                 NgayXuat = x.NgayXuat;
@@ -61,8 +61,16 @@ namespace _20880012_DoAn_KTLT.Pages.XuatHang
         }
         public void OnPost()
         {
-            TaiTonKho();
             Ketqua = XuLyXuat.SuaHD(id, MaHD, NgayXuat, MaMH, SL);
+            TaiTonKho();
+            var target = DSTK.FirstOrDefault(hd => hd.MaMH == MaMH);
+            if (target == null)
+            {
+                Tonkho t = new Tonkho();
+                t.MaMH = MaMH;
+                t.SL = 0;
+                DSTK.Add(t);
+            }
         }
     }
 }

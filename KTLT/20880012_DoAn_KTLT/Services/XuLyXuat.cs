@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using _20880012_DoAn_KTLT.Entities;
+using _20880012_DoAn_KTLT.Services;
 using _20880012_DoAn_KTLT.DAL;
 
 namespace _20880012_DoAn_KTLT.Services
@@ -93,6 +94,7 @@ namespace _20880012_DoAn_KTLT.Services
             {
                 if (DSHD[i].MaHD == id)
                 {
+                    //1:Kiểm tra ID có trùng không
                     for (int j = 0; j < DSHD.Count(); j++)
                     {
                         if (i != j && DSHD[j].MaHD == mahd)
@@ -100,6 +102,37 @@ namespace _20880012_DoAn_KTLT.Services
                             return "Trùng mã hóa đơn, chỉnh sửa thất bại";
                         }
                     }
+                    //2:Kiểm tra Số lượng bán có phù hợp với tồn kho hay không
+                    List<Tonkho> DSTK = XuLyTonKho.TaiDSTonKho(null);
+                    HDxuat x = XuLyXuat.ThongTinHD(id); //thông tin bán hàng cũ 
+                    var target = DSTK.FirstOrDefault(item => item.MaMH == x.MaMH);
+                    if (target == null)
+                    {
+                        Tonkho t = new Tonkho();
+                        t.MaMH = x.MaMH;
+                        t.SL = x.SoLuong;
+                        DSTK.Add(t);
+                    } else
+                    {
+                        for (int k=0; k<DSTK.Count(); k++)
+                        {
+                            if (DSTK[k].MaMH == x.MaMH)
+                            {
+                                Tonkho t = new Tonkho();
+                                t.MaMH = DSTK[k].MaMH;
+                                t.SL = DSTK[k].SL + x.SoLuong;
+                                DSTK[k] = t;
+                            }
+                        }
+                    }
+                    foreach (Tonkho t in DSTK) // kiểm tra số lượng
+                    {
+                        if (t.MaMH == mamh && t.SL<sl)
+                        {
+                            return "Số lượng bán vượt quá tồn kho, không thể chỉnh sửa";
+                        }
+                    }
+                    //3:Lưu HD Xuất
                     hd.MaHD = mahd;
                     hd.NgayXuat = ngaynhap;
                     hd.MaMH = mamh;
