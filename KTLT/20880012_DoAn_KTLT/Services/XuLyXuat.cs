@@ -10,18 +10,29 @@ namespace _20880012_DoAn_KTLT.Services
 {
     public class XuLyXuat
     {
-        public static bool XuatHD(HDxuat x)
+        public static string XuatHD(HDxuat x)
         {
+            //1: Kiểm tra trùng ID
             List<HDxuat> DSHD = LuuTruHDXuat.DocHDXuat();
             foreach (HDxuat xh in DSHD)
             {
                 if (xh.MaHD == x.MaHD)
                 {
-                    return false;
+                    return "Trùng mã hóa đơn, vui lòng nhập lại";
                 }
             }
+            //2: Kiểm tra số lượng phù hợp tồn kho
+            List<Tonkho> DSTK = XuLyTonKho.TaiDSTonKho(null);
+            foreach (Tonkho t in DSTK)
+            {
+                if (t.MaMH == x.MaMH && t.SL < x.SoLuong)
+                {
+                    return "Số lượng bán vượt quá số lượng tồn kho, không thể tạo hóa đơn";
+                }
+            }
+            //3: Tạo hóa đơn
             LuuTruHDXuat.LuuHDXuat(x);
-            return true;
+            return "Xuất hóa đơn bán thành công";
         }
         public static List<HDxuat> TimKiemHD(string keyword, string keydate)
         {

@@ -42,13 +42,7 @@ namespace _20880012_DoAn_KTLT.Pages.XuatHang
             h.NgayXuat = NgayXuat;
             h.MaMH = MaMH;
             h.SoLuong = SL;
-            if (XuLyXuat.XuatHD(h))
-            {
-                Ketqua = "Xuất hóa đơn bán thành công";
-            } else
-            {
-                Ketqua = "Dữ liệu lỗi hoặc trùng, xuất 3thất bại";
-            }
+            Ketqua = XuLyXuat.XuatHD(h);
         }
     }
 }
