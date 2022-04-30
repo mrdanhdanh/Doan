@@ -11,7 +11,8 @@ namespace _20880012_DoAn_KTLT.Entities
         public string TenMatHang;
         public string CongTySanXuat;
         public string LoaiHang;
-        public int NamSanXuat;
-        public int HanSuDung;
+        public int Gia;
+        public string NgaySanXuat;
+        public string HanSuDung;
     }
 }

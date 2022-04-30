@@ -12,7 +12,7 @@ namespace _20880012_DoAn_KTLT.DAL
     {
         public static List<HDnhap> DocHDNhap()
         {
-            StreamReader reader = new StreamReader("wwwroot\\data\\hdnhap.json");
+            StreamReader reader = new StreamReader("wwwroot/data/hdnhap.json");
             string jsonString = reader.ReadToEnd();
             reader.Close();
             List<HDnhap> danhsachHD = JsonConvert.DeserializeObject<List<HDnhap>>(jsonString);
@@ -20,7 +20,7 @@ namespace _20880012_DoAn_KTLT.DAL
         }
         public static bool LuuDSNhap(List<HDnhap> danhsachHD)
         {
-            StreamWriter writer = new StreamWriter("wwwroot\\data\\hdnhap.json");
+            StreamWriter writer = new StreamWriter("wwwroot/data/hdnhap.json");
             string jsonString = JsonConvert.SerializeObject(danhsachHD);
             writer.Write(jsonString);
             writer.Close();

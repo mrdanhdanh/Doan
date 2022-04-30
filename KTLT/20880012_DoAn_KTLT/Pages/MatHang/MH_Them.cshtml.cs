@@ -19,8 +19,9 @@ namespace _20880012_DoAn_KTLT.Pages.MatHang
         public string TenMH { get; set; }
         public string CtySX { get; set; }
         public string TenLH { get; set; }
-        public int NamSX { get; set; }
-        public int HanSD { get; set; }
+        public int Gia { get; set; }
+        public string NgaySX { get; set; }
+        public string HanSD { get; set; }
 
 
         public void TaiLoaiHang()
@@ -44,7 +45,8 @@ namespace _20880012_DoAn_KTLT.Pages.MatHang
             m.TenMatHang = TenMH;
             m.CongTySanXuat = CtySX;
             m.LoaiHang = TenLH;
-            m.NamSanXuat = NamSX;
+            m.Gia = Gia;
+            m.NgaySanXuat = NgaySX;
             m.HanSuDung = HanSD;
             if (XuLyMatHang.TaoMatHang(m))
             {

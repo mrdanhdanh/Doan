@@ -12,7 +12,7 @@ namespace _20880012_DoAn_KTLT.DAL
     {
         public static List<Loaihang> DocDSLH()
         {
-            StreamReader reader = new StreamReader("wwwroot\\data\\loaihang.json");
+            StreamReader reader = new StreamReader("wwwroot/data/loaihang.json");
             string jsonString = reader.ReadToEnd();
             reader.Close();
             List<Loaihang> danhsachLoaiHang = JsonConvert.DeserializeObject<List<Loaihang>>(jsonString);
@@ -20,7 +20,7 @@ namespace _20880012_DoAn_KTLT.DAL
         }
         public static bool LuuDSLH(List<Loaihang> danhsachLoaiHang)
         {
-            StreamWriter writer = new StreamWriter("wwwroot\\data\\loaihang.json");
+            StreamWriter writer = new StreamWriter("wwwroot/data/loaihang.json");
             string jsonString = JsonConvert.SerializeObject(danhsachLoaiHang);
             writer.Write(jsonString);
             writer.Close();

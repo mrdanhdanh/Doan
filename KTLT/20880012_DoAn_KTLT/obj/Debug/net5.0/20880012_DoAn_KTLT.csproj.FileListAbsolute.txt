@@ -1,67 +1,133 @@
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\bin\Debug\net5.0\appsettings.Development.json
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\bin\Debug\net5.0\appsettings.json
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\bin\Debug\net5.0\20880012_DoAn_KTLT.exe
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\bin\Debug\net5.0\20880012_DoAn_KTLT.deps.json
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\bin\Debug\net5.0\20880012_DoAn_KTLT.runtimeconfig.json
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\bin\Debug\net5.0\20880012_DoAn_KTLT.runtimeconfig.dev.json
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\bin\Debug\net5.0\20880012_DoAn_KTLT.dll
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\bin\Debug\net5.0\ref\20880012_DoAn_KTLT.dll
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\bin\Debug\net5.0\20880012_DoAn_KTLT.pdb
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\bin\Debug\net5.0\20880012_DoAn_KTLT.Views.dll
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\bin\Debug\net5.0\20880012_DoAn_KTLT.Views.pdb
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\20880012_DoAn_KTLT.csprojAssemblyReference.cache
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\20880012_DoAn_KTLT.GeneratedMSBuildEditorConfig.editorconfig
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\20880012_DoAn_KTLT.AssemblyInfoInputs.cache
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\20880012_DoAn_KTLT.AssemblyInfo.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\20880012_DoAn_KTLT.csproj.CoreCompileInputs.cache
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\20880012_DoAn_KTLT.MvcApplicationPartsAssemblyInfo.cache
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\20880012_DoAn_KTLT.RazorAssemblyInfo.cache
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\20880012_DoAn_KTLT.RazorAssemblyInfo.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\staticwebassets\20880012_DoAn_KTLT.StaticWebAssets.Manifest.cache
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\staticwebassets\20880012_DoAn_KTLT.StaticWebAssets.xml
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\scopedcss\bundle\20880012_DoAn_KTLT.styles.css
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\20880012_DoAn_KTLT.TagHelpers.input.cache
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\20880012_DoAn_KTLT.TagHelpers.output.cache
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\20880012_DoAn_KTLT.RazorCoreGenerate.cache
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\Error.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\Privacy.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\Shared\_Layout.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\_ViewImports.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\_ViewStart.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\20880012_DoAn_KTLT.RazorTargetAssemblyInfo.cache
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\20880012_DoAn_KTLT.RazorTargetAssemblyInfo.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\20880012_DoAn_KTLT.Views.pdb
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\20880012_DoAn_KTLT.dll
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\ref\20880012_DoAn_KTLT.dll
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\20880012_DoAn_KTLT.pdb
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\20880012_DoAn_KTLT.genruntimeconfig.cache
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\20880012_DoAn_KTLT.csproj.CopyComplete
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\Index.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\Loaihang.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\bin\Debug\net5.0\Newtonsoft.Json.dll
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\Shared\_LayoutLH.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\LoaiHang\MH_Them.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\LoaiHang\MH_TimKiem.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\LoaiHang\MH_Xoa.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\LoaiHang\MH_Sua.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\Mathang.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\Shared\_LayoutMH.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\MatHang\MH_Them.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\MatHang\MH_TimKiem.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\MatHang\MH_Xoa.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\MatHang\MH_Sua.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\Nhaphang.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\NhapHang\MH_Nhap.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\Shared\_LayoutNH.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\NhapHang\MH_TimKiem.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\NhapHang\MH_Sua.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\NhapHang\MH_Xoa.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\Shared\_LayoutTK.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\XuatHang\MH_Sua.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\XuatHang\MH_TimKiem.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\XuatHang\MH_Xoa.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\XuatHang\MH_Xuat.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\Thongketonkho.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\Shared\_LayoutXH.cshtml.g.cs
-D:\Bai tap HK 1\Doan\KTLT\20880012_DoAn_KTLT\obj\Debug\net5.0\Razor\Pages\Xuathang.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/appsettings.Development.json
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/appsettings.json
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/20880012_DoAn_KTLT.exe
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/20880012_DoAn_KTLT.deps.json
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/20880012_DoAn_KTLT.runtimeconfig.json
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/20880012_DoAn_KTLT.runtimeconfig.dev.json
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/20880012_DoAn_KTLT.dll
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/ref/20880012_DoAn_KTLT.dll
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/20880012_DoAn_KTLT.pdb
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/20880012_DoAn_KTLT.Views.dll
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/20880012_DoAn_KTLT.Views.pdb
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.csprojAssemblyReference.cache
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.GeneratedMSBuildEditorConfig.editorconfig
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.AssemblyInfoInputs.cache
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.AssemblyInfo.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.csproj.CoreCompileInputs.cache
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.MvcApplicationPartsAssemblyInfo.cache
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.RazorAssemblyInfo.cache
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.RazorAssemblyInfo.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/staticwebassets/20880012_DoAn_KTLT.StaticWebAssets.Manifest.cache
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/staticwebassets/20880012_DoAn_KTLT.StaticWebAssets.xml
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/scopedcss/bundle/20880012_DoAn_KTLT.styles.css
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.TagHelpers.input.cache
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.TagHelpers.output.cache
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.RazorCoreGenerate.cache
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Error.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Privacy.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Shared/_Layout.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Shared/_ValidationScriptsPartial.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/_ViewImports.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/_ViewStart.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.RazorTargetAssemblyInfo.cache
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.RazorTargetAssemblyInfo.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.Views.pdb
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.dll
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/ref/20880012_DoAn_KTLT.dll
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.pdb
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.genruntimeconfig.cache
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.csproj.CopyComplete
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Index.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Loaihang.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/Newtonsoft.Json.dll
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Shared/_LayoutLH.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/LoaiHang/MH_Them.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/LoaiHang/MH_TimKiem.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/LoaiHang/MH_Xoa.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/LoaiHang/MH_Sua.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Mathang.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Shared/_LayoutMH.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/MatHang/MH_Them.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/MatHang/MH_TimKiem.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/MatHang/MH_Xoa.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/MatHang/MH_Sua.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Nhaphang.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/NhapHang/MH_Nhap.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Shared/_LayoutNH.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/NhapHang/MH_TimKiem.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/NhapHang/MH_Sua.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/NhapHang/MH_Xoa.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Shared/_LayoutTK.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/XuatHang/MH_Sua.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/XuatHang/MH_TimKiem.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/XuatHang/MH_Xoa.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/XuatHang/MH_Xuat.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Thongketonkho.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Shared/_LayoutXH.cshtml.g.cs
+D:/Bai tap HK 1/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Xuathang.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/appsettings.Development.json
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/appsettings.json
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/20880012_DoAn_KTLT.deps.json
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/20880012_DoAn_KTLT.runtimeconfig.json
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/20880012_DoAn_KTLT.runtimeconfig.dev.json
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/20880012_DoAn_KTLT.dll
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/ref/20880012_DoAn_KTLT.dll
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/20880012_DoAn_KTLT.pdb
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/20880012_DoAn_KTLT.Views.dll
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/20880012_DoAn_KTLT.Views.pdb
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/bin/Debug/net5.0/Newtonsoft.Json.dll
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.csproj.AssemblyReference.cache
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.GeneratedMSBuildEditorConfig.editorconfig
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.AssemblyInfoInputs.cache
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.AssemblyInfo.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.csproj.CoreCompileInputs.cache
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.MvcApplicationPartsAssemblyInfo.cache
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.RazorAssemblyInfo.cache
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.RazorAssemblyInfo.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/staticwebassets/20880012_DoAn_KTLT.StaticWebAssets.Manifest.cache
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/staticwebassets/20880012_DoAn_KTLT.StaticWebAssets.xml
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/scopedcss/bundle/20880012_DoAn_KTLT.styles.css
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.TagHelpers.input.cache
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.TagHelpers.output.cache
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.RazorCoreGenerate.cache
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Error.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Index.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Loaihang.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/LoaiHang/MH_Sua.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/LoaiHang/MH_Them.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/LoaiHang/MH_TimKiem.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/LoaiHang/MH_Xoa.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Mathang.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/MatHang/MH_Sua.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/MatHang/MH_Them.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/MatHang/MH_TimKiem.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/MatHang/MH_Xoa.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Nhaphang.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/NhapHang/MH_Nhap.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/NhapHang/MH_Sua.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/NhapHang/MH_TimKiem.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/NhapHang/MH_Xoa.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Privacy.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Shared/_Layout.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Shared/_LayoutLH.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Shared/_LayoutMH.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Shared/_LayoutNH.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Shared/_LayoutTK.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Shared/_LayoutXH.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Shared/_ValidationScriptsPartial.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Thongketonkho.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/Xuathang.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/XuatHang/MH_Sua.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/XuatHang/MH_TimKiem.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/XuatHang/MH_Xoa.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/XuatHang/MH_Xuat.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/_ViewImports.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/Razor/Pages/_ViewStart.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.RazorTargetAssemblyInfo.cache
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.RazorTargetAssemblyInfo.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.Views.pdb
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.csproj.CopyComplete
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.dll
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/ref/20880012_DoAn_KTLT.dll
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.pdb
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/net5.0/20880012_DoAn_KTLT.genruntimeconfig.cache

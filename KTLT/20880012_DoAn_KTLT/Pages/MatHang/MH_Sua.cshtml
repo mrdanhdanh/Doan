@@ -16,24 +16,26 @@
     <label for="ctysx">Công ty sản xuất:</label><br />
     <input type="text" name="ctysx" value="@Model.CtySX" required /><br />
     <label for="tenlh">Loại hàng:</label><br />
-        <select name="tenlh" required>
-            @foreach (Loaihang l in Model.DSLH)
+    <select name="tenlh" required>
+        @foreach (Loaihang l in Model.DSLH)
+        {
+            if (l.TenLoaiHang == Model.TenLH)
             {
-                if (l.TenLoaiHang == Model.TenLH)
-                {
-                    <option value="@l.TenLoaiHang" selected>@l.TenLoaiHang</option>
-                }
-                else
-                {
-                    <option value="@l.TenLoaiHang">@l.TenLoaiHang</option>
-                }
-
+                <option value="@l.TenLoaiHang" selected>@l.TenLoaiHang</option>
             }
-        </select><br />
-    <label for="namsx">Năm sản xuất:</label><br />
-    <input type="number" name="namsx" value="@Model.NamSX" min="1900" max="2022" required /><br />
-    <label for="namsx">Hạn sử dụng (đơn vị: năm):</label><br />
-    <input type="number" name="hansd" value="@Model.HanSD" required /><br />
+            else
+            {
+                <option value="@l.TenLoaiHang">@l.TenLoaiHang</option>
+            }
+
+        }
+    </select><br />
+    <label for="gia">Gia mat hang:</label><br />
+    <input type="number" name="gia" min="0" value="@Model.Gia" required /><br />
+    <label for="ngaysx">Ngay sản xuất:</label><br />
+    <input type="date" name="ngaysx" value="@Model.NgaySX" required /><br />
+    <label for="hansd">Hạn sử dụng:</label><br />
+    <input type="date" name="hansd" value="@Model.HanSD" required /><br />
     <br />
     <input type="submit" value="Sửa mặt hàng" />
     <input type="reset" value="Reset">

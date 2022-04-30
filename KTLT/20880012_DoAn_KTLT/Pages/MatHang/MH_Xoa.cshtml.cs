@@ -13,7 +13,7 @@ namespace _20880012_DoAn_KTLT.Pages.MatHang
     {
         public string Ketqua;
         public bool kiemtraID;
-        [BindProperty(SupportsGet =true)]
+        [BindProperty(SupportsGet = true)]
         public string id { get; set; }
         public void OnGet()
         {

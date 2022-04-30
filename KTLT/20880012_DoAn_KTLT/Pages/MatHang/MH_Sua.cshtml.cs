@@ -22,8 +22,9 @@ namespace _20880012_DoAn_KTLT.Pages.MatHang
         public string TenMH { get; set; }
         public string CtySX { get; set; }
         public string TenLH { get; set; }
-        public int NamSX { get; set; }
-        public int HanSD { get; set; }
+        public int Gia { get; set; }
+        public string NgaySX { get; set; }
+        public string HanSD { get; set; }
 
 
         public void TaiLoaiHang()
@@ -45,7 +46,8 @@ namespace _20880012_DoAn_KTLT.Pages.MatHang
                 TenMH = m.TenMatHang;
                 CtySX = m.CongTySanXuat;
                 TenLH = m.LoaiHang;
-                NamSX = m.NamSanXuat;
+                Gia = m.Gia;
+                NgaySX = m.NgaySanXuat;
                 HanSD = m.HanSuDung;
             } else
             {
@@ -56,7 +58,7 @@ namespace _20880012_DoAn_KTLT.Pages.MatHang
         public void OnPost()
         {
             KiemtraID = XuLyMatHang.TimKiemID(id);
-            bool kqSua = XuLyMatHang.SuaMatHang(id, MaMH, TenMH, CtySX, TenLH, NamSX, HanSD);
+            bool kqSua = XuLyMatHang.SuaMatHang(id, MaMH, TenMH, CtySX, TenLH, Gia, NgaySX, HanSD);
             TaiLoaiHang();
             if (kqSua)
             {

@@ -108,7 +108,7 @@ namespace _20880012_DoAn_KTLT.Services
             return mh;
         }
 
-        public static bool SuaMatHang(string id, string MaMH, string TenMH, string CtySX, string TenLH, int NamSX, int HanSD)
+        public static bool SuaMatHang(string id, string MaMH, string TenMH, string CtySX, string TenLH, int Gia, string NgaySX, string HanSD)
         {
             List<Mathang> DSMHfull = LuuTruMatHang.DocDSMH();
             
@@ -128,7 +128,8 @@ namespace _20880012_DoAn_KTLT.Services
                     m.TenMatHang = TenMH;
                     m.CongTySanXuat = CtySX;
                     m.LoaiHang = TenLH;
-                    m.NamSanXuat = NamSX;
+                    m.Gia = Gia;
+                    m.NgaySanXuat = NgaySX;
                     m.HanSuDung = HanSD;
                     DSMHfull[i] = m;
                     LuuTruMatHang.LuuDSMH(DSMHfull);

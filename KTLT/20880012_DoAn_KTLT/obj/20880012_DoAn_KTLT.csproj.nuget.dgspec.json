@@ -1,36 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Bai tap HK 1\\Doan\\KTLT\\20880012_DoAn_KTLT\\20880012_DoAn_KTLT.csproj": {}
+    "/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/20880012_DoAn_KTLT.csproj": {}
   },
   "projects": {
-    "D:\\Bai tap HK 1\\Doan\\KTLT\\20880012_DoAn_KTLT\\20880012_DoAn_KTLT.csproj": {
+    "/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/20880012_DoAn_KTLT.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Bai tap HK 1\\Doan\\KTLT\\20880012_DoAn_KTLT\\20880012_DoAn_KTLT.csproj",
+        "projectUniqueName": "/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/20880012_DoAn_KTLT.csproj",
         "projectName": "20880012_DoAn_KTLT",
-        "projectPath": "D:\\Bai tap HK 1\\Doan\\KTLT\\20880012_DoAn_KTLT\\20880012_DoAn_KTLT.csproj",
-        "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-        "outputPath": "D:\\Bai tap HK 1\\Doan\\KTLT\\20880012_DoAn_KTLT\\obj\\",
+        "projectPath": "/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/20880012_DoAn_KTLT.csproj",
+        "packagesPath": "/Users/huudanh/.nuget/packages/",
+        "outputPath": "/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/Users/huudanh/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -41,8 +35,8 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Newtonsoft.Json": {
               "target": "Package",
@@ -67,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
         }
       }
     }

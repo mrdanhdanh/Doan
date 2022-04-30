@@ -12,7 +12,7 @@ namespace _20880012_DoAn_KTLT.DAL
     {
         public static List<Mathang> DocDSMH()
         {
-            StreamReader reader = new StreamReader("wwwroot\\data\\mathang.json");
+            StreamReader reader = new StreamReader("wwwroot/data/mathang.json");
             string jsonString = reader.ReadToEnd();
             reader.Close();
             List<Mathang> danhsachMatHang = JsonConvert.DeserializeObject<List<Mathang>>(jsonString);
@@ -20,7 +20,7 @@ namespace _20880012_DoAn_KTLT.DAL
         }
         public static bool LuuDSMH(List<Mathang> danhsachMatHang)
         {
-            StreamWriter writer = new StreamWriter("wwwroot\\data\\mathang.json");
+            StreamWriter writer = new StreamWriter("wwwroot/data/mathang.json");
             string jsonString = JsonConvert.SerializeObject(danhsachMatHang);
             writer.Write(jsonString);
             writer.Close();
