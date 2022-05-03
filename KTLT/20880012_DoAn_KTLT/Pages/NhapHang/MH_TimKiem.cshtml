@@ -20,6 +20,7 @@
             <th>Mã hóa đơn nhập</th>
             <th>Ngày nhập</th>
             <th>Mặt hàng</th>
+            <th>Gia</th>
             <th>Số lượng</th>
             <th>Chức năng</th>
         </tr>
@@ -30,18 +31,32 @@
             <tr>
                 <td>@h.MaHD</td>
                 <td>@h.NgayNhap</td>
-                @{
-                    Model.MatHang = "Error";
-                    foreach (Mathang m in Model.DSMH)
+                <td>
+                    @foreach (PhieuHH hh in h.DSNhapHang)
                     {
-                        if (m.MaMatHang == h.MaMH)
+                        var MHang = "Error";
+                        foreach (Mathang m in Model.DSMH)
                         {
-                            Model.MatHang = m.TenMatHang + " (" + m.MaMatHang + ")";
+                            if (m.MaMatHang == hh.MaMH)
+                            {
+                                MHang = m.TenMatHang + " (" + m.MaMatHang + ")";
+                            }
                         }
+                        @MHang<br />
                     }
-                }
-                <td>@Model.MatHang</td>
-                <td>@h.SoLuong</td>
+                </td>
+                <td>
+                    @foreach (PhieuHH hh in h.DSNhapHang)
+                    {
+                        @hh.Gia<br />
+                    }
+                </td>
+                <td>
+                    @foreach (PhieuHH hh in h.DSNhapHang)
+                    {
+                        @hh.SoLuong<br />
+                    }
+                </td>
                 <td>
                     <a href="/NhapHang/MH_Sua?id=@h.MaHD" class="btn btn-info" role="button">Sửa</a>
                     <a href="/NhapHang/MH_Xoa?id=@h.MaHD" class="btn btn-danger" role="button">Xóa</a>

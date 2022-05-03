@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{3191EA52-A38C-4CE6-9250-3D0E5E669419}|Default">
   <MonoDevelop.Ide.ItemProperties.20880012__DoAn__KTLT PreferredExecutionTarget="/Applications/Opera.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/NhapHang/MH_Nhap.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/NhapHang/MH_Sua.cshtml.cs">
     <Files>
-      <File FileName="Services/XuLyNhap.cs" Line="114" Column="12" />
-      <File FileName="Pages/NhapHang/MH_Nhap.cshtml" Line="25" Column="18" />
-      <File FileName="Pages/NhapHang/MH_Nhap.cshtml.cs" Line="32" Column="14" />
-      <File FileName="Entities/HDnhap.cs" />
+      <File FileName="Services/XuLyNhap.cs" Line="91" Column="24" />
+      <File FileName="Pages/NhapHang/MH_Nhap.cshtml.cs" Line="74" Column="41" />
+      <File FileName="Pages/NhapHang/MH_Sua.cshtml" Line="1" Column="1" />
+      <File FileName="Pages/NhapHang/MH_Nhap.cshtml" Line="17" Column="10" />
+      <File FileName="Pages/NhapHang/MH_Sua.cshtml.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,7 +17,10 @@
               <Node name="Entities" expanded="True" />
               <Node name="Pages" expanded="True">
                 <Node name="NhapHang" expanded="True">
-                  <Node name="MH_Nhap.cshtml" expanded="True" selected="True" />
+                  <Node name="MH_Nhap.cshtml" expanded="True" />
+                  <Node name="MH_Sua.cshtml" expanded="True">
+                    <Node name="MH_Sua.cshtml.cs" selected="True" />
+                  </Node>
                 </Node>
               </Node>
               <Node name="Services" expanded="True" />

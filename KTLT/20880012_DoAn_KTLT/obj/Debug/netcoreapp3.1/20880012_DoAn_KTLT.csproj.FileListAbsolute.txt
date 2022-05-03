@@ -53,3 +53,5 @@
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/20880012_DoAn_KTLT.pdb
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/20880012_DoAn_KTLT.genruntimeconfig.cache
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/20880012_DoAn_KTLT.csproj.AssemblyReference.cache
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/Razor/Pages/NhapHang/MH_TimKiem.cshtml.g.cs
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/Razor/Pages/NhapHang/MH_Sua.cshtml.g.cs

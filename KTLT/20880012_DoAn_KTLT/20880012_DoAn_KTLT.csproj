@@ -20,17 +20,13 @@
     <Compile Remove="Pages\XuatHang\MH_Xoa.cshtml.cs" />
     <Compile Remove="Services\XuLyXuat.cs" />
     <Compile Remove="Services\XuLyTonKho.cs" />
-    <Compile Remove="Pages\NhapHang\MH_Sua.cshtml.cs" />
     <Compile Remove="Pages\Thongketonkho.cshtml.cs" />
-    <Compile Remove="Pages\NhapHang\MH_TimKiem.cshtml.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Pages\XuatHang\MH_Sua.cshtml" />
     <Content Remove="Pages\XuatHang\MH_TimKiem.cshtml" />
     <Content Remove="Pages\XuatHang\MH_Xoa.cshtml" />
     <Content Remove="Pages\XuatHang\MH_Xuat.cshtml" />
-    <Content Remove="Pages\NhapHang\MH_Sua.cshtml" />
     <Content Remove="Pages\Thongketonkho.cshtml" />
-    <Content Remove="Pages\NhapHang\MH_TimKiem.cshtml" />
   </ItemGroup>
 </Project>
