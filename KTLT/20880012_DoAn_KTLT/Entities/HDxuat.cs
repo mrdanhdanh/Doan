@@ -9,7 +9,6 @@ namespace _20880012_DoAn_KTLT.Entities
     {
         public string MaHD;
         public string NgayXuat;
-        public string MaMH;
-        public int SoLuong;
+        public List<PhieuHH> DSBanHang;
     }
 }

@@ -16,8 +16,6 @@
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/20880012_DoAn_KTLT.RazorAssemblyInfo.cache
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/20880012_DoAn_KTLT.RazorAssemblyInfo.cs
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/staticwebassets/20880012_DoAn_KTLT.StaticWebAssets.Manifest.cache
-/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/staticwebassets/20880012_DoAn_KTLT.StaticWebAssets.xml
-/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/scopedcss/bundle/20880012_DoAn_KTLT.styles.css
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/20880012_DoAn_KTLT.TagHelpers.input.cache
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/20880012_DoAn_KTLT.TagHelpers.output.cache
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/20880012_DoAn_KTLT.RazorCoreGenerate.cache
@@ -35,8 +33,6 @@
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/Razor/Pages/MatHang/MH_Xoa.cshtml.g.cs
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/Razor/Pages/Nhaphang.cshtml.g.cs
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/Razor/Pages/NhapHang/MH_Nhap.cshtml.g.cs
-/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/Razor/Pages/NhapHang/MH_Sua.cshtml.g.cs
-/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/Razor/Pages/NhapHang/MH_TimKiem.cshtml.g.cs
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/Razor/Pages/NhapHang/MH_Xoa.cshtml.g.cs
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/Razor/Pages/Privacy.cshtml.g.cs
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/Razor/Pages/Shared/_Layout.cshtml.g.cs
@@ -46,12 +42,7 @@
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/Razor/Pages/Shared/_LayoutTK.cshtml.g.cs
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/Razor/Pages/Shared/_LayoutXH.cshtml.g.cs
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/Razor/Pages/Shared/_ValidationScriptsPartial.cshtml.g.cs
-/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/Razor/Pages/Thongketonkho.cshtml.g.cs
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/Razor/Pages/Xuathang.cshtml.g.cs
-/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/Razor/Pages/XuatHang/MH_Sua.cshtml.g.cs
-/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/Razor/Pages/XuatHang/MH_TimKiem.cshtml.g.cs
-/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/Razor/Pages/XuatHang/MH_Xoa.cshtml.g.cs
-/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/Razor/Pages/XuatHang/MH_Xuat.cshtml.g.cs
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/Razor/Pages/_ViewImports.cshtml.g.cs
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/Razor/Pages/_ViewStart.cshtml.g.cs
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/20880012_DoAn_KTLT.RazorTargetAssemblyInfo.cache
@@ -61,3 +52,4 @@
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/20880012_DoAn_KTLT.dll
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/20880012_DoAn_KTLT.pdb
 /Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/20880012_DoAn_KTLT.genruntimeconfig.cache
+/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/Debug/netcoreapp3.1/20880012_DoAn_KTLT.csproj.AssemblyReference.cache

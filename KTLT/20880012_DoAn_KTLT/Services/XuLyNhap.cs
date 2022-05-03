@@ -85,32 +85,32 @@ namespace _20880012_DoAn_KTLT.Services
             return hf;
         }
 
-        public static string SuaHD(string id, string mahd, string ngaynhap, string mamh, int sl)
-        {
-            HDnhap hd = new HDnhap();
-            List<HDnhap> DSHD = LuuTruHDNhap.DocHDNhap();
-            for (int i = 0; i < DSHD.Count(); i++)
-            {
-                if (DSHD[i].MaHD == id)
-                {
-                    for (int j = 0; j < DSHD.Count(); j++) {
-                        if (i!=j && DSHD[j].MaHD == mahd)
-                        {
-                            return "Trùng mã hóa đơn, chỉnh sửa thất bại";
-                        }
-                    }
-                    hd.MaHD = mahd;
-                    hd.NgayNhap = ngaynhap;
-                    hd.MaMH = mamh;
-                    hd.SoLuong = sl;
-                    DSHD[i] = hd;
-                    LuuTruHDNhap.LuuDSNhap(DSHD);
-                    return "Chỉnh sửa thành công";
-                }
-            }
+        //public static string SuaHD(string id, string mahd, string ngaynhap, string mamh, int sl)
+        //{
+        //    HDnhap hd = new HDnhap();
+        //    List<HDnhap> DSHD = LuuTruHDNhap.DocHDNhap();
+        //    for (int i = 0; i < DSHD.Count(); i++)
+        //    {
+        //        if (DSHD[i].MaHD == id)
+        //        {
+        //            for (int j = 0; j < DSHD.Count(); j++) {
+        //                if (i!=j && DSHD[j].MaHD == mahd)
+        //                {
+        //                    return "Trùng mã hóa đơn, chỉnh sửa thất bại";
+        //                }
+        //            }
+        //            hd.MaHD = mahd;
+        //            hd.NgayNhap = ngaynhap;
+        //            hd.MaMH = mamh;
+        //            hd.SoLuong = sl;
+        //            DSHD[i] = hd;
+        //            LuuTruHDNhap.LuuDSNhap(DSHD);
+        //            return "Chỉnh sửa thành công";
+        //        }
+        //    }
 
-            //số lượng phải lớn hơn hoặc bằng tổng lượng đã bán - chưa làm
-            return "Chỉnh sửa thất bại, dữ liệu không phù hợp";
-        }
+        //    //số lượng phải lớn hơn hoặc bằng tổng lượng đã bán - chưa làm
+        //    return "Chỉnh sửa thất bại, dữ liệu không phù hợp";
+        //}
     }
 }
