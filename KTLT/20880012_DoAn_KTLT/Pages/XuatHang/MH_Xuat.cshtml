@@ -7,27 +7,32 @@
 
 <form method="POST">
     <label for="mahd">Nhập mã hóa đơn:</label><br />
-    <input type="text" name="mahd" value="" required/><br />
-    <label for="ngayxuat">Ngày bán hàng:</label><br />
-    <input type="date" name="ngayxuat" value="" required/><br />
-    <label for="mamh">Chọn mặt hàng:</label><br />
-        <select name="mamh" required>
-            @foreach (Tonkho t in Model.DSTK)
-            {
-                Model.MatHang = "Error";
-                foreach (Mathang m in Model.DSMH)
+    <input type="text" name="mahd" value="" required /><br />
+    <label for="ngayxuat">Ngày ban hàng:</label><br />
+    <input type="date" name="ngayxuat" value="" required /><br />
+    <p>Thong tin ban hàng:</p>
+    <div id="spban">
+        @for (int i = 0; i < 5; i++)
+        {
+            var mamh = "mamh" + i;
+            var gia = "gia" + i;
+            var sl = "sl" + i;
+            <select name="@mamh">
+                <option value="">Chon mat hang</option>
+                @foreach (Mathang m in Model.DSMH)
                 {
-                    if (m.MaMatHang == t.MaMH)
-                    {
-                        Model.MatHang = m.TenMatHang + " (" + m.MaMatHang + ") - Tồn kho: " + t.SL;
-                    }
+                    <option value="@m.MaMatHang">@m.TenMatHang (@m.MaMatHang)</option>
                 }
-                <option value="@t.MaMH">@Model.MatHang</option>
-            }
-        </select><br />
-    <label for="sl">Số lượng bán:</label><br />
-    <input type="number" name="sl" value="" min="1" required/><br />
-    <input type="submit" value="Bán hàng" />
+            </select>
+            <label for=@gia>Gia:</label>
+            <input type="number" name=@gia value="" />
+            <label for=@sl>Số lượng nhập:</label>
+            <input type="number" name=@sl value="" /><br />
+        }
+
+    </div>
+    <input type="submit" value="Ban hàng" />
+    <input type="reset" />
 </form>
 
 @Model.Ketqua

@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{3191EA52-A38C-4CE6-9250-3D0E5E669419}|Default">
   <MonoDevelop.Ide.ItemProperties.20880012__DoAn__KTLT PreferredExecutionTarget="/Applications/Opera.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/NhapHang/MH_Sua.cshtml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Services/XuLyTonKho.cs">
     <Files>
-      <File FileName="Services/XuLyNhap.cs" Line="91" Column="24" />
-      <File FileName="Pages/NhapHang/MH_Nhap.cshtml.cs" Line="74" Column="41" />
-      <File FileName="Pages/NhapHang/MH_Sua.cshtml" Line="1" Column="1" />
-      <File FileName="Pages/NhapHang/MH_Nhap.cshtml" Line="17" Column="10" />
-      <File FileName="Pages/NhapHang/MH_Sua.cshtml.cs" Line="1" Column="1" />
+      <File FileName="Services/XuLyNhap.cs" Line="140" Column="51" />
+      <File FileName="Pages/NhapHang/MH_Nhap.cshtml.cs" Line="70" Column="39" />
+      <File FileName="Pages/XuatHang/MH_Xuat.cshtml" Line="34" Column="36" />
+      <File FileName="Pages/XuatHang/MH_Xuat.cshtml.cs" Line="27" Column="37" />
+      <File FileName="Services/XuLyTonKho.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,12 +18,15 @@
               <Node name="Pages" expanded="True">
                 <Node name="NhapHang" expanded="True">
                   <Node name="MH_Nhap.cshtml" expanded="True" />
-                  <Node name="MH_Sua.cshtml" expanded="True">
-                    <Node name="MH_Sua.cshtml.cs" selected="True" />
-                  </Node>
+                  <Node name="MH_Sua.cshtml" expanded="True" />
+                </Node>
+                <Node name="XuatHang" expanded="True">
+                  <Node name="MH_Xuat.cshtml" expanded="True" />
                 </Node>
               </Node>
-              <Node name="Services" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="XuLyTonKho.cs" selected="True" />
+              </Node>
               <Node name="wwwroot" expanded="True">
                 <Node name="data" expanded="True" />
               </Node>
