@@ -105,8 +105,22 @@ namespace _20880012_DoAn_KTLT.Pages.XuatHang
             }
             x.DSBanHang = DSBanHang;
             Ketqua = XuLyXuat.SuaHD(id, x);
+
+
             TaiTonKho();
-            DSBH = LamDayDS(x.DSBanHang);
+            //Nếu trong ds bán có mặt hàng nào không còn tồn kho -> thêm vào DSMH với sl=0 để ko lỗi data
+            foreach (PhieuHH hh in x.DSBanHang)
+            {
+                var target = DSTKMH.FirstOrDefault(m => m.MaMH == hh.MaMH);
+                if (target == null)
+                {
+                    TonkhoMH t = new TonkhoMH();
+                    t.MaMH = hh.MaMH;
+                    t.SL = 0;
+                    DSTKMH.Add(t);
+                }
+            }
+            DSBH = LamDayDS(x.DSBanHang); //làm đầy ds bằng các sp rỗng để load không lỗi
         }
     }
 }
