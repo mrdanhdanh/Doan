@@ -10,6 +10,39 @@ namespace _20880012_DoAn_KTLT.Services
 {
     public class XuLyXuat
     {
+        public static List<PhieuHH> KiemTraDSBan(List<PhieuHH> DSBH)
+        {
+            List<PhieuHH> DSKiemTra = new List<PhieuHH>();
+            foreach (PhieuHH h in DSBH)
+            {
+                if (h.MaMH != null && h.SoLuong != 0)
+                {
+                    DSKiemTra.Add(h);
+                }
+            }
+            return DSKiemTra;
+        }
+        public static bool KiemTraTonMH(List<PhieuHH> DSHH)
+        {
+            List<TonkhoMH> DSTK = XuLyTonKho.TaiDSTonKhoMH(null);
+            if (DSTK.Count() != 0)
+            {
+                foreach (TonkhoMH t in DSTK)
+                {
+                    foreach (PhieuHH hh in DSHH)
+                    {
+                        if (t.MaMH == hh.MaMH && t.SL < hh.SoLuong)
+                        {
+                            return false;
+                        }
+                    }
+                }
+            } else
+            {
+                return false;
+            }
+            return true;
+        }
         public static string XuatHD(HDxuat x)
         {
             //1: Kiểm tra trùng ID
@@ -21,18 +54,26 @@ namespace _20880012_DoAn_KTLT.Services
                     return "Trùng mã hóa đơn, vui lòng nhập lại";
                 }
             }
-            //2: Kiểm tra số lượng phù hợp tồn kho
-            List<Tonkho> DSTK = XuLyTonKho.TaiDSTonKho(null);
-            foreach (Tonkho t in DSTK)
+            //2: Kiểm tra sản phấm bán có đủ thông tin không
+            List<PhieuHH> hh = KiemTraDSBan(x.DSBanHang);
+            if (hh.Count() == 0)
             {
-                if (t.MaMH == x.MaMH && t.SL < x.SoLuong)
-                {
-                    return "Số lượng bán vượt quá số lượng tồn kho, không thể tạo hóa đơn";
-                }
+                return "Dữ liệu sai, vui lòng nhập lại";
+            } else
+            {
+                x.DSBanHang = hh;
+                
             }
-            //3: Tạo hóa đơn
-            LuuTruHDXuat.LuuHDXuat(x);
-            return "Xuất hóa đơn bán thành công";
+            //3: Kiểm tra số lượng phù hợp tồn kho
+            if (KiemTraTonMH(x.DSBanHang))
+            {
+                //4: Tạo hóa đơn
+                LuuTruHDXuat.LuuHDXuat(x);
+                return "Xuất hóa đơn bán thành công";
+            } else
+            {
+                return "Số lượng bán vượt quá số lượng tồn kho, không thể tạo hóa đơn";
+            }
         }
         public static List<HDxuat> TimKiemHD(string keyword, string keydate)
         {
@@ -96,8 +137,7 @@ namespace _20880012_DoAn_KTLT.Services
             }
             return xf;
         }
-
-        public static string SuaHD(string id, string mahd, string ngaynhap, string mamh, int sl)
+        public static string SuaHD(string id, HDxuat h)
         {
             HDxuat hd = new HDxuat();
             List<HDxuat> DSHD = LuuTruHDXuat.DocHDXuat();
@@ -108,47 +148,47 @@ namespace _20880012_DoAn_KTLT.Services
                     //1:Kiểm tra ID có trùng không
                     for (int j = 0; j < DSHD.Count(); j++)
                     {
-                        if (i != j && DSHD[j].MaHD == mahd)
+                        if (i != j && DSHD[j].MaHD == h.MaHD)
                         {
                             return "Trùng mã hóa đơn, chỉnh sửa thất bại";
                         }
                     }
                     //2:Kiểm tra Số lượng bán có phù hợp với tồn kho hay không
-                    List<Tonkho> DSTK = XuLyTonKho.TaiDSTonKho(null);
-                    HDxuat x = XuLyXuat.ThongTinHD(id); //thông tin bán hàng cũ 
-                    var target = DSTK.FirstOrDefault(item => item.MaMH == x.MaMH);
-                    if (target == null)
-                    {
-                        Tonkho t = new Tonkho();
-                        t.MaMH = x.MaMH;
-                        t.SL = x.SoLuong;
-                        DSTK.Add(t);
-                    } else
-                    {
-                        for (int k=0; k<DSTK.Count(); k++)
-                        {
-                            if (DSTK[k].MaMH == x.MaMH)
-                            {
-                                Tonkho t = new Tonkho();
-                                t.MaMH = DSTK[k].MaMH;
-                                t.SL = DSTK[k].SL + x.SoLuong;
-                                DSTK[k] = t;
-                            }
-                        }
-                    }
-                    foreach (Tonkho t in DSTK) // kiểm tra số lượng
-                    {
-                        if (t.MaMH == mamh && t.SL<sl)
-                        {
-                            return "Số lượng bán vượt quá tồn kho, không thể chỉnh sửa";
-                        }
-                    }
+                    List<PhieuHH> DSBH = KiemTraDSBan(h.DSBanHang);
+                    //List<Tonkho> DSTK = XuLyTonKho.TaiDSTonKho(null);
+                    //HDxuat x = XuLyXuat.ThongTinHD(id); //thông tin bán hàng cũ 
+                    //var target = DSTK.FirstOrDefault(item => item.MaMH == x.MaMH);
+                    //if (target == null)
+                    //{
+                    //    Tonkho t = new Tonkho();
+                    //    t.MaMH = x.MaMH;
+                    //    t.SL = x.SoLuong;
+                    //    DSTK.Add(t);
+                    //}
+                    //else
+                    //{
+                    //    for (int k = 0; k < DSTK.Count(); k++)
+                    //    {
+                    //        if (DSTK[k].MaMH == x.MaMH)
+                    //        {
+                    //            Tonkho t = new Tonkho();
+                    //            t.MaMH = DSTK[k].MaMH;
+                    //            t.SL = DSTK[k].SL + x.SoLuong;
+                    //            DSTK[k] = t;
+                    //        }
+                    //    }
+                    //}
+                    //foreach (Tonkho t in DSTK) // kiểm tra số lượng
+                    //{
+                    //    if (t.MaMH == mamh && t.SL < sl)
+                    //    {
+                    //        return "Số lượng bán vượt quá tồn kho, không thể chỉnh sửa";
+                    //    }
+                    //}
                     //3:Lưu HD Xuất
-                    hd.MaHD = mahd;
-                    hd.NgayXuat = ngaynhap;
-                    hd.MaMH = mamh;
-                    hd.SoLuong = sl;
-                    DSHD[i] = hd;
+
+                    h.DSBanHang = DSBH;
+                    DSHD[i] = h;
                     LuuTruHDXuat.LuuDSXuat(DSHD);
                     return "Chỉnh sửa thành công";
                 }

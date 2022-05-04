@@ -14,18 +14,31 @@ namespace _20880012_DoAn_KTLT.Pages.XuatHang
     {
         public string Ketqua;
         public List<Mathang> DSMH = XuLyMatHang.TimKiemMatHang(null);
-        public List<Tonkho> DSTK;
+        public List<TonkhoMH> DSTKMH;
 
-        public string MatHang;
         public string MaHD { get; set; }
         public string NgayXuat { get; set; }
-        public string MaMH { get; set; }
-        public int SL { get; set; }
+
+        public string MaMH0 { get; set; }
+        public int Gia0 { get; set; }
+        public int SL0 { get; set; }
+        public string MaMH1 { get; set; }
+        public int Gia1 { get; set; }
+        public int SL1 { get; set; }
+        public string MaMH2 { get; set; }
+        public int Gia2 { get; set; }
+        public int SL2 { get; set; }
+        public string MaMH3 { get; set; }
+        public int Gia3 { get; set; }
+        public int SL3 { get; set; }
+        public string MaMH4 { get; set; }
+        public int Gia4 { get; set; }
+        public int SL4 { get; set; }
 
         public void TaiTonKho()
         {
-            DSTK = XuLyTonKho.TaiDSTonKho(null);
-            if (DSTK.Count() == 0)
+            DSTKMH = XuLyTonKho.TaiDSTonKhoMH(null);
+            if (DSTKMH.Count() == 0)
             {
                 Ketqua = "Kho không còn hàng để bán, vui lòng nhập hàng trước khi xuất hóa đơn bán";
             }
@@ -36,13 +49,26 @@ namespace _20880012_DoAn_KTLT.Pages.XuatHang
         }
         public void OnPost()
         {
-            TaiTonKho();
             HDxuat h = new HDxuat();
             h.MaHD = MaHD;
             h.NgayXuat = NgayXuat;
-            h.MaMH = MaMH;
-            h.SoLuong = SL;
+
+
+            string[] MaMH = { MaMH0, MaMH1, MaMH2, MaMH3, MaMH4 };
+            int[] Gia = { Gia0, Gia1, Gia2, Gia3, Gia4 };
+            int[] SL = { SL0, SL1, SL2, SL3, SL4 };
+            List<PhieuHH> DSBanHang = new List<PhieuHH>();
+            for (int i = 0; i < 5; i++)
+            {
+                PhieuHH HangBan = new PhieuHH();
+                HangBan.MaMH = MaMH[i];
+                HangBan.Gia = Gia[i];
+                HangBan.SoLuong = SL[i];
+                DSBanHang.Add(HangBan);
+            }
+            h.DSBanHang = DSBanHang;
             Ketqua = XuLyXuat.XuatHD(h);
+            TaiTonKho();
         }
     }
 }

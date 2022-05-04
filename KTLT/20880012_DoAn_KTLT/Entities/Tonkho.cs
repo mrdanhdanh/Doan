@@ -5,9 +5,15 @@ using System.Threading.Tasks;
 
 namespace _20880012_DoAn_KTLT.Entities
 {
-    public class Tonkho
+    public class TonkhoMH
     {
         public string MaMH;
         public int SL;
     }
+    public class TonkhoLH
+    {
+        public string MaLH;
+        public int SL;
+    }
+
 }

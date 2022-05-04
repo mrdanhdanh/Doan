@@ -14,24 +14,47 @@ namespace _20880012_DoAn_KTLT.Pages.XuatHang
     {
         public string Ketqua;
         public List<Mathang> DSMH = XuLyMatHang.TimKiemMatHang(null);
-        public List<Tonkho> DSTK;
-
-        public string MatHang;
+        public List<TonkhoMH> DSTKMH;
+        public List<PhieuHH> DSBH;
 
         [BindProperty(SupportsGet = true)]
         public string id { get; set; }
         public string MaHD { get; set; }
         public string NgayXuat { get; set; }
-        public string MaMH { get; set; }
-        public int SL { get; set; }
+
+        public string MaMH0 { get; set; }
+        public int Gia0 { get; set; }
+        public int SL0 { get; set; }
+        public string MaMH1 { get; set; }
+        public int Gia1 { get; set; }
+        public int SL1 { get; set; }
+        public string MaMH2 { get; set; }
+        public int Gia2 { get; set; }
+        public int SL2 { get; set; }
+        public string MaMH3 { get; set; }
+        public int Gia3 { get; set; }
+        public int SL3 { get; set; }
+        public string MaMH4 { get; set; }
+        public int Gia4 { get; set; }
+        public int SL4 { get; set; }
 
         public void TaiTonKho()
         {
-            DSTK = XuLyTonKho.TaiDSTonKho(null);
-            if (DSTK.Count() == 0)
+            DSTKMH = XuLyTonKho.TaiDSTonKhoMH(null);
+            if (DSTKMH.Count() == 0)
             {
                 Ketqua = "Kho không còn hàng để bán, vui lòng nhập hàng trước khi xuất hóa đơn bán";
             }
+        }
+        public static List<PhieuHH> LamDayDS(List<PhieuHH> DSBanHang)
+        {
+            int c = 5 - DSBanHang.Count();
+            for (int i=0; i<c; i++)
+            {
+                PhieuHH hh = new PhieuHH();
+                DSBanHang.Add(hh);
+            }
+            return DSBanHang;
         }
         public void OnGet()
         {
@@ -39,20 +62,23 @@ namespace _20880012_DoAn_KTLT.Pages.XuatHang
             if (x.MaHD != null)
             {
                 TaiTonKho();
-                var target = DSTK.FirstOrDefault(hd => hd.MaMH == x.MaMH);
-                if (target == null)
+                //Nếu trong ds bán có mặt hàng nào không còn tồn kho -> thêm vào DSMH với sl=0 để ko lỗi data
+                foreach (PhieuHH hh in x.DSBanHang)
                 {
-                    Tonkho t = new Tonkho();
-                    t.MaMH = x.MaMH;
-                    t.SL = 0;
-                    DSTK.Add(t);
+                    var target = DSTKMH.FirstOrDefault(m => m.MaMH == hh.MaMH);
+                    if (target == null)
+                    {
+                        TonkhoMH t = new TonkhoMH();
+                        t.MaMH = hh.MaMH;
+                        t.SL = 0;
+                        DSTKMH.Add(t);
+                    }
                 }
+                DSBH = LamDayDS(x.DSBanHang); //làm đầy ds bằng các sp rỗng để load không lỗi
                 MaHD = x.MaHD;
                 NgayXuat = x.NgayXuat;
-                SL = x.SoLuong;
-                MaMH = x.MaMH;
-
-            } else
+            }
+            else
             {
                 MaHD = null;
                 Ketqua = "Không tìm thấy mã hóa đơn, không thể chỉnh sửa";
@@ -61,16 +87,26 @@ namespace _20880012_DoAn_KTLT.Pages.XuatHang
         }
         public void OnPost()
         {
-            Ketqua = XuLyXuat.SuaHD(id, MaHD, NgayXuat, MaMH, SL);
-            TaiTonKho();
-            var target = DSTK.FirstOrDefault(hd => hd.MaMH == MaMH);
-            if (target == null)
+            HDxuat x = new HDxuat();
+            x.MaHD = MaHD;
+            x.NgayXuat = NgayXuat;
+
+            string[] MaMH = { MaMH0, MaMH1, MaMH2, MaMH3, MaMH4 };
+            int[] Gia = { Gia0, Gia1, Gia2, Gia3, Gia4 };
+            int[] SL = { SL0, SL1, SL2, SL3, SL4 };
+            List<PhieuHH> DSBanHang = new List<PhieuHH>();
+            for (int i = 0; i < 5; i++)
             {
-                Tonkho t = new Tonkho();
-                t.MaMH = MaMH;
-                t.SL = 0;
-                DSTK.Add(t);
+                PhieuHH HangBan = new PhieuHH();
+                HangBan.MaMH = MaMH[i];
+                HangBan.Gia = Gia[i];
+                HangBan.SoLuong = SL[i];
+                DSBanHang.Add(HangBan);
             }
+            x.DSBanHang = DSBanHang;
+            Ketqua = XuLyXuat.SuaHD(id, x);
+            TaiTonKho();
+            DSBH = LamDayDS(x.DSBanHang);
         }
     }
 }

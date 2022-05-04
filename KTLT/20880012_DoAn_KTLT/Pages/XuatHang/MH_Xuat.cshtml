@@ -8,30 +8,37 @@
 <form method="POST">
     <label for="mahd">Nhập mã hóa đơn:</label><br />
     <input type="text" name="mahd" value="" required /><br />
-    <label for="ngayxuat">Ngày ban hàng:</label><br />
+    <label for="ngayxuat">Ngày bán hàng:</label><br />
     <input type="date" name="ngayxuat" value="" required /><br />
-    <p>Thong tin ban hàng:</p>
+    <p>Thông tin bán hàng:</p>
     <div id="spban">
         @for (int i = 0; i < 5; i++)
         {
             var mamh = "mamh" + i;
             var gia = "gia" + i;
             var sl = "sl" + i;
-            <select name="@mamh">
-                <option value="">Chon mat hang</option>
-                @foreach (Mathang m in Model.DSMH)
+        <select name="@mamh">
+            <option value="">Chọn mặt hàng</option>
+            @foreach (TonkhoMH t in Model.DSTKMH)
+            {
+                foreach (Mathang m in Model.DSMH)
                 {
-                    <option value="@m.MaMatHang">@m.TenMatHang (@m.MaMatHang)</option>
+                    if (t.MaMH == m.MaMatHang)
+                    {
+                        <option value="@m.MaMatHang">@m.TenMatHang (@m.MaMatHang) - Tồn kho: @t.SL</option>
+                    }
                 }
-            </select>
-            <label for=@gia>Gia:</label>
+
+            }
+        </select>
+            <label for=@gia>Giá:</label>
             <input type="number" name=@gia value="" />
-            <label for=@sl>Số lượng nhập:</label>
+            <label for=@sl>Số lượng bán:</label>
             <input type="number" name=@sl value="" /><br />
         }
 
     </div>
-    <input type="submit" value="Ban hàng" />
+    <input type="submit" value="Bán hàng" />
     <input type="reset" />
 </form>
 

@@ -13,7 +13,7 @@ namespace _20880012_DoAn_KTLT.Pages.NhapHang
     public class MH_TimKiemModel : PageModel
     {
         public string Ketqua;
-        public List<Mathang> DSMH = XuLyMatHang.TimKiemMatHang("");
+        public List<Mathang> DSMH = XuLyMatHang.TimKiemMatHang(null);
         public List<HDnhap> DSHD;
         public string MatHang;
 

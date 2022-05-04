@@ -9,6 +9,18 @@ namespace _20880012_DoAn_KTLT.Services
 {
     public class XuLyNhap
     {
+        public static List<PhieuHH> KiemTraDSNhap(List<PhieuHH> DSNH)
+        {
+            List<PhieuHH> DSKiemTra = new List<PhieuHH>();
+            foreach (PhieuHH h in DSNH)
+            {
+                if (h.MaMH != null && h.SoLuong != 0)
+                {
+                    DSKiemTra.Add(h);
+                }
+            }
+            return DSKiemTra;
+        }
         public static string NhapHD(HDnhap h)
         {
             //Kiem tra trung ma hoa don
@@ -21,24 +33,16 @@ namespace _20880012_DoAn_KTLT.Services
                 }
             }
             //kiem tra hang hoa loi du lieu
-            List<PhieuHH> HHdakiem = new List<PhieuHH>();
-            foreach (PhieuHH hh in h.DSNhapHang)
+            List<PhieuHH> hh = KiemTraDSNhap(h.DSNhapHang);
+            if (hh.Count() == 0)
             {
-                if (hh.MaMH!=null && hh.Gia!=0 && hh.SoLuong!=0)
-                {
-                    HHdakiem.Add(hh);
-                }
-            }
-            if (HHdakiem.Count() == 0)
-            {
-                return "Du lieu sai, vui long nhap lai";    
+                return "Dữ liệu nhập hàng sai, vui lòng nhập lại";    
             } else
             {
-                h.DSNhapHang = HHdakiem;
+                h.DSNhapHang = hh;
                 //Buoc 3: Luu 
                 LuuTruHDNhap.LuuHDNhap(h);
-                return "Tao thanh cong hoa don Nhap voi "+ HHdakiem.Count() + " mat hang";
-
+                return "Tạo thành công hóa đơn nhập với "+ hh.Count() + " mặt hàng";
             }
             
         }
@@ -120,21 +124,14 @@ namespace _20880012_DoAn_KTLT.Services
                         }
                     }
                     //kiem tra hang hoa loi du lieu
-                    List<PhieuHH> HHdakiem = new List<PhieuHH>();
-                    foreach (PhieuHH hh in h.DSNhapHang)
+                    List<PhieuHH> hh = KiemTraDSNhap(h.DSNhapHang);
+                    if (hh.Count() == 0)
                     {
-                        if (hh.MaMH != null && hh.Gia != 0 && hh.SoLuong != 0)
-                        {
-                            HHdakiem.Add(hh);
-                        }
-                    }
-                    if (HHdakiem.Count() == 0)
-                    {
-                        return "Du lieu sai, vui long nhap lai";
+                        return "Dữ liệu nhập hàng sai, vui lòng nhập lại";
                     }
                     else
                     {
-                        h.DSNhapHang = HHdakiem;
+                        h.DSNhapHang = hh;
                         DSHD[i] = h;
                         LuuTruHDNhap.LuuDSNhap(DSHD);
                         return "Chỉnh sửa thành công";

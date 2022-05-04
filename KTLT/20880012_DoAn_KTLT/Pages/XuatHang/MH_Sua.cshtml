@@ -8,35 +8,47 @@
 @if (Model.MaHD != null)
 {
 <form method="POST">
-    <label for="mahd">Nhập mã hóa đơn:</label><br />
+    <label for="mahd">Mã hóa đơn:</label><br />
     <input type="text" name="mahd" value="@Model.MaHD" required /><br />
     <label for="ngayxuat">Ngày bán hàng:</label><br />
     <input type="date" name="ngayxuat" value="@Model.NgayXuat" required /><br />
-    <label for="mamh">Chọn mặt hàng:</label><br />
-    <select name="mamh" required>
-        @foreach (Tonkho t in Model.DSTK)
+    <p>Thông tin bán hàng:</p>
+    <div id="spban">
+        @for (int i = 0; i < 5; i++)
         {
-            Model.MatHang = "Error";
-            foreach (Mathang m in Model.DSMH)
+            var mamh = "mamh" + i;
+            var gia = "gia" + i;
+            var sl = "sl" + i;
+        <select name="@mamh">
+            <option value="">Chọn mặt hàng</option>
+            @foreach (TonkhoMH t in Model.DSTKMH)
             {
-                if (m.MaMatHang == t.MaMH)
+                foreach (Mathang m in Model.DSMH)
                 {
-                    Model.MatHang = m.TenMatHang + " (" + m.MaMatHang + ") - Tồn kho: " + t.SL;
+                    if (t.MaMH == m.MaMatHang)
+                    {
+                        if (Model.DSBH[i].MaMH == t.MaMH)
+                        {
+                            <option value="@m.MaMatHang" selected>@m.TenMatHang (@m.MaMatHang) - Tồn kho: @t.SL</option>
+                        }
+                        else
+                        {
+                            <option value="@m.MaMatHang">@m.TenMatHang (@m.MaMatHang) - Tồn kho: @t.SL</option>
+                        }
+                    }
                 }
-            }
-            if (t.MaMH == Model.MaMH)
-            {
-                <option value="@t.MaMH" selected>@Model.MatHang</option>
-            } else
-            {
-                <option value="@t.MaMH">@Model.MatHang</option>
 
             }
+        </select>
+            <label for=@gia>Giá:</label>
+            <input type="number" name=@gia value="@Model.DSBH[i].Gia" />
+            <label for=@sl>Số lượng bán:</label>
+            <input type="number" name=@sl value="@Model.DSBH[i].SoLuong" /><br />
         }
-    </select><br />
-    <label for="sl">Số lượng bán:</label><br />
-    <input type="number" name="sl" value="@Model.SL" min="1" required /><br />
+
+    </div>
     <input type="submit" value="Lưu chỉnh sửa" />
+    <input type="reset" />
 </form>
 }
 
