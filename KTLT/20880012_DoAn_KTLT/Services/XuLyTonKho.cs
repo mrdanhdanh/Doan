@@ -54,5 +54,37 @@ namespace _20880012_DoAn_KTLT.Services
 
             return DSton;
         }
+        public static List<TonkhoLH> TaiDSTonKhoLH(string malh)
+        {
+            List<TonkhoLH> tklh = new List<TonkhoLH>();
+            List<TonkhoMH> tkmh = TaiDSTonKhoMH(null);
+            List<Mathang> dsmh = XuLyMatHang.TimKiemMatHang(null);
+            List<Loaihang> dslh = XuLyLoaiHang.TimKiemLoaiHang(null);
+
+            foreach (Loaihang l in dslh)
+            {
+                if (malh == null || l.MaLoaiHang == malh) //Neu malh la null => lay tat ca, neu khac null => chi lay dung ma loai hang
+                {
+                    TonkhoLH tlh = new TonkhoLH();
+                    tlh.TenLH = l.TenLoaiHang;
+                    tlh.SL = 0;
+                    foreach (Mathang m in dsmh)
+                    {
+                        if (m.LoaiHang == tlh.TenLH)
+                        {
+                            var target = tkmh.FirstOrDefault(t => t.MaMH == m.MaMatHang);
+                            if (target != null)
+                            {
+                                tlh.SL += target.SL;
+                            }
+                        }
+                    }
+                    tklh.Add(tlh);
+                }
+                
+            }
+
+            return tklh;
+        }
     }
 }

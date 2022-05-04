@@ -11,20 +11,19 @@ namespace _20880012_DoAn_KTLT.Pages
 {
     public class TonkhoModel : PageModel
     {
-        public List<Tonkho> DSTK;
-        public List<Mathang> DSMH = XuLyMatHang.TimKiemMatHang(null);
-        public string MatHang;
+        public List<TonkhoLH> DSTK;
+        public List<Loaihang> DSLH = XuLyLoaiHang.TimKiemLoaiHang(null);
         [BindProperty] 
-        public string MaMH { get; set; }
+        public string MaLH { get; set; }
 
         public void OnGet()
         {
-            DSTK = XuLyTonKho.TaiDSTonKho(null);
+            DSTK = XuLyTonKho.TaiDSTonKhoLH(null);
         }
 
         public void OnPost()
         {
-            DSTK = XuLyTonKho.TaiDSTonKho(null);
+            DSTK = XuLyTonKho.TaiDSTonKhoLH(MaLH);
         }
     }
 }

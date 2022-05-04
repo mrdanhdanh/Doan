@@ -3,56 +3,34 @@
 @using _20880012_DoAn_KTLT.Entities
 @{
     Layout = "_LayoutTK";
-
 }
 <form method="POST">
-    <select name="mamh" required>
-        <option value="" selected>Chọn mặt hàng</option>
-        @foreach (Tonkho t in Model.DSTK)
+    <label for="malh">Chon Mat hang:</label>
+    <select name="malh">
+        <option value="" selected>Xem tat ca</option>
+        @foreach (Loaihang l in Model.DSLH)
         {
-            Model.MatHang = "Error";
-            foreach (Mathang m in Model.DSMH)
-            {
-                if (m.MaMatHang == t.MaMH)
-                {
-                    Model.MatHang = m.TenMatHang + " (" + m.MaMatHang + ")";
-                }
-            }
-            <option value="@t.MaMH">@Model.MatHang</option>
+            var LoaiHang = l.TenLoaiHang + " (" + l.MaLoaiHang + ")";
+            <option value = "@l.MaLoaiHang">@LoaiHang</option>
         }
     </select>
-    <input type="submit" value="Lọc tồn kho"  class="btn btn-primary"/>
-    <a href="Thongketonkho" role="button" class="btn btn-primary">Xem Tất Cả</a>
+    <input type="submit" value="Lọc tồn kho"/>
 </form>
 
-<br />
 <table class="table table-striped table-hover">
     <thead>
         <tr>
-            <th>Tên mặt hàng</th>
-            <th>Số lượng</th>
+            <th>Tên loai hàng</th>
+            <th>Số lượng ton</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (Tonkho t in Model.DSTK)
-            {
-                if (Model.MaMH == null || t.MaMH == Model.MaMH)
+        @foreach (TonkhoLH t in Model.DSTK)
             {
                 <tr>
-                    @{
-                        Model.MatHang = "Error";
-                        foreach (Mathang m in Model.DSMH)
-                        {
-                            if (m.MaMatHang == t.MaMH)
-                            {
-                                Model.MatHang = m.TenMatHang + " (" + m.MaMatHang + ")";
-                            }
-                        }
-                    }
-                    <td>@Model.MatHang</td>
+                    <td>@t.TenLH</td>
                     <td>@t.SL</td>
                 </tr>
             }
-        }
     </tbody>
 </table>

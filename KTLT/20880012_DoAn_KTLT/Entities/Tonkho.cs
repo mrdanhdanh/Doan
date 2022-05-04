@@ -12,7 +12,7 @@ namespace _20880012_DoAn_KTLT.Entities
     }
     public class TonkhoLH
     {
-        public string MaLH;
+        public string TenLH;
         public int SL;
     }
 

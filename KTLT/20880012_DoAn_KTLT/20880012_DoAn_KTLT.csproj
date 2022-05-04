@@ -13,10 +13,4 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Remove="Pages\Thongketonkho.cshtml.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Remove="Pages\Thongketonkho.cshtml" />
-  </ItemGroup>
 </Project>
