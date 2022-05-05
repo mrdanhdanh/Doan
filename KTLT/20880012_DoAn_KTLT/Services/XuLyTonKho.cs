@@ -9,7 +9,7 @@ namespace _20880012_DoAn_KTLT.Services
 {
     public class XuLyTonKho
     {
-        public static List<TonkhoMH> TaiDSTonKhoMH(string mamh)
+        public static List<TonkhoMH> TaiDSTonKhoMH(string mamh, bool hethan)
         {
             List<HDnhap> DSnhap = LuuTruHDNhap.DocHDNhap();
             List<HDxuat> DSxuat = LuuTruHDXuat.DocHDXuat();
@@ -57,13 +57,13 @@ namespace _20880012_DoAn_KTLT.Services
         public static List<TonkhoLH> TaiDSTonKhoLH(string malh)
         {
             List<TonkhoLH> tklh = new List<TonkhoLH>();
-            List<TonkhoMH> tkmh = TaiDSTonKhoMH(null);
+            List<TonkhoMH> tkmh = TaiDSTonKhoMH(null, false);
             List<Mathang> dsmh = XuLyMatHang.TimKiemMatHang(null);
             List<Loaihang> dslh = XuLyLoaiHang.TimKiemLoaiHang(null);
 
             foreach (Loaihang l in dslh)
             {
-                if (malh == null || l.MaLoaiHang == malh) //Neu malh la null => lay tat ca, neu khac null => chi lay dung ma loai hang
+                if (malh == null || l.MaLoaiHang == malh) //Neu malh la null => lay tat ca, neu khac null => chi lay đúng mã loại hàng
                 {
                     TonkhoLH tlh = new TonkhoLH();
                     tlh.TenLH = l.TenLoaiHang;

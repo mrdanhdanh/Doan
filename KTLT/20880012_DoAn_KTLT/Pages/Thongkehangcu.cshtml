@@ -1,20 +1,20 @@
 ﻿@page
-@model _20880012_DoAn_KTLT.Pages.TonkhoModel
+@model _20880012_DoAn_KTLT.Pages.ThongkehangcuModel
 @using _20880012_DoAn_KTLT.Entities
 @{
     Layout = "_LayoutTK";
 }
 <form method="POST">
-    <label for="malh">Chọn loại hàng:</label>
+    <label for="mamh">Chọn mặt hàng:</label>
     <select name="malh">
         <option value="" selected>Xem tất cả</option>
         @foreach (Loaihang l in Model.DSLH)
         {
             var LoaiHang = l.TenLoaiHang + " (" + l.MaLoaiHang + ")";
-            <option value = "@l.MaLoaiHang">@LoaiHang</option>
+            <option value="@l.MaLoaiHang">@LoaiHang</option>
         }
     </select>
-    <input type="submit" value="Lọc tồn kho"/>
+    <input type="submit" value="Lọc tồn kho" />
 </form>
 
 <table class="table table-striped table-hover">
@@ -26,11 +26,11 @@
     </thead>
     <tbody>
         @foreach (TonkhoLH t in Model.DSTK)
-            {
-                <tr>
-                    <td>@t.TenLH</td>
-                    <td>@t.SL</td>
-                </tr>
-            }
+        {
+            <tr>
+                <td>@t.TenLH</td>
+                <td>@t.SL</td>
+            </tr>
+        }
     </tbody>
 </table>
