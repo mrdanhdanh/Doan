@@ -1,0 +1,13 @@
+/Users/huudanh/Desktop/Doan/testcode/testcode/bin/Debug/netcoreapp3.1/testcode.deps.json
+/Users/huudanh/Desktop/Doan/testcode/testcode/bin/Debug/netcoreapp3.1/testcode.runtimeconfig.json
+/Users/huudanh/Desktop/Doan/testcode/testcode/bin/Debug/netcoreapp3.1/testcode.runtimeconfig.dev.json
+/Users/huudanh/Desktop/Doan/testcode/testcode/bin/Debug/netcoreapp3.1/testcode.dll
+/Users/huudanh/Desktop/Doan/testcode/testcode/bin/Debug/netcoreapp3.1/testcode.pdb
+/Users/huudanh/Desktop/Doan/testcode/testcode/obj/Debug/netcoreapp3.1/testcode.csproj.AssemblyReference.cache
+/Users/huudanh/Desktop/Doan/testcode/testcode/obj/Debug/netcoreapp3.1/testcode.GeneratedMSBuildEditorConfig.editorconfig
+/Users/huudanh/Desktop/Doan/testcode/testcode/obj/Debug/netcoreapp3.1/testcode.AssemblyInfoInputs.cache
+/Users/huudanh/Desktop/Doan/testcode/testcode/obj/Debug/netcoreapp3.1/testcode.AssemblyInfo.cs
+/Users/huudanh/Desktop/Doan/testcode/testcode/obj/Debug/netcoreapp3.1/testcode.csproj.CoreCompileInputs.cache
+/Users/huudanh/Desktop/Doan/testcode/testcode/obj/Debug/netcoreapp3.1/testcode.dll
+/Users/huudanh/Desktop/Doan/testcode/testcode/obj/Debug/netcoreapp3.1/testcode.pdb
+/Users/huudanh/Desktop/Doan/testcode/testcode/obj/Debug/netcoreapp3.1/testcode.genruntimeconfig.cache

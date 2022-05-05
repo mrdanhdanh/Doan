@@ -24,7 +24,7 @@ namespace _20880012_DoAn_KTLT.Services
         }
         public static bool KiemTraTonMH(List<PhieuHH> DSHH, string id)
         {
-            List<TonkhoMH> DSTK = XuLyTonKho.TaiDSTonKhoMH(null);
+            List<TonkhoMH> DSTK = XuLyTonKho.TaiDSTonKhoMH(null, false);
             if (DSTK.Count() != 0)
             {
                 //Nếu id là null -> kiểm tra bình thường; nếu id != null -> đang trong phần sửa hóa đơn, tồn kho sẽ phải bao gồm cả số lượng của các mặt hàng trong hóa đơn có id này

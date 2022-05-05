@@ -1,11 +1,10 @@
 ﻿<Properties StartupConfiguration="{3191EA52-A38C-4CE6-9250-3D0E5E669419}|Default">
   <MonoDevelop.Ide.ItemProperties.20880012__DoAn__KTLT PreferredExecutionTarget="/Applications/Opera.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Services/XuLyTonKho.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/Thongkehangcu.cshtml.cs">
     <Files>
-      <File FileName="Pages/Thongketonkho.cshtml.cs" Line="16" Column="1" />
-      <File FileName="Pages/Thongketonkho.cshtml" Line="34" Column="14" />
-      <File FileName="Services/XuLyTonKho.cs" Line="70" Column="31" />
-      <File FileName="Services/XuLyMatHang.cs" Line="1" Column="1" />
+      <File FileName="Services/XuLyTonKho.cs" Line="19" Column="19" />
+      <File FileName="Pages/Thongkehangcu.cshtml" Line="42" Column="17" />
+      <File FileName="Pages/Thongkehangcu.cshtml.cs" Line="24" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,12 +16,16 @@
               <Node name="Pages" expanded="True">
                 <Node name="MatHang" expanded="True" />
                 <Node name="NhapHang" expanded="True" />
-                <Node name="XuatHang" expanded="True" />
+                <Node name="XuatHang" expanded="True">
+                  <Node name="MH_Sua.cshtml" expanded="True" />
+                  <Node name="MH_Xuat.cshtml" expanded="True" />
+                </Node>
+                <Node name="Thongkehangcu.cshtml" expanded="True">
+                  <Node name="Thongkehangcu.cshtml.cs" selected="True" />
+                </Node>
                 <Node name="Thongketonkho.cshtml" expanded="True" />
               </Node>
-              <Node name="Services" expanded="True">
-                <Node name="XuLyTonKho.cs" selected="True" />
-              </Node>
+              <Node name="Services" expanded="True" />
               <Node name="wwwroot" expanded="True">
                 <Node name="data" expanded="True" />
               </Node>

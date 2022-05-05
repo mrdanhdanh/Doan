@@ -6,13 +6,19 @@
 }
 <form method="POST">
     <label for="mamh">Chọn mặt hàng:</label>
-    <select name="malh">
+    <select name="mamh">
         <option value="" selected>Xem tất cả</option>
-        @foreach (Loaihang l in Model.DSLH)
+        @foreach (TonkhoMH t in Model.DSTK)
         {
-            var LoaiHang = l.TenLoaiHang + " (" + l.MaLoaiHang + ")";
-            <option value="@l.MaLoaiHang">@LoaiHang</option>
+            string MatHang = "Error";
+            var target = Model.DSMH.FirstOrDefault(m => m.MaMatHang == t.MaMH);
+            if (target != null)
+            {
+                MatHang = target.TenMatHang + " (" + target.MaMatHang + ")";
+            }
+            <option value="@t.MaMH">@MatHang</option>
         }
+
     </select>
     <input type="submit" value="Lọc tồn kho" />
 </form>
@@ -20,15 +26,21 @@
 <table class="table table-striped table-hover">
     <thead>
         <tr>
-            <th>Tên loai hàng</th>
+            <th>Tên mat hàng</th>
             <th>Số lượng tồn</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (TonkhoLH t in Model.DSTK)
+        @foreach (TonkhoMH t in Model.DSTK)
         {
+            string MatHang = "Error";
+            var target = Model.DSMH.FirstOrDefault(m => m.MaMatHang == t.MaMH);
+            if (target != null)
+            {
+                MatHang = target.TenMatHang + " (" + target.MaMatHang + ")";
+            }
             <tr>
-                <td>@t.TenLH</td>
+                <td>@MatHang</td>
                 <td>@t.SL</td>
             </tr>
         }

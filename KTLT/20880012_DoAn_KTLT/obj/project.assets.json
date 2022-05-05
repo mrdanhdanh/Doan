@@ -48,31 +48,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nguye\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "/Users/huudanh/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Bai tap HK 1\\Doan\\KTLT\\20880012_DoAn_KTLT\\20880012_DoAn_KTLT.csproj",
+      "projectUniqueName": "/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/20880012_DoAn_KTLT.csproj",
       "projectName": "20880012_DoAn_KTLT",
-      "projectPath": "D:\\Bai tap HK 1\\Doan\\KTLT\\20880012_DoAn_KTLT\\20880012_DoAn_KTLT.csproj",
-      "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-      "outputPath": "D:\\Bai tap HK 1\\Doan\\KTLT\\20880012_DoAn_KTLT\\obj\\",
+      "projectPath": "/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/20880012_DoAn_KTLT.csproj",
+      "packagesPath": "/Users/huudanh/.nuget/packages/",
+      "outputPath": "/Users/huudanh/Desktop/Doan/KTLT/20880012_DoAn_KTLT/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "/Users/huudanh/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -106,12 +99,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[3.1.13, 3.1.13]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -120,7 +107,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.104/RuntimeIdentifierGraph.json"
       }
     }
   }

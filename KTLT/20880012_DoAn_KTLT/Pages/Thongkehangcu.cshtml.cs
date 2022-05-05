@@ -19,11 +19,11 @@ namespace _20880012_DoAn_KTLT.Pages
 
         public void OnGet()
         {
-            DSTK = XuLyTonKho.TaiDSHetHan(null);
+            DSTK = XuLyTonKho.TaiDSTonKhoMH(null, true);
         }
         public void OnPost()
         {
-            DSTK = XuLyTonKho.TaiDSHetHan(MaMH);
+            DSTK = XuLyTonKho.TaiDSTonKhoMH(MaMH, true);
         }
     }
 }

@@ -37,7 +37,7 @@ namespace _20880012_DoAn_KTLT.Pages.XuatHang
 
         public void TaiTonKho()
         {
-            DSTKMH = XuLyTonKho.TaiDSTonKhoMH(null);
+            DSTKMH = XuLyTonKho.TaiDSTonKhoMH(null, false);
             if (DSTKMH.Count() == 0)
             {
                 Ketqua = "Kho không còn hàng để bán, vui lòng nhập hàng trước khi xuất hóa đơn bán";

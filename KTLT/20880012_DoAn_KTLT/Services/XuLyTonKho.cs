@@ -9,6 +9,18 @@ namespace _20880012_DoAn_KTLT.Services
 {
     public class XuLyTonKho
     {
+        public static bool KiemTraHetHan(Mathang m)
+        {
+            DateTime n = DateTime.Now;
+            DateTime hsd = DateTime.Parse(m.HanSuDung);
+            if (DateTime.Compare(n, hsd) == 1)
+            {
+                return true;
+            } else
+            {
+                return false;
+            }
+        }
         public static List<TonkhoMH> TaiDSTonKhoMH(string mamh, bool hethan)
         {
             List<HDnhap> DSnhap = LuuTruHDNhap.DocHDNhap();
@@ -23,32 +35,36 @@ namespace _20880012_DoAn_KTLT.Services
             {
                 if (m.MaMatHang.IndexOf(mamh) != -1) //Nếu chuỗi rỗng -> lấy tất cả mamh, nếu có giá trị -> chỉ tìm đúng mamh
                 {
-                    TonkhoMH t = new TonkhoMH();
-                    t.MaMH = m.MaMatHang;
-                    foreach (HDnhap h in DSnhap)
+                    if (hethan == false || KiemTraHetHan(m)) //hethan: thong thuong se la false, khi thong ke hang het han se la true; Khi do, kiem tra het han mathang, neu mathang het han thi se cho qua
                     {
-                        foreach (PhieuHH hh in h.DSNhapHang)
+                        TonkhoMH t = new TonkhoMH();
+                        t.MaMH = m.MaMatHang;
+                        foreach (HDnhap h in DSnhap)
                         {
-                            if (hh.MaMH == t.MaMH)
+                            foreach (PhieuHH hh in h.DSNhapHang)
                             {
-                                t.SL += hh.SoLuong;
+                                if (hh.MaMH == t.MaMH)
+                                {
+                                    t.SL += hh.SoLuong;
+                                }
                             }
                         }
-                    }
-                    foreach (HDxuat h in DSxuat)
-                    {
-                        foreach (PhieuHH hh in h.DSBanHang)
+                        foreach (HDxuat h in DSxuat)
                         {
-                            if (hh.MaMH == t.MaMH)
+                            foreach (PhieuHH hh in h.DSBanHang)
                             {
-                                t.SL -= hh.SoLuong;
+                                if (hh.MaMH == t.MaMH)
+                                {
+                                    t.SL -= hh.SoLuong;
+                                }
                             }
                         }
+                        if (t.SL > 0)
+                        {
+                            DSton.Add(t);
+                        }
                     }
-                    if (t.SL > 0)
-                    {
-                        DSton.Add(t);
-                    }
+                    
                 }
             }
 
