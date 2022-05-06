@@ -22,6 +22,15 @@ namespace _20880012_DoAn_KTLT.Services
             }
             return DSKiemTra;
         }
+        public static int TinhThanhTien(List<PhieuHH> DSHH)
+        {
+            int kq = 0;
+            foreach (PhieuHH h in DSHH)
+            {
+                kq += h.Gia * h.SoLuong;
+            }
+            return kq;
+        }
         public static bool KiemTraTonMH(List<PhieuHH> DSHH, string id)
         {
             List<TonkhoMH> DSTK = XuLyTonKho.TaiDSTonKhoMH(null, false);
@@ -83,6 +92,7 @@ namespace _20880012_DoAn_KTLT.Services
             {
                 //4: Tạo hóa đơn
                 x.DSBanHang = DSBH;
+                x.ThanhTien = TinhThanhTien(x.DSBanHang);
                 LuuTruHDXuat.LuuHDXuat(x);
                 return "Xuất hóa đơn bán thành công";
             } else
@@ -180,6 +190,7 @@ namespace _20880012_DoAn_KTLT.Services
                     {
                         //3:Lưu HD Xuất
                         h.DSBanHang = DSBH;
+                        h.ThanhTien = TinhThanhTien(h.DSBanHang);
                         DSHD[i] = h;
                         LuuTruHDXuat.LuuDSXuat(DSHD);
                         return "Chỉnh sửa thành công";

@@ -16,5 +16,6 @@ namespace _20880012_DoAn_KTLT.Entities
         public string MaHD;
         public string NgayNhap;
         public List<PhieuHH> DSNhapHang;
+        public int ThanhTien;
     }
 }

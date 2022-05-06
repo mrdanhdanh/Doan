@@ -22,6 +22,7 @@
             <th>Mặt hàng</th>
             <th>Giá</th>
             <th>Số lượng</th>
+            <th>Thành tiền</th>
             <th>Chức năng</th>
         </tr>
     </thead>
@@ -57,6 +58,7 @@
                         @hh.SoLuong<br />
                     }
                 </td>
+                <td>@h.ThanhTien</td>
                 <td>
                     <a href="/NhapHang/MH_Sua?id=@h.MaHD" class="btn btn-info" role="button">Sửa</a>
                     <a href="/NhapHang/MH_Xoa?id=@h.MaHD" class="btn btn-danger" role="button">Xóa</a>

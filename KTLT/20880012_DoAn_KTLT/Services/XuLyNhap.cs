@@ -9,10 +9,10 @@ namespace _20880012_DoAn_KTLT.Services
 {
     public class XuLyNhap
     {
-        public static List<PhieuHH> KiemTraDSNhap(List<PhieuHH> DSNH)
+        public static List<PhieuHH> KiemTraDSNhap(List<PhieuHH> DSHH)
         {
             List<PhieuHH> DSKiemTra = new List<PhieuHH>();
-            foreach (PhieuHH h in DSNH)
+            foreach (PhieuHH h in DSHH)
             {
                 if (h.MaMH != null && h.SoLuong != 0)
                 {
@@ -20,6 +20,15 @@ namespace _20880012_DoAn_KTLT.Services
                 }
             }
             return DSKiemTra;
+        }
+        public static int TinhThanhTien(List<PhieuHH> DSHH)
+        {
+            int kq = 0;
+            foreach (PhieuHH h in DSHH)
+            {
+                kq += h.Gia * h.SoLuong;
+            }
+            return kq;
         }
         public static string NhapHD(HDnhap h)
         {
@@ -41,6 +50,7 @@ namespace _20880012_DoAn_KTLT.Services
             {
                 h.DSNhapHang = hh;
                 //Buoc 3: Luu 
+                h.ThanhTien = TinhThanhTien(h.DSNhapHang);
                 LuuTruHDNhap.LuuHDNhap(h);
                 return "Tạo thành công hóa đơn nhập với "+ hh.Count() + " mặt hàng";
             }
@@ -132,6 +142,7 @@ namespace _20880012_DoAn_KTLT.Services
                     else
                     {
                         h.DSNhapHang = hh;
+                        h.ThanhTien = TinhThanhTien(h.DSNhapHang);
                         DSHD[i] = h;
                         LuuTruHDNhap.LuuDSNhap(DSHD);
                         return "Chỉnh sửa thành công";
