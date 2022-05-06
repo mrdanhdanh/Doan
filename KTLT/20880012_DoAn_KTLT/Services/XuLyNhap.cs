@@ -90,6 +90,54 @@ namespace _20880012_DoAn_KTLT.Services
             return false;
         }
 
+        public static bool KiemTraTonKho(List<PhieuHH> DSHH, string id)
+        {
+            List<TonkhoMH> DSTK = XuLyTonKho.TaiDSTonKhoMH(null, false);
+            if (id != null) //Nếu ko có id -> đang là Xóa HD nhập: goi T là số tồn, A là số nhập sẽ xóa, T < A thì không dc xóa; nếu có id -> đang sửa hd nhập, gọi T là số tồn, B là số nhập ban đâù, A là số nhập sẽ sửa, T-B+A < 0 thì không được sửa
+            {
+                HDnhap hd = ThongTinHD(id);
+                foreach (PhieuHH hh in hd.DSNhapHang)
+                {
+                    bool check = false;
+                    for (int i = 0; i < DSTK.Count(); i++)
+                    {
+                        if (DSTK[i].MaMH == hh.MaMH)
+                        {
+                            DSTK[i].SL -= hh.SoLuong;
+                            check = true;
+                        }
+                        
+                    }
+                    if (check==false)
+                    {
+                        TonkhoMH tm = new TonkhoMH();
+                        tm.MaMH = hh.MaMH;
+                        tm.SL = hh.SoLuong;
+                        DSTK.Add(tm);
+                    }
+                }
+            }
+            foreach (PhieuHH hh in DSHH)
+            {
+                var target = DSTK.FirstOrDefault(t => t.MaMH == hh.MaMH);
+                if (target != null) //null tức là mặt hàng này ko có tồn kho => có thể nhập mà ko cần kiểm tra nữa
+                {
+                    if (id != null) //giải thích tương tự như trên, với mỗi trường hợp sửa và xóa sẽ có công thức khác nhay
+                    {
+                        if (target.SL + hh.SoLuong < 0) {
+                            return false;
+                        }
+                    } else
+                    {
+                        if (target.SL - hh.SoLuong < 0)
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
+        }
         public static string XoaHD(string id)
         {
             List<HDnhap> DSHD = LuuTruHDNhap.DocHDNhap();
@@ -97,9 +145,16 @@ namespace _20880012_DoAn_KTLT.Services
             {
                 if (DSHD[i].MaHD == id)
                 {
-                    DSHD.RemoveAt(i);
-                    LuuTruHDNhap.LuuDSNhap(DSHD);
-                    return "Xóa thành công";
+                    if (KiemTraTonKho(DSHD[i].DSNhapHang, null)) //Kiểm tra có phù hợp tồn kho hay không
+                    {
+                        DSHD.RemoveAt(i);
+                        LuuTruHDNhap.LuuDSNhap(DSHD);
+                        return "Xóa thành công";
+                    } else
+                    {
+                        return "Không thể xóa do khiến tồn kho bị âm";
+                    }
+                    
                 }
             }
             return "Xóa thất bại, không tìm thấy mã hóa đơn";
@@ -142,10 +197,18 @@ namespace _20880012_DoAn_KTLT.Services
                     else
                     {
                         h.DSNhapHang = hh;
-                        h.ThanhTien = TinhThanhTien(h.DSNhapHang);
-                        DSHD[i] = h;
-                        LuuTruHDNhap.LuuDSNhap(DSHD);
-                        return "Chỉnh sửa thành công";
+                        if (KiemTraTonKho(h.DSNhapHang,id)) //Kiểm tra có phù hợp tồn kho hay không
+                        {
+                            h.ThanhTien = TinhThanhTien(h.DSNhapHang);
+                            DSHD[i] = h;
+                            LuuTruHDNhap.LuuDSNhap(DSHD);
+                            return "Chỉnh sửa thành công";
+                        }
+                        else
+                        {
+                            return "Không thể sửa do khiến tồn kho bị âm";
+                        }
+
                     }
                         
                 }
