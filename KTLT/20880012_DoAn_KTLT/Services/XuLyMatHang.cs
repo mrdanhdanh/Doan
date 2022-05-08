@@ -79,7 +79,33 @@ namespace _20880012_DoAn_KTLT.Services
             }
             return false;
         }
-
+        public static void DoiMHtrongHD(string oldMH, string newMH)
+        {
+            List<HDnhap> DSHN = LuuTruHDNhap.DocHDNhap();
+            List<HDxuat> DSHX = LuuTruHDXuat.DocHDXuat();
+            foreach (HDnhap h in DSHN)
+            {
+                foreach (PhieuHH hh in h.DSNhapHang)
+                {
+                    if (hh.MaMH == oldMH)
+                    {
+                        hh.MaMH = newMH;
+                    }
+                }
+            }
+            foreach (HDxuat h in DSHX)
+            {
+                foreach (PhieuHH hh in h.DSBanHang)
+                {
+                    if (hh.MaMH == oldMH)
+                    {
+                        hh.MaMH = newMH;
+                    }
+                }
+            }
+            LuuTruHDNhap.LuuDSNhap(DSHN);
+            LuuTruHDXuat.LuuDSXuat(DSHX);
+        }
         public static bool XoaMatHang(string id)
         {
             List<Mathang> DSMHfull = LuuTruMatHang.DocDSMH();
@@ -88,6 +114,7 @@ namespace _20880012_DoAn_KTLT.Services
                 if (DSMHfull[i].MaMatHang == id)
                 {
                     DSMHfull.RemoveAt(i);
+                    DoiMHtrongHD(id, "deleted");
                     LuuTruMatHang.LuuDSMH(DSMHfull);
                     return true;
                 }
@@ -107,7 +134,7 @@ namespace _20880012_DoAn_KTLT.Services
             }
             return mh;
         }
-
+        
         public static bool SuaMatHang(string id, string MaMH, string TenMH, string CtySX, string TenLH, int Gia, string NgaySX, string HanSD)
         {
             List<Mathang> DSMHfull = LuuTruMatHang.DocDSMH();
@@ -133,6 +160,10 @@ namespace _20880012_DoAn_KTLT.Services
                     m.HanSuDung = HanSD;
                     DSMHfull[i] = m;
                     LuuTruMatHang.LuuDSMH(DSMHfull);
+                    if (id != MaMH) //Nếu mã MH không thay đổi thì không cần đổi thông tin trong các hd Nhập và Xuất
+                    {
+                        DoiMHtrongHD(id, MaMH);
+                    }
                     return true;
                 }
             }

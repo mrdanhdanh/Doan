@@ -79,7 +79,7 @@ namespace _20880012_DoAn_KTLT.Services
 
             foreach (Loaihang l in dslh)
             {
-                if (malh == null || l.MaLoaiHang == malh) //Neu malh la null => lay tat ca, neu khac null => chi lay đúng mã loại hàng
+                if (malh == null || l.MaLoaiHang == malh) //Nếu malh là null => lay tat ca, neu khac null => chi lay đúng mã loại hàng
                 {
                     TonkhoLH tlh = new TonkhoLH();
                     tlh.TenLH = l.TenLoaiHang;

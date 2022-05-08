@@ -86,6 +86,17 @@ namespace _20880012_DoAn_KTLT.Services
             }
             return false;
         }
+        public static void XoaMHkhiXoaLH(string lh)
+        {
+            List<Mathang> DSMH = LuuTruMatHang.DocDSMH();
+            foreach (Mathang m in DSMH)
+            {
+                if (m.LoaiHang == lh)
+                {
+                    XuLyMatHang.XoaMatHang(m.MaMatHang);
+                }
+            }
+        }
         public static string XoaLoaiHang(string id)
         {
             List<Loaihang> DSLH = LuuTruLoaiHang.DocDSLH();
@@ -93,10 +104,7 @@ namespace _20880012_DoAn_KTLT.Services
             {
                 if (DSLH[i].MaLoaiHang == id) 
                 {
-                    if (KiemTraTonTaiMH(DSLH[i].TenLoaiHang))
-                    {
-                        return "Không thể xóa loại hàng do có mặt hàng thuộc loại hàng này";
-                    }
+                    XoaMHkhiXoaLH(DSLH[i].TenLoaiHang);
                     DSLH.RemoveAt(i);
                     LuuTruLoaiHang.LuuDSLH(DSLH);
                     return "Xóa loại hàng thành công";

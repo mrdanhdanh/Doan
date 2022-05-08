@@ -214,7 +214,6 @@ namespace _20880012_DoAn_KTLT.Services
                 }
             }
 
-            //số lượng phải lớn hơn hoặc bằng tổng lượng đã bán - chưa làm
             return "Chỉnh sửa thất bại, dữ liệu không phù hợp";
         }
     }

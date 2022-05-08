@@ -8,7 +8,8 @@
 @if (Model.kiemtraID)
 {
     <form method="POST">
-        <p>Bạn có chắc chắn muốn xóa mã mặt hàng @Model.id không, dữ liệu sẽ không thể khôi phục</p>
+        <p>Bạn có chắc chắn muốn xóa mã mặt hàng @Model.id không, việc này sẽ ảnh hưởng đến hóa đơn nhập và xuất.<br />
+        Dữ liệu sẽ không thể khôi phục</p>
         <input type="submit" value="Chắc chắn XÓA" />
     </form>
 }
