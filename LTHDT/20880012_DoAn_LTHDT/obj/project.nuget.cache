@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "z+PJBEoybDZ921MrquBX+HhRc1XU+d+3cC2VeICLNMjhQW2s89z1WFnyl3FRK6nFsyP3pQsi4qDDIs9GRD3XgQ==",
+  "dgSpecHash": "C5zv5fdvdkyY7hNd6KExMBG0l1lPGw9VPVxKPyVQXNrzHSUmi7trZBb1v1aD68/Y0fTYDf72lW8p3iWbNFgJag==",
   "success": true,
   "projectFilePath": "D:\\Bai tap HK 1\\Doan\\LTHDT\\20880012_DoAn_LTHDT\\20880012_DoAn_LTHDT.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\nguye\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

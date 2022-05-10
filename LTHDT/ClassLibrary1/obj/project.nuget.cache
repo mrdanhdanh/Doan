@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "mXDqXxAs0J5XJD+KplSiKBiH/ITAxBxN6rXTEJK0FTxb7zSti+L9CkJVaJrmHilJNgx80H3YiUb3Eg/qDU3E9g==",
+  "success": true,
+  "projectFilePath": "D:\\Bai tap HK 1\\Doan\\LTHDT\\ClassLibrary1\\ClassLibrary1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nguye\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

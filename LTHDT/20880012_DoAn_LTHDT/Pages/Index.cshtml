@@ -4,7 +4,50 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="btn-group">
+    <a href="Mathang" class="btn btn-primary" role="button">Mặt hàng</a>
+    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+        <span class="caret"></span>
+    </button>
+    <div class="dropdown-menu">
+        <a class="dropdown-item" href="/MatHang/MH_TimKiem">Tìm Kiếm, Chỉnh Sửa</a>
+        <a class="dropdown-item" href="/MatHang/MH_Them">Thêm Mặt Hàng</a>
+    </div>
 </div>
+
+<div class="btn-group">
+    <a href="Loaihang" class="btn btn-primary" role="button">Loại hàng</a>
+    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+        <span class="caret"></span>
+    </button>
+    <div class="dropdown-menu">
+        <a class="dropdown-item" href="/LoaiHang/MH_TimKiem">Tìm Kiếm, Chỉnh Sửa</a>
+        <a class="dropdown-item" href="/LoaiHang/MH_Them">Thêm Loại Hàng</a>
+    </div>
+</div>
+
+<div class="btn-group">
+    <a href="Xuathang" class="btn btn-primary" role="button">Hóa đơn Bán Hàng</a>
+    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+        <span class="caret"></span>
+    </button>
+    <div class="dropdown-menu">
+        <a class="dropdown-item" href="/BanHang/MH_TimKiem">Tìm Kiếm, Chỉnh Sửa</a>
+        <a class="dropdown-item" href="/BanHang/MH_Them">Thêm HĐ Bán Hàng</a>
+    </div>
+</div>
+
+<div class="btn-group">
+    <a href="Nhaphang" class="btn btn-primary" role="button">Hóa đơn Nhập Hàng</a>
+    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+        <span class="caret"></span>
+    </button>
+    <div class="dropdown-menu">
+        <a class="dropdown-item" href="/NhapHang/MH_TimKiem">Tìm Kiếm, Chỉnh Sửa</a>
+        <a class="dropdown-item" href="/NhapHang/MH_Nhap">Thêm HĐ Nhập Hàng</a>
+    </div>
+</div>
+
+<a href="Thongketonkho" class="btn btn-primary" role="button">Thống kê hàng tồn kho</a>
+
+<a href="Thongkehangcu" class="btn btn-primary" role="button">Thống kê hàng hết hạn</a>
