@@ -47,5 +47,62 @@ namespace Services
             }
             return luutru.TimKiem(keyword);
         }
+        
+        public ServiceResult<Loaihang> DocLoaiHang(string id)
+        {
+            if (id == null)
+            {
+                throw new Exception("Lỗi dữ liệu, vui lòng thử lại");
+            } else
+            {
+                Loaihang l = luutru.TimKiemID(id);
+                if (l == null)
+                {
+                    return new ServiceResult<Loaihang>(false, null, "Không tìm thấy loại hàng");
+                }
+                else
+                {
+                    return new ServiceResult<Loaihang>(true, l, null);
+                }
+            }
+        }
+        public ServiceResult<bool> XoaLoaiHang(string id)
+        {
+            if (id == null)
+            {
+                throw new Exception("Lỗi dữ liệu, vui lòng thử lại");
+            }
+            else
+            {
+                var kq = luutru.XoaID(id);
+                if (kq)
+                {
+                    return new ServiceResult<bool>(true, true, "Xóa thành công");
+                } else
+                {
+                    return new ServiceResult<bool>(false, false, "Không tìm thấy loại hàng, không thể xóa");
+                }
+            }
+            //Chưa làm phần xóa mặt hàng
+        }
+        public ServiceResult<Loaihang> SuaLoaiHang(string id, Loaihang l)
+        {
+            if (id == null)
+            {
+                throw new Exception("Lỗi dữ liệu, vui lòng thử lại");
+            }
+            else
+            {
+                bool kq = luutru.SuaLH(id, l);
+                if (kq)
+                {
+                    return new ServiceResult<Loaihang>(true, l, "Sửa thành công");
+                } else
+                {
+                    return new ServiceResult<Loaihang>(true, l, "Không thể sửa do trùng dữ liệu");
+                }
+            }
+            //Chưa làm phần sửa mặt hàng
+        }
     }
 }

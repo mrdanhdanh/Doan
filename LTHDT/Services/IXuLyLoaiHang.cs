@@ -9,5 +9,8 @@ namespace Services
     {
         ServiceResult<bool> ThemLoaiHang(Loaihang l);
         List<Loaihang> TimKiemLoaiHang(string keyword);
+        ServiceResult<Loaihang> DocLoaiHang(string id);
+        ServiceResult<bool> XoaLoaiHang(string id);
+        ServiceResult<Loaihang> SuaLoaiHang(string id, Loaihang l);
     }
 }

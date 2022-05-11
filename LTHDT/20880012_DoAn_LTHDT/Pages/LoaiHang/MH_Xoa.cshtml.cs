@@ -9,31 +9,37 @@ using Services;
 
 namespace _20880012_DoAn_LTHDT.Pages.LoaiHang
 {
-    public class MH_TimKiemModel : PageModel
+    public class MH_XoaModel : PageModel
     {
         public string Ketqua;
-        public List<Loaihang> DSLH;
+        public bool KiemTraID;
         private IXuLyLoaiHang xuly;
-        [BindProperty]
-        public string keyword { get; set; }
-        public MH_TimKiemModel()
+
+        [BindProperty(SupportsGet = true)]
+        public string ID { get; set; }
+        public MH_XoaModel()
         {
             xuly = new XuLyLoaiHang();
         }
         public void OnGet()
         {
-            Ketqua = string.Empty;
-            DSLH = new List<Loaihang>();
+            try
+            {
+                KiemTraID = xuly.DocLoaiHang(ID).IsSuccess;
+            }
+            catch (Exception ex)
+            {
+                Ketqua = ex.Message;
+            }
         }
         public void OnPost()
         {
             try
             {
-                DSLH = xuly.TimKiemLoaiHang(keyword);
+                Ketqua = xuly.XoaLoaiHang(ID).Message;
             }
             catch (Exception ex)
             {
-                DSLH = new List<Loaihang>();
                 Ketqua = ex.Message;
             }
         }

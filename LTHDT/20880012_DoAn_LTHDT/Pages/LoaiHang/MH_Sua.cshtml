@@ -1,0 +1,18 @@
+﻿@page
+@model _20880012_DoAn_LTHDT.Pages.LoaiHang.MH_SuaModel
+@{
+    Layout = "_LayoutLH";
+}
+
+@if (Model.Kiemtra)
+{
+    <form method="POST">
+        <label for="malh">Nhập mã loại hàng:</label><br />
+        <input type="text" name="malh" value="@Model.kq.Data.MaLoaiHang"/><br />
+        <label for="tenlh">Nhập tên loại hàng:</label><br />
+        <input type="text" name="tenlh" value="@Model.kq.Data.TenLoaiHang" /><br />
+        <input type="submit" value="Sửa loại hàng" />
+    </form>
+}
+
+@Model.Ketqua
