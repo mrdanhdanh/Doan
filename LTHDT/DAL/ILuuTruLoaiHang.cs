@@ -9,5 +9,6 @@ namespace DAL
     {
         List<Loaihang> DocDSLH();
         void LuuLoaiHang(Loaihang l);
+        List<Loaihang> TimKiem(string keyword);
     }
 }

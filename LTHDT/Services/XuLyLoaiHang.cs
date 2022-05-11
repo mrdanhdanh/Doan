@@ -9,7 +9,7 @@ namespace Services
 {
     public class XuLyLoaiHang : IXuLyLoaiHang
     {
-        public ILuuTruLoaiHang luutru;
+        private ILuuTruLoaiHang luutru;
 
         public XuLyLoaiHang()
         {
@@ -17,15 +17,15 @@ namespace Services
         }
         public ServiceResult<bool> ThemLoaiHang(Loaihang l)
         {
-            luutru.LuuLoaiHang(l);
-            return new ServiceResult<bool>(true, true, "Thêm thành công");
-            //if (KiemTraTrungDL(l))
-            //{
-            //    return new ServiceResult<bool>(false, false, "Trùng dữ liệu, không thể thêm");
-            //} else
-            //{
-            //    return new ServiceResult<bool>(true, true, "Thêm thành công");
-            //}
+            if (KiemTraTrungDL(l))
+            {
+                return new ServiceResult<bool>(false, false, "Trùng dữ liệu, không thể thêm");
+            }
+            else
+            {
+                luutru.LuuLoaiHang(l);
+                return new ServiceResult<bool>(true, true, "Thêm thành công");
+            }
         }
         protected bool KiemTraTrungDL(Loaihang l)
         {
@@ -41,10 +41,11 @@ namespace Services
 
         public List<Loaihang> TimKiemLoaiHang(string keyword)
         {
-            //if (keyword == null)
-            //{
-                return luutru.DocDSLH();
-            //}
+            if (keyword == null)
+            {
+                keyword = String.Empty;
+            }
+            return luutru.TimKiem(keyword);
         }
     }
 }

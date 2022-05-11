@@ -25,11 +25,11 @@
         @foreach (Loaihang l in Model.DSLH)
         {
             <tr>
-                <td>@l.DocMaLH()</td>
-                <td>@l.DocTenLH()</td>
+                <td>@l.MaLoaiHang</td>
+                <td>@l.TenLoaiHang</td>
                 <td>
-                    <a href="/LoaiHang/MH_Sua?id=@l.DocMaLH()" class="btn btn-info" role="button">Sửa</a>
-                    <a href="/LoaiHang/MH_Xoa?id=@l.DocMaLH()" class="btn btn-danger" role="button">Xóa</a>
+                    <a href="/LoaiHang/MH_Sua?id=@l.MaLoaiHang" class="btn btn-info" role="button">Sửa</a>
+                    <a href="/LoaiHang/MH_Xoa?id=@l.MaLoaiHang" class="btn btn-danger" role="button">Xóa</a>
                 </td>
             </tr>
         }

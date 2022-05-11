@@ -13,7 +13,7 @@ namespace _20880012_DoAn_LTHDT.Pages.LoaiHang
     {
         public string Ketqua;
         public List<Loaihang> DSLH;
-        public IXuLyLoaiHang xuly;
+        private IXuLyLoaiHang xuly;
         [BindProperty]
         public string keyword { get; set; }
         public MH_TimKiemModel()
@@ -27,7 +27,7 @@ namespace _20880012_DoAn_LTHDT.Pages.LoaiHang
         }
         public void OnPost()
         {
-            DSLH = xuly.TimKiemLoaiHang(null);
+            DSLH = xuly.TimKiemLoaiHang(keyword);
         }
     }
 }

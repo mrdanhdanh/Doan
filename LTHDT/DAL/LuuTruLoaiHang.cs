@@ -7,6 +7,11 @@ using Newtonsoft.Json;
 
 namespace DAL
 {
+    internal class LoaiHangLT
+    {
+        public string MaLoaiHang;
+        public string TenLoaiHang;
+    }
     public class LuuTruLoaiHang : ILuuTruLoaiHang
     {
         public List<Loaihang> DocDSLH()
@@ -30,6 +35,20 @@ namespace DAL
             List<Loaihang> danhsachLoaiHang = DocDSLH();
             danhsachLoaiHang.Add(l);
             LuuDSLH(danhsachLoaiHang);
+        }
+
+        public List<Loaihang> TimKiem(string keyword)
+        {
+            List<Loaihang> DSLHfull = DocDSLH();
+            List<Loaihang> DSLH = new List<Loaihang>();
+            foreach (Loaihang l in DSLHfull)
+            {
+                if (l.MaLoaiHang.Contains(keyword) || l.TenLoaiHang.Contains(keyword))
+                {
+                    DSLH.Add(l);
+                }
+            }
+            return DSLH;
         }
     }
 }

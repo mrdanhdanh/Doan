@@ -6,16 +6,9 @@ namespace Entities
 {
     public class Loaihang
     {
-        public string MaLoaiHang;
-        public string TenLoaiHang;
-        public string DocMaLH()
-        {
-            return this.MaLoaiHang;
-        }
-        public string DocTenLH()
-        {
-            return this.TenLoaiHang;
-        }
+        public string MaLoaiHang { get; set; }
+        public string TenLoaiHang { get; set; }
+
         public Loaihang() { }
         public Loaihang(string malh, string tenlh)
         {
@@ -27,7 +20,6 @@ namespace Entities
             {
                 throw new Exception("Dữ liệu không hợp lệ");
             }
-
         }
 
         protected bool KiemTraDuLieu(string malh, string tenlh)
