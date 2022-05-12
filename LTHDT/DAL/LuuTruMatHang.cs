@@ -21,7 +21,7 @@ namespace DAL
             }
             catch
             {
-                throw new Exception("File dữ liệu không tồn tại");
+                throw new Exception("File dữ liệu Mặt Hàng không tồn tại");
             }
 
         }
@@ -51,7 +51,7 @@ namespace DAL
             List<Mathang> DSMHfull = DocDSMH();
             if (DSMHfull[0].MaMatHang == null)
             {
-                throw new Exception("File dữ liệu rỗng, vui lòng thêm mặt hàng");
+                throw new Exception("File dữ liệu Mặt Hàng rỗng, vui lòng thêm mặt hàng");
             }
             else
             {
@@ -78,7 +78,7 @@ namespace DAL
             List<Mathang> DSMHfull = DocDSMH();
             if (DSMHfull[0].MaMatHang == null)
             {
-                throw new Exception("File dữ liệu rỗng, vui lòng thêm mặt hàng");
+                throw new Exception("File dữ liệu Mặt Hàng rỗng, vui lòng thêm mặt hàng");
             }
             else
             {
@@ -104,7 +104,7 @@ namespace DAL
             List<Mathang> DSMHfull = DocDSMH();
             if (DSMHfull[0].MaMatHang == null)
             {
-                throw new Exception("File dữ liệu rỗng, vui lòng thêm mặt hàng");
+                throw new Exception("File dữ liệu Mặt Hàng rỗng, vui lòng thêm mặt hàng");
             }
             else
             {

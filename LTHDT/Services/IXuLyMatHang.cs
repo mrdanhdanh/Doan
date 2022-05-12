@@ -10,5 +10,6 @@ namespace Services
         ServiceResult<List<Mathang>> TimKiemMatHang(string keyword);
         ServiceResult<Mathang> DocMatHang(string id);
         string XoaMatHang(string id);
+        string ThemMatHang(Mathang m);
     }
 }

@@ -33,7 +33,7 @@ namespace Entities
             }
         }
 
-        protected bool KiemTraTrung(Mathang m)
+        public bool KiemTraTrung(Mathang m)
         {
             if (this.MaMatHang == m.MaMatHang)
             {

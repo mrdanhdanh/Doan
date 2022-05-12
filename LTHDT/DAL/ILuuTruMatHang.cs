@@ -11,5 +11,6 @@ namespace DAL
         List<Mathang> TimKiem(string keyword);
         Mathang DocID(string id);
         bool XoaID(string id);
+        void LuuMatHang(Mathang m);
     }
 }

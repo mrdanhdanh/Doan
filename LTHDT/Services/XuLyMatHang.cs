@@ -48,5 +48,18 @@ namespace Services
             }
             //Chưa làm phần xóa thông tin hóa đơn nhập và xuất
         }
+        public string ThemMatHang(Mathang m)
+        {
+            List<Mathang> DSMH = luutru.DocDSMH();
+            foreach (Mathang mh in DSMH)
+            {
+                if (mh.KiemTraTrung(m))
+                {
+                    return "Trùng mã mặt hàng, không thể thêm mới";
+                }
+            }
+            luutru.LuuMatHang(m);
+            return "Thêm mặt hàng thành công";
+        }
     }
 }

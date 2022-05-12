@@ -21,7 +21,7 @@ namespace DAL
             }
             catch
             {
-                throw new Exception("File dữ liệu không tồn tại");
+                throw new Exception("File dữ liệu Loại Hàng không tồn tại");
             }
             
         }
@@ -51,7 +51,7 @@ namespace DAL
             List<Loaihang> DSLHfull = DocDSLH();
             if (DSLHfull[0].MaLoaiHang == null)
             {
-                throw new Exception("File dữ liệu rỗng, không thể tải");
+                throw new Exception("File dữ liệu Loại hàng rỗng, không thể tải");
             } else
             {
                 List<Loaihang> DSLH = new List<Loaihang>();
