@@ -7,11 +7,6 @@ using Newtonsoft.Json;
 
 namespace DAL
 {
-    internal class LoaiHangLT
-    {
-        public string MaLoaiHang;
-        public string TenLoaiHang;
-    }
     public class LuuTruLoaiHang : ILuuTruLoaiHang
     {
         public List<Loaihang> DocDSLH()
@@ -41,22 +36,35 @@ namespace DAL
         public void LuuLoaiHang(Loaihang l)
         {
             List<Loaihang> danhsachLoaiHang = DocDSLH();
-            danhsachLoaiHang.Add(l);
+            if (danhsachLoaiHang[0].MaLoaiHang == null)
+            {
+                danhsachLoaiHang[0] = l;
+            } else
+            {
+                danhsachLoaiHang.Add(l);
+            }
             LuuDSLH(danhsachLoaiHang);
         }
 
         public List<Loaihang> TimKiem(string keyword)
         {
             List<Loaihang> DSLHfull = DocDSLH();
-            List<Loaihang> DSLH = new List<Loaihang>();
-            foreach (Loaihang l in DSLHfull)
+            if (DSLHfull[0].MaLoaiHang == null)
             {
-                if (l.MaLoaiHang.Contains(keyword) || l.TenLoaiHang.Contains(keyword))
+                throw new Exception("File dữ liệu rỗng, không thể tải");
+            } else
+            {
+                List<Loaihang> DSLH = new List<Loaihang>();
+                foreach (Loaihang l in DSLHfull)
                 {
-                    DSLH.Add(l);
+                    if (l.MaLoaiHang.Contains(keyword) || l.TenLoaiHang.Contains(keyword))
+                    {
+                        DSLH.Add(l);
+                    }
                 }
+                return DSLH;
             }
-            return DSLH;
+            
         }
         public Loaihang TimKiemID(string id)
         {

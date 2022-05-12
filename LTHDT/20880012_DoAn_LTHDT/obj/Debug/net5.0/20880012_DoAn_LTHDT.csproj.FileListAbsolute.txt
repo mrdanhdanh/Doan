@@ -55,3 +55,6 @@ D:\Bai tap HK 1\Doan\LTHDT\20880012_DoAn_LTHDT\bin\Debug\net5.0\DAL.pdb
 D:\Bai tap HK 1\Doan\LTHDT\20880012_DoAn_LTHDT\obj\Debug\net5.0\Razor\Pages\LoaiHang\MH_TimKiem.cshtml.g.cs
 D:\Bai tap HK 1\Doan\LTHDT\20880012_DoAn_LTHDT\obj\Debug\net5.0\Razor\Pages\LoaiHang\MH_Xoa.cshtml.g.cs
 D:\Bai tap HK 1\Doan\LTHDT\20880012_DoAn_LTHDT\obj\Debug\net5.0\Razor\Pages\LoaiHang\MH_Sua.cshtml.g.cs
+D:\Bai tap HK 1\Doan\LTHDT\20880012_DoAn_LTHDT\obj\Debug\net5.0\Razor\Pages\Mathang.cshtml.g.cs
+D:\Bai tap HK 1\Doan\LTHDT\20880012_DoAn_LTHDT\obj\Debug\net5.0\Razor\Pages\MatHang\MH_TimKiem.cshtml.g.cs
+D:\Bai tap HK 1\Doan\LTHDT\20880012_DoAn_LTHDT\obj\Debug\net5.0\Razor\Pages\MatHang\MH_Xoa.cshtml.g.cs

@@ -1,0 +1,18 @@
+﻿@page
+@model _20880012_DoAn_LTHDT.Pages.MatHang.MH_XoaModel
+@{
+    Layout = "_LayoutMH";
+}
+
+@if (Model.KiemtraID)
+{
+    <form method="POST">
+        <p>
+            Bạn có chắc chắn muốn xóa mã mặt hàng @Model.ID không, việc này sẽ ảnh hưởng đến hóa đơn nhập và xuất.<br />
+            Dữ liệu sẽ không thể khôi phục
+        </p>
+        <input type="submit" value="Chắc chắn XÓA" />
+    </form>
+}
+
+@Model.Ketqua
