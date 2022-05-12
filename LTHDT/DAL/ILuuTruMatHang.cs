@@ -12,5 +12,6 @@ namespace DAL
         Mathang DocID(string id);
         bool XoaID(string id);
         void LuuMatHang(Mathang m);
+        void LuuDSMH(List<Mathang> danhsachMatHang);
     }
 }

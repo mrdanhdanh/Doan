@@ -59,3 +59,4 @@ D:\Bai tap HK 1\Doan\LTHDT\20880012_DoAn_LTHDT\obj\Debug\net5.0\Razor\Pages\Math
 D:\Bai tap HK 1\Doan\LTHDT\20880012_DoAn_LTHDT\obj\Debug\net5.0\Razor\Pages\MatHang\MH_TimKiem.cshtml.g.cs
 D:\Bai tap HK 1\Doan\LTHDT\20880012_DoAn_LTHDT\obj\Debug\net5.0\Razor\Pages\MatHang\MH_Xoa.cshtml.g.cs
 D:\Bai tap HK 1\Doan\LTHDT\20880012_DoAn_LTHDT\obj\Debug\net5.0\Razor\Pages\MatHang\MH_Them.cshtml.g.cs
+D:\Bai tap HK 1\Doan\LTHDT\20880012_DoAn_LTHDT\obj\Debug\net5.0\Razor\Pages\MatHang\MH_Sua.cshtml.g.cs

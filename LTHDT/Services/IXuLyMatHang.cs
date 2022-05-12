@@ -11,5 +11,6 @@ namespace Services
         ServiceResult<Mathang> DocMatHang(string id);
         string XoaMatHang(string id);
         string ThemMatHang(Mathang m);
+        string SuaMatHang(string id, Mathang m);
     }
 }

@@ -30,7 +30,7 @@ namespace Services
             Mathang m = luutru.DocID(id);
             if (m == null)
             {
-                return new ServiceResult<Mathang>(false, null, "Không tìm thấy mặt hàng, không thể xóa");
+                return new ServiceResult<Mathang>(false, null, "Không tìm thấy mặt hàng");
             } else
             {
                 return new ServiceResult<Mathang>(true, luutru.DocID(id), null);
@@ -60,6 +60,32 @@ namespace Services
             }
             luutru.LuuMatHang(m);
             return "Thêm mặt hàng thành công";
+        }
+        public string SuaMatHang(string id, Mathang m)
+        {
+            List<Mathang> DSMH = luutru.DocDSMH();
+            if (id != m.MaMatHang)
+            {
+                foreach (Mathang mh in DSMH)
+                {
+                    if (mh.KiemTraTrung(m))
+                    {
+                        return "Mã mặt hàng trùng, không thể sửa";
+                    }
+                }
+            }
+            for (int i=0; i<DSMH.Count; i++)
+            {
+                if (DSMH[i].MaMatHang == id)
+                {
+                    DSMH[i] = m;
+                    luutru.LuuDSMH(DSMH);
+                    return "Sửa thành công";
+                }
+            }
+            throw new Exception("Không tìm thấy mặt hàng, không thể sửa");
+
+            //Chưa làm phần sửa kèm hóa đơn nhập và xuất
         }
     }
 }
