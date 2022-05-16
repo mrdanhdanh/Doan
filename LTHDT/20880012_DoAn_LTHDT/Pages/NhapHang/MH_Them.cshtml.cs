@@ -39,6 +39,17 @@ namespace _20880012_DoAn_LTHDT.Pages.NhapHang
         public void OnPost()
         {
             int tong = 0;
+            for (int i=0; i<2; i++)
+            {
+                var mamh = "mamh" + i;
+                var gia = "gia" + i;
+                var sl = "sl" + i;
+                PhieuHH hh = new PhieuHH();
+                hh.MaMH = Request.Form[mamh];
+                hh.Gia = int.Parse(Request.Form[gia]);
+                hh.SoLuong = int.Parse(Request.Form[sl]);
+                DSHH.Add(hh);
+            }
             for (int i = 0; i<DSHH.Count; i++)
             {
                 tong += DSHH[i].SoLuong;
