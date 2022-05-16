@@ -1,0 +1,54 @@
+﻿@page
+@model _20880012_DoAn_LTHDT.Pages.NhapHang.MH_ThemModel
+@using Entities; 
+@{
+    Layout = "_LayoutNH";
+}
+
+@if(Request.Method == "POST")
+{
+    for (int i=0; i<2; i++)
+    {
+        var mamh = "mamh" + i;
+        var gia = "gia" + i;
+        var sl = "sl" + i;
+        PhieuHH hh = new PhieuHH();
+        hh.MaMH = Request.Form[mamh];
+        hh.Gia = int.Parse(Request.Form[gia]);
+        hh.SoLuong = int.Parse(Request.Form[sl]);
+        Model.DSHH.Add(hh);
+    }
+}
+
+
+<form method="POST">
+    <label for="mahd">Nhập mã hóa đơn:</label><br />
+    <input type="text" name="mahd" value="" required /><br />
+    <label for="ngaynhap">Ngày nhập hàng:</label><br />
+    <input type="date" name="ngaytao" value="" required /><br />
+    <p>Thong tin nhap hàng:</p>
+    <div id="spnhap">
+        @for (int i = 0; i < 5; i++)
+        {
+            var mamh = "mamh" + i;
+            var gia = "gia" + i;
+            var sl = "sl" + i;
+            <select name="@mamh">
+                <option value="">Chọn mặt hàng</option>
+                @foreach (Mathang m in Model.DSMH)
+                {
+                    <option value="@m.MaMatHang">@m.TenMatHang (@m.MaMatHang)</option>
+                }
+            </select>
+            <label for=@gia>Gia:</label>
+            <input type="number" name=@gia value="" />
+            <label for=@sl>Số lượng nhập:</label>
+            <input type="number" name=@sl value="" /><br />
+        }
+
+    </div>
+    <input type="submit" value="Lưu hóa đơn nhập"/>
+    <input type="reset" />
+</form>
+
+@Model.Ketqua

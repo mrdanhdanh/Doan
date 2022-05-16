@@ -63,3 +63,4 @@ D:\Bai tap HK 1\Doan\LTHDT\20880012_DoAn_LTHDT\obj\Debug\net5.0\Razor\Pages\MatH
 D:\Bai tap HK 1\Doan\LTHDT\20880012_DoAn_LTHDT\obj\Debug\net5.0\Razor\Pages\Nhaphang.cshtml.g.cs
 D:\Bai tap HK 1\Doan\LTHDT\20880012_DoAn_LTHDT\obj\Debug\net5.0\Razor\Pages\NhapHang\MH_TimKiem.cshtml.g.cs
 D:\Bai tap HK 1\Doan\LTHDT\20880012_DoAn_LTHDT\obj\Debug\net5.0\Razor\Pages\NhapHang\MH_Xoa.cshtml.g.cs
+D:\Bai tap HK 1\Doan\LTHDT\20880012_DoAn_LTHDT\obj\Debug\net5.0\Razor\Pages\NhapHang\MH_Them.cshtml.g.cs
