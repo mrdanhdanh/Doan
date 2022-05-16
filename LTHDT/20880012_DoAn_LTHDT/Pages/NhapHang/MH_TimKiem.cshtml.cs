@@ -14,10 +14,9 @@ namespace _20880012_DoAn_LTHDT.Pages.NhapHang
         public string Ketqua;
         public bool KiemTra;
         public IXuLyMatHang xulyMH;
-        public IXuLyNhap xulyN;
+        public IXuLyHoaDon xulyHD;
         public List<Mathang> DSMH;
         public List<Hoadon> DSHD;
-        public string MatHang;
 
         [BindProperty]
         public string Keyword { get; set; }
@@ -27,7 +26,7 @@ namespace _20880012_DoAn_LTHDT.Pages.NhapHang
         public MH_TimKiemModel()
         {
             xulyMH = new XuLyMatHang();
-            xulyN = new XuLyNhap();
+            xulyHD = new XuLyNhap();
         }
 
         
@@ -54,7 +53,7 @@ namespace _20880012_DoAn_LTHDT.Pages.NhapHang
         {
             try
             {
-                var kq = xulyN.TimKiemHDnhap(Keyword, Keydate);
+                var kq = xulyHD.TimKiemHD(Keyword, Keydate);
                 if (kq.IsSuccess)
                 {
                     KiemTra = true;

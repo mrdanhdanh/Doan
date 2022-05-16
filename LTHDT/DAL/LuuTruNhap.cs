@@ -7,9 +7,9 @@ using Newtonsoft.Json;
 
 namespace DAL
 {
-    public class LuuTruNhap : ILuuTruNhap
+    public class LuuTruNhap : LuuTruHoaDon, ILuuTruHoaDon
     {
-        public List<Hoadon> DocDSHDnhap()
+        public List<Hoadon> DocDSHD()
         {
             try
             {
@@ -30,17 +30,16 @@ namespace DAL
             }
 
         }
-        public void LuuDSHDnhap(List<Hoadon> danhsachHoadon)
+        public void LuuDSHD(List<Hoadon> danhsachHoadon)
         {
             StreamWriter writer = new StreamWriter("wwwroot/data/hdnhap.json");
             string jsonString = JsonConvert.SerializeObject(danhsachHoadon);
             writer.Write(jsonString);
             writer.Close();
         }
-
-        public void LuuHDnhap(Hoadon h)
+        public override void LuuHD(Hoadon h)
         {
-            List<Hoadon> DSHD = DocDSHDnhap();
+            List<Hoadon> DSHD = DocDSHD();
             if (DSHD[0].MaHD == null)
             {
                 DSHD[0] = h;
@@ -49,7 +48,21 @@ namespace DAL
             {
                 DSHD.Add(h);
             }
-            LuuDSHDnhap(DSHD);
+            LuuDSHD(DSHD);
+        }
+        public override bool XoaID(string id)
+        {
+            List<Hoadon> DSHD = DocDSHD();
+            for (int i=0; i<DSHD.Count; i++)
+            {
+                if (DSHD[i].MaHD == id)
+                {
+                    DSHD.RemoveAt(i);
+                    LuuDSHD(DSHD);
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

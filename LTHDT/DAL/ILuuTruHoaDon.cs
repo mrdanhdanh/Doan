@@ -5,8 +5,9 @@ using Entities;
 
 namespace DAL
 {
-    public interface ILuuTruNhap
+    public interface ILuuTruHoaDon
     {
-        List<Hoadon> DocDSHDnhap();
+        List<Hoadon> DocDSHD();
+        bool XoaID(string id);
     }
 }

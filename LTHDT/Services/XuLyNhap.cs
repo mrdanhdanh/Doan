@@ -6,43 +6,40 @@ using DAL;
 
 namespace Services
 {
-    public class XuLyNhap : IXuLyNhap
+    public class XuLyNhap : XuLyHoaDon, IXuLyHoaDon
     {
-        public ILuuTruNhap luutru;
+        public ILuuTruHoaDon luutru;
         public XuLyNhap()
         {
             luutru = new LuuTruNhap();
         }
-        public ServiceResult<List<Hoadon>> TimKiemHDnhap(string keyword, string keydate)
+        public ServiceResult<List<Hoadon>> TimKiemHD(string keyword, string keydate)
         {
-            List<Hoadon> DSHD = luutru.DocDSHDnhap();
-            if (keyword == null && keydate == null)
+            List<Hoadon> DSHD = luutru.DocDSHD();
+            return TimKiemHoadon(DSHD, keyword, keydate);
+        }
+        public override ServiceResult<Hoadon> ThongTinHD(string id)
+        {
+            List<Hoadon> DSHD = luutru.DocDSHD();
+            foreach (Hoadon h in DSHD)
             {
-                return new ServiceResult<List<Hoadon>>(true, DSHD, null);
-            } else
+                if (h.MaHD == id)
+                {
+                    return new ServiceResult<Hoadon>(true, h, null);
+                }
+            }
+            return new ServiceResult<Hoadon>(false, null, "Không tìm thấy mã hóa đơn");
+        }
+        public override ServiceResult<bool> XoaHD(string id)
+        {
+            bool isXoa = luutru.XoaID(id);
+            if (isXoa)
             {
-                if (keyword == null) {
-                    keyword = String.Empty;
-                }
-                if (keydate == null)
-                {
-                    keydate = String.Empty;
-                }
-                List<Hoadon> DSloc = new List<Hoadon>();
-                foreach (Hoadon hd in DSHD)
-                {
-                    if (hd.MaHD.Contains(keyword) && hd.NgayTao.Contains(keydate))
-                    {
-                        DSloc.Add(hd);
-                    }
-                }
-                if (DSloc.Count == 0)
-                {
-                    return new ServiceResult<List<Hoadon>>(false, null, "Không tìm thấy hóa đơn phù hợp");
-                } else
-                {
-                    return new ServiceResult<List<Hoadon>>(true, DSloc, null);
-                }
+                return new ServiceResult<bool>(true, true, "Xóa thành công");
+            }
+            else
+            {
+                return new ServiceResult<bool>(false, false, "Không tìm thấy mã hóa đơn, không thể xóa");
             }
         }
     }
