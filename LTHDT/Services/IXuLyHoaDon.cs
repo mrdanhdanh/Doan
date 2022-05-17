@@ -10,5 +10,6 @@ namespace Services
         ServiceResult<List<Hoadon>> TimKiemHD(string keyword, string keydate);
         ServiceResult<Hoadon> ThongTinHD(string id);
         ServiceResult<bool> XoaHD(string id);
+        ServiceResult<bool> TaoHD(Hoadon h);
     }
 }

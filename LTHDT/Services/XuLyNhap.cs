@@ -42,5 +42,18 @@ namespace Services
                 return new ServiceResult<bool>(false, false, "Không tìm thấy mã hóa đơn, không thể xóa");
             }
         }
+        public override ServiceResult<bool> TaoHD(Hoadon h)
+        {
+            List<Hoadon> DSHD = luutru.DocDSHD();
+            foreach (Hoadon hd in DSHD)
+            {
+                if (hd.KiemTraTrung(h))
+                {
+                    return new ServiceResult<bool>(false, false, "Trùng mã hóa đơn, không thể tạo mới");
+                }
+            }
+            luutru.LuuHD(h);
+            return new ServiceResult<bool>(true, true, "Lưu thành công");
+        }
     }
 }

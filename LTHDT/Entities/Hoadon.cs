@@ -11,6 +11,13 @@ namespace Entities
         public int SoLuong { get; set; }
         
         public PhieuHH() { }
+
+        public PhieuHH(string mamh, int gia, int sl)
+        {
+            MaMH = mamh;
+            Gia = gia;
+            SoLuong = sl;
+        }
         public int TinhTien()
         {
             return this.Gia * this.SoLuong;
@@ -27,7 +34,7 @@ namespace Entities
             dshanghoa = KiemtraDSHH(dshanghoa);
             if (mahd == null || ngaytao == null)
             {
-                throw new Exception("Dữ liệu phải khác rõng, vui lòng nhập lại");
+                throw new Exception("Dữ liệu phải khác rỗng, vui lòng nhập lại");
             }
 
             this.MaHD = mahd;
@@ -41,7 +48,7 @@ namespace Entities
             List<PhieuHH> DS = new List<PhieuHH>();
             foreach (PhieuHH hh in dshh)
             {
-                if(hh.MaMH != null && hh.SoLuong >0 && hh.Gia>=0)
+                if(hh.MaMH != "" && hh.SoLuong >0 && hh.Gia>=0)
                 {
                     DS.Add(hh);
                 }

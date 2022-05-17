@@ -9,5 +9,6 @@ namespace DAL
     {
         List<Hoadon> DocDSHD();
         bool XoaID(string id);
+        void LuuHD(Hoadon h);
     }
 }

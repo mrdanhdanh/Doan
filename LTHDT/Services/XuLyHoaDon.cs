@@ -45,5 +45,7 @@ namespace Services
         public abstract ServiceResult<Hoadon> ThongTinHD(string id);
 
         public abstract ServiceResult<bool> XoaHD(string id);
+
+        public abstract ServiceResult<bool> TaoHD(Hoadon h);
     }
 }
