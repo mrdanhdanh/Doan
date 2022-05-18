@@ -5,6 +5,46 @@
     Layout = "_LayoutNH";
 }
 
+@if (Model.KiemTra)
+{
+<form method="POST">
+    <label for="mahd">Nhập mã hóa đơn:</label><br />
+    <input type="text" name="mahd" value="" required /><br />
+    <label for="ngaynhap">Ngày nhập hàng:</label><br />
+    <input type="date" name="ngaytao" value="" required /><br /><br />
+    <p>Thông tin nhập hàng: <input type="button" onclick="themsp()" value="Thêm Sản Phẩm"></p>
+    <div id="dssp">
+        <input id="demsp" name="demsp" value="@Model.DemSP" hidden />
+        @for (int i = 0; i < Model.DemSP; i++)
+        {
+            var mamh = "mamh" + i;
+            var gia = "gia" + i;
+            var sl = "sl" + i;
+            var sp = "sp" + i;
+            <div id="@sp">
+                <select name="@mamh" id="@mamh">
+                    <option value="">Chọn mặt hàng</option>
+                    @foreach (Mathang m in Model.DSMH)
+                    {
+                        <option value="@m.MaMatHang">@m.TenMatHang (@m.MaMatHang)</option>
+                    }
+                </select>
+                <label for=@gia>Giá:</label>
+                <input type="number" name=@gia min="0" value="0" required />
+                <label for=@sl>Số lượng nhập:</label>
+                <input type="number" name=@sl min="0" value="0" required /><br />
+            </div>
+        }
+
+    </div><br />
+    <input type="submit" value="Lưu hóa đơn nhập" />
+    <input type="reset" />
+</form>
+}
+
+
+@Model.Ketqua
+
 <script>
     function themsp() {
         let i = $("#demsp").val();
@@ -15,52 +55,11 @@
         let spmoi = "";
         spmoi += '<div id="' + sp + '"><select name="' + mamh + '">';
         spmoi += $("#mamh0").html();
-        spmoi += '</select><label for=' + gia + '>&thinsp;Gia:</label><input type="number" name=' + gia + ' min="0" value="0" required />';
-        spmoi += '<label for=' + sl + '>&thinsp;Số lượng nhập:</label><input type="number" name=' + sl + ' min="0" value="0" required/><br />';
+        spmoi += '</select><label for=' + gia + '>&#8197;Giá:&#8197;</label><input type="number" name=' + gia + ' min="0" value="0" required />';
+        spmoi += '<label for=' + sl + '>&#8197;Số lượng nhập:&#8197;</label><input type="number" name=' + sl + ' min="0" value="0" required/><br />';
 
-        $("#spnhap").append(spmoi);
+        $("#dssp").append(spmoi);
         i++;
         $("#demsp").val(i);
     }
 </script>
-
-@if (Model.KiemTra)
-{
-    <button onclick="themsp()">Test</button>
-    <form method="POST">
-        <label for="mahd">Nhập mã hóa đơn:</label><br />
-        <input type="text" name="mahd" value="" required /><br />
-        <label for="ngaynhap">Ngày nhập hàng:</label><br />
-        <input type="date" name="ngaytao" value="" required /><br />
-        <p>Thông tin nhập hàng:</p>
-        <div id="spnhap">
-            <input id="demsp" name="demsp" value="@Model.demsp" hidden />
-            @for (int i = 0; i < Model.demsp; i++)
-            {
-                var mamh = "mamh" + i;
-                var gia = "gia" + i;
-                var sl = "sl" + i;
-                var sp = "sp" + i;
-                <div id="@sp">
-                    <select name="@mamh" id="@mamh">
-                        <option value="">Chọn mặt hàng</option>
-                        @foreach (Mathang m in Model.DSMH)
-                        {
-                            <option value="@m.MaMatHang">@m.TenMatHang (@m.MaMatHang)</option>
-                        }
-                    </select>
-                    <label for=@gia>Giá:</label>
-                    <input type="number" name=@gia min="0" value="0" required />
-                    <label for=@sl>Số lượng nhập:</label>
-                    <input type="number" name=@sl min="0" value="0" required /><br />
-                </div>
-            }
-
-        </div>
-        <input type="submit" value="Lưu hóa đơn nhập" />
-        <input type="reset" />
-    </form>
-}
-
-
-@Model.Ketqua

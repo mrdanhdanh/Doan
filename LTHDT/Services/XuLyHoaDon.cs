@@ -47,5 +47,7 @@ namespace Services
         public abstract ServiceResult<bool> XoaHD(string id);
 
         public abstract ServiceResult<bool> TaoHD(Hoadon h);
+
+        public abstract ServiceResult<Hoadon> SuaHD(string id, Hoadon h);
     }
 }

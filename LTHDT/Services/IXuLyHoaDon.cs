@@ -11,5 +11,6 @@ namespace Services
         ServiceResult<Hoadon> ThongTinHD(string id);
         ServiceResult<bool> XoaHD(string id);
         ServiceResult<bool> TaoHD(Hoadon h);
+        ServiceResult<Hoadon> SuaHD(string id, Hoadon h);
     }
 }

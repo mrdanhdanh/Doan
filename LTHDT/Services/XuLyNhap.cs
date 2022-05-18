@@ -55,5 +55,26 @@ namespace Services
             luutru.LuuHD(h);
             return new ServiceResult<bool>(true, true, "Lưu thành công");
         }
+        public override ServiceResult<Hoadon> SuaHD(string id, Hoadon h)
+        {
+            List<Hoadon> DSHD = luutru.DocDSHD();
+            for (int i = 0; i < DSHD.Count; i++)
+            {
+                if (DSHD[i].MaHD == id)
+                {
+                    foreach (Hoadon hd in DSHD)
+                    {
+                        if (h.MaHD != id && hd.KiemTraTrung(h))
+                        {
+                            throw new Exception("Trùng mã hóa đơn, không thể sửa");
+                        }
+                    }
+                    DSHD[i] = h;
+                    luutru.LuuDSHD(DSHD);
+                    return new ServiceResult<Hoadon>(true, h, "Sửa hóa đơn thành công");
+                }
+            }
+            return new ServiceResult<Hoadon>(false, h, "Không tìm thấy mã hóa đơn, không thể sửa");
+        }
     }
 }

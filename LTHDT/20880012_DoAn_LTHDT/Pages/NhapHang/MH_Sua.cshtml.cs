@@ -9,10 +9,9 @@ using Services;
 
 namespace _20880012_DoAn_LTHDT.Pages.NhapHang
 {
-    public class MH_ThemModel : PageModel
+    public class MH_SuaModel : PageModel
     {
         public string Ketqua;
-        
         public bool KiemTra = false;
         public IXuLyMatHang xulyMH;
         public IXuLyHoaDon xulyHD;
@@ -25,8 +24,10 @@ namespace _20880012_DoAn_LTHDT.Pages.NhapHang
         public string NgayTao { get; set; }
         [BindProperty]
         public int DemSP { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string ID { get; set; }
 
-        public MH_ThemModel()
+        public MH_SuaModel()
         {
             xulyMH = new XuLyMatHang();
             xulyHD = new XuLyNhap();
@@ -35,10 +36,17 @@ namespace _20880012_DoAn_LTHDT.Pages.NhapHang
         {
             try
             {
-                DemSP = 1;
                 var kq = xulyMH.TimKiemMatHang(null);
                 KiemTra = kq.IsSuccess;
                 DSMH = kq.Data;
+                if (KiemTra)
+                {
+                    var taihd = xulyHD.ThongTinHD(ID);
+                    MaHD = taihd.Data.MaHD;
+                    NgayTao = taihd.Data.NgayTao;
+                    DSHH = taihd.Data.DShanghoa;
+                    DemSP = DSHH.Count;
+                }
             }
             catch (Exception ex)
             {
@@ -59,15 +67,15 @@ namespace _20880012_DoAn_LTHDT.Pages.NhapHang
                 }
                 HDnhap h = new HDnhap();
                 h.TaoHoadon(MaHD, NgayTao, DSHH);
-                var kq = xulyHD.TaoHD(h);
+                var kq = xulyHD.SuaHD(ID, h);
                 Ketqua = kq.Message;
+                KiemTra = kq.IsSuccess;
                 DSMH = xulyMH.TimKiemMatHang(null).Data;
             }
             catch (Exception ex)
             {
                 Ketqua = ex.Message;
             }
-            
         }
     }
 }
