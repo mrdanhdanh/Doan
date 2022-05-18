@@ -1,0 +1,73 @@
+﻿@page
+@model _20880012_DoAn_LTHDT.Pages.XuatHang.MH_TimKiemModel
+@using Entities;
+@{
+    Layout = "_LayoutXH";
+}
+
+@if (Model.KiemTra)
+{
+    <form method="POST">
+        <label>Nhập thông tin hóa đơn cần tìm:</label><br />
+        <input type="text" name="keyword" value="" />
+        <input type="date" name="keydate" value="" />
+        <input type="submit" value="Tìm kiếm" />
+    </form>
+    <br />
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Mã hóa đơn bán</th>
+                <th>Ngày bán</th>
+                <th>Mặt hàng</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+                <th>Chức năng</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (HDxuat h in Model.DSHD)
+            {
+                <tr>
+                    <td>@h.MaHD</td>
+                    <td>@h.NgayTao</td>
+                    <td>
+                        @foreach (PhieuHH hh in h.DShanghoa)
+                        {
+                            var MHang = "Error";
+                            foreach (Mathang m in Model.DSMH)
+                            {
+                                if (m.MaMatHang == hh.MaMH)
+                                {
+                                    MHang = m.TenMatHang + " (" + m.MaMatHang + ")";
+                                }
+                            }
+                            @MHang<br />
+                        }
+                    </td>
+                    <td>
+                        @foreach (PhieuHH hh in h.DShanghoa)
+                        {
+                            @hh.Gia<br />
+                        }
+                    </td>
+                    <td>
+                        @foreach (PhieuHH hh in h.DShanghoa)
+                        {
+                            @hh.SoLuong<br />
+                        }
+                    </td>
+                    <td>@h.ThanhTien</td>
+                    <td>
+                        <a href="/XuatHang/MH_Sua?id=@h.MaHD" class="btn btn-info" role="button">Sửa</a>
+                        <a href="/XuatHang/MH_Xoa?id=@h.MaHD" class="btn btn-danger" role="button">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@Model.Ketqua
