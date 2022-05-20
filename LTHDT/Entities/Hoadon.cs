@@ -82,6 +82,12 @@ namespace Entities
                 return false;
             }
         }
+
+        public virtual string LoaiHD()
+        {
+            return null;
+        }
+        
     }
     
 }

@@ -12,5 +12,11 @@ namespace Entities
         {
             base.TaoHoadon(mahd, ngaytao, dshanghoa);
         }
+
+        public override string LoaiHD()
+        {
+            return "Nhap";
+        }
     }
+    
 }

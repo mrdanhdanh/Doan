@@ -1,0 +1,14 @@
+﻿@page
+@model _20880012_DoAn_LTHDT.Pages.XuatHang.MH_XoaModel
+@{
+    Layout = "_LayoutXH";
+}
+
+@Model.ThongBao
+@if (Model.KiemTra)
+{
+    <form method="POST">
+        <p>Bạn chắc chắn muốn xóa hóa đơn @Model.ID, dữ liệu sẽ không thể khôi phục </p>
+        <input type="submit" value="Chắc chắn XÓA" />
+    </form>
+}

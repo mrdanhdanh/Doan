@@ -1,0 +1,65 @@
+﻿@page
+@model _20880012_DoAn_LTHDT.Pages.XuatHang.MH_ThemModel
+@using Entities;
+@{
+    Layout = "_LayoutXH";
+}
+
+@if (Model.KiemTra)
+{
+    <form method="POST">
+        <label for="mahd">Nhập mã hóa đơn:</label><br />
+        <input type="text" name="mahd" value="" required /><br />
+        <label for="ngaynhap">Ngày nhập hàng:</label><br />
+        <input type="date" name="ngaytao" value="" required /><br /><br />
+        <p>Thông tin nhập hàng: <input type="button" onclick="themsp()" value="Thêm Sản Phẩm"></p>
+        <div id="dssp">
+            <input id="demsp" name="demsp" value="@Model.DemSP" hidden />
+            @for (int i = 0; i < Model.DemSP; i++)
+            {
+                var mamh = "mamh" + i;
+                var gia = "gia" + i;
+                var sl = "sl" + i;
+                var sp = "sp" + i;
+                <div id="@sp">
+                    <select name="@mamh" id="@mamh">
+                        <option value="">Chọn mặt hàng</option>
+                        @foreach (TonkhoMH t in Model.DSTK)
+                        {
+                            <option value="@t.MaMH">@t.TenMH (@t.MaMH) - Tồn kho: @t.TonKho</option>
+                        }
+                    </select>
+                    <label for=@gia>Giá:</label>
+                    <input type="number" name=@gia min="0" value="0" required />
+                    <label for=@sl>Số lượng bán:</label>
+                    <input type="number" name=@sl min="0" value="0" required /><br />
+                </div>
+            }
+
+        </div><br />
+        <input type="submit" value="Lưu hóa đơn bán" />
+        <input type="reset" />
+    </form>
+}
+
+
+@Model.Ketqua
+
+<script>
+    function themsp() {
+        let i = $("#demsp").val();
+        let mamh = "mamh" + i;
+        let gia = "gia" + i;
+        let sl = "sl" + i;
+        let sp = "sp" + i;
+        let spmoi = "";
+        spmoi += '<div id="' + sp + '"><select name="' + mamh + '">';
+        spmoi += $("#mamh0").html();
+        spmoi += '</select><label for=' + gia + '>&#8197;Giá:&#8197;</label><input type="number" name=' + gia + ' min="0" value="0" required />';
+        spmoi += '<label for=' + sl + '>&#8197;Số lượng bán:&#8197;</label><input type="number" name=' + sl + ' min="0" value="0" required/><br />';
+
+        $("#dssp").append(spmoi);
+        i++;
+        $("#demsp").val(i);
+    }
+</script>
