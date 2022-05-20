@@ -51,9 +51,30 @@ namespace Services
                 {
                     return new ServiceResult<bool>(false, false, "Trùng mã hóa đơn, không thể tạo mới");
                 }
+                if (KiemTraTonKho(h) == false)
+                {
+                    return new ServiceResult<bool>(false, false, "Tồn kho không đủ số lượng, vui lòng nhập hàng");
+                }
             }
             luutru.LuuHD(h);
             return new ServiceResult<bool>(true, true, "Lưu thành công");
+        }
+        public bool KiemTraTonKho(Hoadon h)
+        {
+            IXuLyTonKho xulyTK = new XuLyTonKho();
+            List<TonkhoMH> DSTK = xulyTK.TaoTonKhoMH().Data;
+            foreach (TonkhoMH t in DSTK)
+            {
+                foreach (PhieuHH hh in h.DShanghoa)
+                {
+                    t.SuaTonKho(hh, false);
+                }
+                if (t.KiemTraTK() == false)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
         public override ServiceResult<Hoadon> SuaHD(string id, Hoadon h)
         {
