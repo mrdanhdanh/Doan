@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 using Entities;
@@ -54,15 +55,67 @@ namespace Services
         {
             IXuLyTonKho xulyTK = new XuLyTonKho();
             List<TonkhoMH> DSTK = xulyTK.TaoTonKhoMH().Data;
-            foreach (TonkhoMH t in DSTK)
+
+            foreach (PhieuHH hh in DSHH)
             {
-                foreach (PhieuHH hh in DSHH)
-                {
-                    t.SuaTonKho(hh, false);
-                }
-                if (t.KiemTraTK() == false)
-                {
+                var target = DSTK.FirstOrDefault(t => t.MaMH == hh.MaMH);
+                if (target == null) { //Nếu có sp nào không xuất hiện trong tồn kho, hay tồn kho của nó = 0 => trả về false do không thể giảm nữa
                     return false;
+                } else
+                {
+                    foreach (TonkhoMH t in DSTK)
+                    {
+                        t.SuaTonKho(hh, false);
+                        if (t.TonKho < 0)
+                        {
+                            return false;
+                        }
+                    }
+                }
+                
+            }
+            return true;
+        }
+
+        public bool KiemTraTonKhoSua(List<PhieuHH> HHthem, List<PhieuHH> HHxoa)
+        {
+            IXuLyTonKho xulyTK = new XuLyTonKho();
+            List<TonkhoMH> DSTK = xulyTK.TaoTonKhoMH().Data;
+
+            foreach (PhieuHH hh in HHthem)
+            {
+                var target = DSTK.FirstOrDefault(t => t.MaMH == hh.MaMH);
+                if (target == null)
+                {
+                    TonkhoMH tk = new TonkhoMH();
+                    tk.MaMH = hh.MaMH;
+                    tk.TonKho = hh.SoLuong;
+                    DSTK.Add(tk);
+                } else
+                {
+                    foreach (TonkhoMH t in DSTK)
+                    {
+                        t.SuaTonKho(hh, true);
+                    }
+                }
+            }
+            foreach (PhieuHH hh in HHxoa)
+            {
+                var target = DSTK.FirstOrDefault(t => t.MaMH == hh.MaMH);
+                if (target == null)
+                { //Nếu có sp nào không xuất hiện trong tồn kho, hay tồn kho của nó = 0 => trả về false do không thể giảm nữa
+                    return false;
+                }
+                else
+                {
+                    foreach (TonkhoMH t in DSTK)
+                    {
+                        t.SuaTonKho(hh, false);
+                        if (t.TonKho < 0)
+                        {
+                            return false;
+                        }
+                    }
                 }
             }
             return true;
