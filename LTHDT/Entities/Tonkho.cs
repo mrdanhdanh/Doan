@@ -8,9 +8,9 @@ namespace Entities
     {
         public string MaMH;
         public string TenMH;
-        private string TenLH;
+        public string TenLH;
         public int TonKho;
-        private bool OutDate;
+        public bool OutDate;
 
         public TonkhoMH() { }
         public TonkhoMH(Mathang m)

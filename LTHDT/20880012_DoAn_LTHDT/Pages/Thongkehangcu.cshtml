@@ -1,0 +1,56 @@
+﻿@page
+@model _20880012_DoAn_LTHDT.Pages.ThongkehangcuModel
+@using Entities
+@{
+    Layout = "_LayoutTK";
+}
+
+@Model.ThongBao
+@if (Model.KiemTra)
+{
+    <form method="POST">
+        <label for="mamh">Chọn mặt hàng:</label>
+        <select name="mamh">
+            <option value="" selected>Xem tất cả</option>
+            @foreach (TonkhoMH t in Model.DSTK)
+            {
+                <option value="@t.MaMH">@t.TenMH (@t.MaMH)</option>
+            }
+        </select>
+        <label for="outdate">
+            @if (Model.OutDate == "on")
+            {
+                <input type="checkbox" name="outdate" value="on" checked />
+            }
+            else
+            {
+                <input type="checkbox" name="outdate" value="on" />
+            }
+
+            Lọc hết hạn
+        </label>
+
+        <input type="submit" value="Xem tồn kho" />
+    </form>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Tên mặt hàng</th>
+                <th>Số lượng tồn</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (TonkhoMH t in Model.DSloc)
+            {
+                var MatHang = t.TenMH + " (" + t.MaMH + ")";
+
+                <tr>
+                    <td>@MatHang</td>
+                    <td>@t.TonKho</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

@@ -89,5 +89,28 @@ namespace Services
             }
             return DSTK;
         }
+        public List<TonkhoMH> LocTonKhoMH(List<TonkhoMH> DSTK, string mamh, string odate)
+        {
+            List<TonkhoMH> DSloc = new List<TonkhoMH>();
+
+            foreach (TonkhoMH t in DSTK)
+            {
+                if (mamh == null || t.MaMH == mamh)
+                {
+                    if (odate == "on")
+                    {
+                        if (t.OutDate)
+                        {
+                            DSloc.Add(t);
+                        }
+                    } else
+                    {
+                        DSloc.Add(t);
+                    }
+                }
+            }
+
+            return DSloc;
+        }
     }
 }
