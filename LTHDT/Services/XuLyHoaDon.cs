@@ -49,5 +49,23 @@ namespace Services
         public abstract ServiceResult<bool> TaoHD(Hoadon h);
 
         public abstract ServiceResult<Hoadon> SuaHD(string id, Hoadon h);
+
+        public bool KiemTraTonKho(List<PhieuHH> DSHH) //Dùng kiểm tra khi tạo hóa đơn bán mới hoặc xóa hóa đơn nhập
+        {
+            IXuLyTonKho xulyTK = new XuLyTonKho();
+            List<TonkhoMH> DSTK = xulyTK.TaoTonKhoMH().Data;
+            foreach (TonkhoMH t in DSTK)
+            {
+                foreach (PhieuHH hh in DSHH)
+                {
+                    t.SuaTonKho(hh, false);
+                }
+                if (t.KiemTraTK() == false)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }

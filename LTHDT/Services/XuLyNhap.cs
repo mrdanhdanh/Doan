@@ -32,10 +32,22 @@ namespace Services
         }
         public override ServiceResult<bool> XoaHD(string id)
         {
-            bool isXoa = luutru.XoaID(id);
-            if (isXoa)
+            var kq = ThongTinHD(id);
+            if (kq.IsSuccess)
             {
-                return new ServiceResult<bool>(true, true, "Xóa thành công");
+                if (KiemTraTonKho(kq.Data.DShanghoa))
+                {
+                    if (luutru.XoaID(id))
+                    {
+                        return new ServiceResult<bool>(true, true, "Xóa thành công");
+                    } else
+                    {
+                        return new ServiceResult<bool>(false, false, "Xóa thất bại, không tìm thấy id");
+                    }
+                } else
+                {
+                    return new ServiceResult<bool>(false, false, "Không thể xóa do sẽ khiến tồn kho bị âm");
+                }
             }
             else
             {
