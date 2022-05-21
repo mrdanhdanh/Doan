@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 using Entities;
@@ -65,6 +66,28 @@ namespace Services
             {
                 return new ServiceResult<List<TonkhoMH>>(true, DSTK, null);
             }
+        }
+
+        public List<TonkhoMH> BoSungTonKho(List<TonkhoMH> DSTK, List<PhieuHH> DSHH)
+        {
+            List<Mathang> DSMH = xulyMH.TimKiemMatHang(null).Data;
+            foreach (PhieuHH hh in DSHH)
+            {
+                var target = DSTK.FirstOrDefault(t => t.MaMH == hh.MaMH);
+                if (target == null)
+                {
+                    var mh = DSMH.FirstOrDefault(m => m.MaMatHang == hh.MaMH);
+                    if (mh != null)
+                    {
+                        TonkhoMH t = new TonkhoMH(mh);
+                        DSTK.Add(t);
+                    } else
+                    {
+                        throw new Exception("Có lỗi bất thường ở dữ liệu mặt hàng, vui lòng kiểm tra và thử lại");
+                    }
+                }
+            }
+            return DSTK;
         }
     }
 }

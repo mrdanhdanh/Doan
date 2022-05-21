@@ -69,3 +69,4 @@ D:\Bai tap HK 1\Doan\LTHDT\20880012_DoAn_LTHDT\obj\Debug\net5.0\Razor\Pages\Xuat
 D:\Bai tap HK 1\Doan\LTHDT\20880012_DoAn_LTHDT\obj\Debug\net5.0\Razor\Pages\Xuathang.cshtml.g.cs
 D:\Bai tap HK 1\Doan\LTHDT\20880012_DoAn_LTHDT\obj\Debug\net5.0\Razor\Pages\XuatHang\MH_Them.cshtml.g.cs
 D:\Bai tap HK 1\Doan\LTHDT\20880012_DoAn_LTHDT\obj\Debug\net5.0\Razor\Pages\XuatHang\MH_Xoa.cshtml.g.cs
+D:\Bai tap HK 1\Doan\LTHDT\20880012_DoAn_LTHDT\obj\Debug\net5.0\Razor\Pages\XuatHang\MH_Sua.cshtml.g.cs

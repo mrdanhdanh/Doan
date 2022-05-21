@@ -74,9 +74,16 @@ namespace Services
                             throw new Exception("Trùng mã hóa đơn, không thể sửa");
                         }
                     }
-                    DSHD[i] = h;
-                    luutru.LuuDSHD(DSHD);
-                    return new ServiceResult<Hoadon>(true, h, "Sửa hóa đơn thành công");
+                    if (KiemTraTonKhoSua(DSHD[i].DShanghoa, h.DShanghoa))
+                    {
+                        DSHD[i] = h;
+                        luutru.LuuDSHD(DSHD);
+                        return new ServiceResult<Hoadon>(true, h, "Sửa hóa đơn thành công");
+                    } else
+                    {
+                        return new ServiceResult<Hoadon>(false, h, "Không thể sửa hóa đơn vì sẽ khiến tồn kho bị âm");
+                    }
+                    
                 }
             }
             return new ServiceResult<Hoadon>(false, h, "Không tìm thấy mã hóa đơn, không thể sửa");

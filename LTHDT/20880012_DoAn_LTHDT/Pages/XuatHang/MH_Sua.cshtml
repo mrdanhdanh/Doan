@@ -1,17 +1,17 @@
 ﻿@page
-@model _20880012_DoAn_LTHDT.Pages.XuatHang.MH_ThemModel
+@model _20880012_DoAn_LTHDT.Pages.XuatHang.MH_SuaModel
 @using Entities;
-@{
-    Layout = "_LayoutXH";
+@{ 
+    Layout = "_LayoutXH"; 
 }
 
 @if (Model.KiemTra)
 {
     <form method="POST">
         <label for="mahd">Nhập mã hóa đơn:</label><br />
-        <input type="text" name="mahd" value="" required /><br />
-        <label for="ngaynhap">Ngày bán hàng:</label><br />
-        <input type="date" name="ngaytao" value="" required /><br /><br />
+        <input type="text" name="mahd" value="@Model.h.MaHD" required /><br />
+        <label for="ngaynhap">Ngày nhập hàng:</label><br />
+        <input type="date" name="ngaytao" value="@Model.h.NgayTao" required /><br /><br />
         <p>Thông tin bán hàng: <input type="button" onclick="themsp()" value="Thêm Sản Phẩm"></p>
         <div id="dssp">
             <input id="demsp" name="demsp" value="@Model.DemSP" hidden />
@@ -26,18 +26,25 @@
                         <option value="">Chọn mặt hàng</option>
                         @foreach (TonkhoMH t in Model.DSTK)
                         {
-                            <option value="@t.MaMH">@t.TenMH (@t.MaMH) - Tồn kho: @t.TonKho</option>
+                            if (t.MaMH == Model.h.DShanghoa[i].MaMH)
+                            {
+                                <option value="@t.MaMH" selected>@t.TenMH (@t.MaMH) - Tồn kho: @t.TonKho</option>
+                            }
+                            else
+                            {
+                                <option value="@t.MaMH">@t.TenMH (@t.MaMH) - Tồn kho: @t.TonKho</option>
+                            }
+
                         }
                     </select>
                     <label for=@gia>Giá:</label>
-                    <input type="number" name=@gia min="0" value="0" required />
+                    <input type="number" name=@gia min="0" value="@Model.h.DShanghoa[i].Gia" required />
                     <label for=@sl>Số lượng bán:</label>
-                    <input type="number" name=@sl min="0" value="0" required /><br />
-                </div>
-            }
+                    <input type="number" name=@sl min="0" value="@Model.h.DShanghoa[i].SoLuong" required /><br />
+                </div>}
 
         </div><br />
-        <input type="submit" value="Lưu hóa đơn bán" />
+        <input type="submit" value="Sửa hóa đơn bán" />
         <input type="reset" />
     </form>
 }

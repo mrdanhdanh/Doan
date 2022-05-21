@@ -8,5 +8,6 @@ namespace Services
     public interface IXuLyTonKho
     {
         ServiceResult<List<TonkhoMH>> TaoTonKhoMH();
+        List<TonkhoMH> BoSungTonKho(List<TonkhoMH> DSTK, List<PhieuHH> DSHH);
     }
 }
