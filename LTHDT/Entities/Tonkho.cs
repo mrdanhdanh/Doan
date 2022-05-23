@@ -6,11 +6,11 @@ namespace Entities
 {
     public class TonkhoMH
     {
-        public string MaMH;
-        public string TenMH;
-        public string TenLH;
-        public int TonKho;
-        public bool OutDate;
+        public string MaMH { get; set; }
+        public string TenMH { get; set; }
+        public string TenLH { get; set; }
+        public int TonKho { get; set; }
+        public bool OutDate { get; set; }
 
         public TonkhoMH() { }
         public TonkhoMH(Mathang m)

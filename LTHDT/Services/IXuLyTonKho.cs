@@ -10,5 +10,6 @@ namespace Services
         ServiceResult<List<TonkhoMH>> TaoTonKhoMH();
         List<TonkhoMH> BoSungTonKho(List<TonkhoMH> DSTK, List<PhieuHH> DSHH);
         List<TonkhoMH> LocTonKhoMH(List<TonkhoMH> DSTK, string mamh, string odate);
+        ServiceResult<List<TonkhoLH>> TaiTonKhoLH(string keyword);
     }
 }

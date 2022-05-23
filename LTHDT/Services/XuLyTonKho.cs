@@ -112,5 +112,42 @@ namespace Services
 
             return DSloc;
         }
+
+        public ServiceResult<List<TonkhoLH>> TaiTonKhoLH(string keyword)
+        {
+            List<TonkhoMH> TKMH = TaoTonKhoMH().Data;
+            List<Loaihang> DSLH = xulyLH.TimKiemLoaiHang(null);
+            List<TonkhoLH> TKLH = new List<TonkhoLH>();
+            if (keyword == null)
+            {
+                keyword = String.Empty;
+            }
+            foreach (Loaihang l in DSLH)
+            {
+                if (l.TenLoaiHang.Contains(keyword))
+                {
+                    TonkhoLH t = new TonkhoLH();
+                    t.TenLH = l.TenLoaiHang;
+                    t.TonKho = 0;
+                    foreach (TonkhoMH m in TKMH)
+                    {
+                        if (m.TenLH == t.TenLH)
+                        {
+                            t.TonKho += m.TonKho;
+                        }
+                    }
+                    TKLH.Add(t);
+                }
+            }
+            if (TKLH.Count > 0)
+            {
+                return new ServiceResult<List<TonkhoLH>>(true, TKLH, null);
+            }
+            else
+            {
+                return new ServiceResult<List<TonkhoLH>>(false, null, "Không tìm thấy loại hàng");
+            }
+
+        }
     }
 }
