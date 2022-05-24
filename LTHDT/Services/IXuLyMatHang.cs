@@ -12,5 +12,7 @@ namespace Services
         string XoaMatHang(string id);
         string ThemMatHang(Mathang m);
         string SuaMatHang(string id, Mathang m);
+        void SuaMHkhiSuaLH(string lold, string lnew);
+        void XoaMHkhiXoaLH(string tenlh);
     }
 }

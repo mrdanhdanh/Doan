@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 using Entities;
@@ -9,9 +10,13 @@ namespace Services
     public class XuLyMatHang : IXuLyMatHang
     {
         public ILuuTruMatHang luutru;
+        public IXuLyHoaDon xulyN;
+        public IXuLyHoaDon xulyX;
         public XuLyMatHang()
         {
             luutru = new LuuTruMatHang();
+            xulyN = new XuLyNhap();
+            xulyX = new XuLyXuat();
         }
         public ServiceResult<List<Mathang>> TimKiemMatHang(string keyword)
         {
@@ -41,12 +46,14 @@ namespace Services
         {
             if (luutru.XoaID(id))
             {
+                xulyN.SuaHDkhiSuaMH(id, "deleted");
+                xulyX.SuaHDkhiSuaMH(id, "deleted");
                 return "Xóa thành công";
+
             } else
             {
                 return "Không tìm thấy mặt hàng, xóa thất bại";
             }
-            //Chưa làm phần xóa thông tin hóa đơn nhập và xuất
         }
         public string ThemMatHang(Mathang m)
         {
@@ -63,6 +70,7 @@ namespace Services
         }
         public string SuaMatHang(string id, Mathang m)
         {
+            
             List<Mathang> DSMH = luutru.DocDSMH();
             if (id != m.MaMatHang)
             {
@@ -79,13 +87,43 @@ namespace Services
                 if (DSMH[i].MaMatHang == id)
                 {
                     DSMH[i] = m;
+                    if (id != m.MaMatHang)
+                    {
+                        xulyN.SuaHDkhiSuaMH(id, m.MaMatHang);
+                        xulyX.SuaHDkhiSuaMH(id, m.MaMatHang);
+                    }
                     luutru.LuuDSMH(DSMH);
                     return "Sửa thành công";
                 }
             }
             throw new Exception("Không tìm thấy mặt hàng, không thể sửa");
+        }
+        public void SuaMHkhiSuaLH(string lold, string lnew)
+        {
+            List<Mathang> DSMH = luutru.DocDSMH();
+            foreach (Mathang m in DSMH)
+            {
+                if (m.TenLoaiHang == lold)
+                {
+                    m.TenLoaiHang = lnew;
+                }
+            }
+            luutru.LuuDSMH(DSMH);
+        }
+        public void XoaMHkhiXoaLH(string tenlh)
+        {
+            List<Mathang> DSMH = luutru.DocDSMH();
+            int index = 0;
 
-            //Chưa làm phần sửa kèm hóa đơn nhập và xuất
+            while (index != -1)
+            {
+                index = DSMH.FindIndex(m => m.TenLoaiHang == tenlh);
+                if (index != -1)
+                {
+                    DSMH.RemoveAt(index);
+                }
+            }
+            luutru.LuuDSMH(DSMH);
         }
     }
 }

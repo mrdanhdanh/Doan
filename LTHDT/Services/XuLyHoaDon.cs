@@ -120,5 +120,7 @@ namespace Services
             }
             return true;
         }
+
+        public abstract void SuaHDkhiSuaMH(string mhold, string mhnew);
     }
 }

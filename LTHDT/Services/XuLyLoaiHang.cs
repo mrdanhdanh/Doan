@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Entities;
+using Services;
 using DAL;
 
 
@@ -10,10 +11,11 @@ namespace Services
     public class XuLyLoaiHang : IXuLyLoaiHang
     {
         private ILuuTruLoaiHang luutru;
-
+        private IXuLyMatHang xulyMH;
         public XuLyLoaiHang()
         {
             luutru = new LuuTruLoaiHang();
+            xulyMH = new XuLyMatHang();
         }
         public ServiceResult<bool> ThemLoaiHang(Loaihang l)
         {
@@ -74,16 +76,17 @@ namespace Services
             }
             else
             {
+                Loaihang lold = DocLoaiHang(id).Data;
                 var kq = luutru.XoaID(id);
                 if (kq)
                 {
+                    xulyMH.XoaMHkhiXoaLH(lold.TenLoaiHang);
                     return new ServiceResult<bool>(true, true, "Xóa thành công");
                 } else
                 {
                     return new ServiceResult<bool>(false, false, "Không tìm thấy loại hàng, không thể xóa");
                 }
             }
-            //Chưa làm phần xóa mặt hàng
         }
         public ServiceResult<Loaihang> SuaLoaiHang(string id, Loaihang l)
         {
@@ -93,16 +96,17 @@ namespace Services
             }
             else
             {
+                Loaihang lold = DocLoaiHang(id).Data;
                 bool kq = luutru.SuaLH(id, l);
                 if (kq)
                 {
+                    xulyMH.SuaMHkhiSuaLH(lold.TenLoaiHang, l.TenLoaiHang);
                     return new ServiceResult<Loaihang>(true, l, "Sửa thành công");
                 } else
                 {
                     return new ServiceResult<Loaihang>(true, l, "Không thể sửa do trùng dữ liệu");
                 }
             }
-            //Chưa làm phần sửa mặt hàng
         }
     }
 }

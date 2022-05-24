@@ -95,5 +95,20 @@ namespace Services
             }
             return new ServiceResult<Hoadon>(false, h, "Không tìm thấy mã hóa đơn, không thể sửa");
         }
+        public override void SuaHDkhiSuaMH(string mhold, string mhnew)
+        {
+            List<Hoadon> DSHD = luutru.DocDSHD();
+            foreach (Hoadon h in DSHD)
+            {
+                foreach (PhieuHH hh in h.DShanghoa)
+                {
+                    if (hh.MaMH == mhold)
+                    {
+                        hh.MaMH = mhnew;
+                    }
+                }
+            }
+            luutru.LuuDSHD(DSHD);
+        }
     }
 }

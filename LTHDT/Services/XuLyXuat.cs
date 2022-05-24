@@ -8,19 +8,19 @@ namespace Services
 {
     public class XuLyXuat : XuLyHoaDon, IXuLyHoaDon
     {
-        public ILuuTruHoaDon luutru;
+        public ILuuTruHoaDon luutruX;
         public XuLyXuat()
         {
-            luutru = new LuuTruXuat();
+            luutruX = new LuuTruXuat();
         }
         public ServiceResult<List<Hoadon>> TimKiemHD(string keyword, string keydate)
         {
-            List<Hoadon> DSHD = luutru.DocDSHD();
+            List<Hoadon> DSHD = luutruX.DocDSHD();
             return TimKiemHoadon(DSHD, keyword, keydate);
         }
         public override ServiceResult<Hoadon> ThongTinHD(string id)
         {
-            List<Hoadon> DSHD = luutru.DocDSHD();
+            List<Hoadon> DSHD = luutruX.DocDSHD();
             foreach (Hoadon h in DSHD)
             {
                 if (h.MaHD == id)
@@ -32,7 +32,7 @@ namespace Services
         }
         public override ServiceResult<bool> XoaHD(string id)
         {
-            bool isXoa = luutru.XoaID(id);
+            bool isXoa = luutruX.XoaID(id);
             if (isXoa)
             {
                 return new ServiceResult<bool>(true, true, "Xóa thành công");
@@ -44,7 +44,7 @@ namespace Services
         }
         public override ServiceResult<bool> TaoHD(Hoadon h)
         {
-            List<Hoadon> DSHD = luutru.DocDSHD();
+            List<Hoadon> DSHD = luutruX.DocDSHD();
             foreach (Hoadon hd in DSHD)
             {
                 if (hd.KiemTraTrung(h))
@@ -56,13 +56,13 @@ namespace Services
                     return new ServiceResult<bool>(false, false, "Tồn kho không đủ số lượng, vui lòng nhập hàng");
                 }
             }
-            luutru.LuuHD(h);
+            luutruX.LuuHD(h);
             return new ServiceResult<bool>(true, true, "Lưu thành công");
         }
         
         public override ServiceResult<Hoadon> SuaHD(string id, Hoadon h)
         {
-            List<Hoadon> DSHD = luutru.DocDSHD();
+            List<Hoadon> DSHD = luutruX.DocDSHD();
             for (int i = 0; i < DSHD.Count; i++)
             {
                 if (DSHD[i].MaHD == id)
@@ -77,7 +77,7 @@ namespace Services
                     if (KiemTraTonKhoSua(DSHD[i].DShanghoa, h.DShanghoa))
                     {
                         DSHD[i] = h;
-                        luutru.LuuDSHD(DSHD);
+                        luutruX.LuuDSHD(DSHD);
                         return new ServiceResult<Hoadon>(true, h, "Sửa hóa đơn thành công");
                     } else
                     {
@@ -87,6 +87,21 @@ namespace Services
                 }
             }
             return new ServiceResult<Hoadon>(false, h, "Không tìm thấy mã hóa đơn, không thể sửa");
+        }
+        public override void SuaHDkhiSuaMH(string mhold, string mhnew)
+        {
+            List<Hoadon> DSHD = luutruX.DocDSHD();
+            foreach (Hoadon h in DSHD)
+            {
+                foreach (PhieuHH hh in h.DShanghoa)
+                {
+                    if (hh.MaMH == mhold)
+                    {
+                        hh.MaMH = mhnew;
+                    }
+                }
+            }
+            luutruX.LuuDSHD(DSHD);
         }
     }
 }
