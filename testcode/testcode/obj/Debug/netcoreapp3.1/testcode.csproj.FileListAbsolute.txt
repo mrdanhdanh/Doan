@@ -11,3 +11,16 @@
 /Users/huudanh/Desktop/Doan/testcode/testcode/obj/Debug/netcoreapp3.1/testcode.dll
 /Users/huudanh/Desktop/Doan/testcode/testcode/obj/Debug/netcoreapp3.1/testcode.pdb
 /Users/huudanh/Desktop/Doan/testcode/testcode/obj/Debug/netcoreapp3.1/testcode.genruntimeconfig.cache
+D:\Bai tap HK 1\Doan\testcode\testcode\bin\Debug\netcoreapp3.1\testcode.exe
+D:\Bai tap HK 1\Doan\testcode\testcode\bin\Debug\netcoreapp3.1\testcode.deps.json
+D:\Bai tap HK 1\Doan\testcode\testcode\bin\Debug\netcoreapp3.1\testcode.runtimeconfig.json
+D:\Bai tap HK 1\Doan\testcode\testcode\bin\Debug\netcoreapp3.1\testcode.runtimeconfig.dev.json
+D:\Bai tap HK 1\Doan\testcode\testcode\bin\Debug\netcoreapp3.1\testcode.dll
+D:\Bai tap HK 1\Doan\testcode\testcode\bin\Debug\netcoreapp3.1\testcode.pdb
+D:\Bai tap HK 1\Doan\testcode\testcode\obj\Debug\netcoreapp3.1\testcode.csprojAssemblyReference.cache
+D:\Bai tap HK 1\Doan\testcode\testcode\obj\Debug\netcoreapp3.1\testcode.AssemblyInfoInputs.cache
+D:\Bai tap HK 1\Doan\testcode\testcode\obj\Debug\netcoreapp3.1\testcode.AssemblyInfo.cs
+D:\Bai tap HK 1\Doan\testcode\testcode\obj\Debug\netcoreapp3.1\testcode.csproj.CoreCompileInputs.cache
+D:\Bai tap HK 1\Doan\testcode\testcode\obj\Debug\netcoreapp3.1\testcode.dll
+D:\Bai tap HK 1\Doan\testcode\testcode\obj\Debug\netcoreapp3.1\testcode.pdb
+D:\Bai tap HK 1\Doan\testcode\testcode\obj\Debug\netcoreapp3.1\testcode.genruntimeconfig.cache

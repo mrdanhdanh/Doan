@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "cPr9wvgpHgo9dJLsm1vc3wRYiQH3qzxrDV9TqhFVIilPueZxqtIOyDh9SgaF5TqrNuxNjoe/mxwP/e9lLCdSpA==",
+  "dgSpecHash": "K+F+IRBl0aKszXPMmbfrljnnCZYD8LbcuOcxZQDoAr+/GQ6XvglYNY7ifjuWmZ4XhjSRqgvVw0KZ95qTCNkJdA==",
   "success": true,
-  "projectFilePath": "/Users/huudanh/Desktop/Doan/testcode/testcode/testcode.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\Bai tap HK 1\\Doan\\testcode\\testcode\\testcode.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nguye\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
+  ],
   "logs": []
 }

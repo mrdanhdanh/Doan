@@ -1,0 +1,31 @@
+﻿@page
+@model testweb.Pages.TestModel
+@{
+}
+
+<form method="POST">
+    <input type="text" name="keyword" alt="Tu khoa"/><br />
+    <input type="submit" value="Tim kiem"/>
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Sản Phẩm</th>
+            <th>Giá</th>
+            <th>Năm Sản Xuất</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (SanPham s in Model.DSSP)
+        {
+            <tr>
+                <td>@s.TenSP</td>
+                <td>@s.Gia</td>
+                <td>@s.NamSX</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@Model.Thongbao
