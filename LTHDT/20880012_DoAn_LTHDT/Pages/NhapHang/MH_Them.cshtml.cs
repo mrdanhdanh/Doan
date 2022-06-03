@@ -57,7 +57,7 @@ namespace _20880012_DoAn_LTHDT.Pages.NhapHang
                     PhieuHH hh = new PhieuHH(Request.Form[mamh], int.Parse(Request.Form[gia]), int.Parse(Request.Form[sl]));
                     DSHH.Add(hh);
                 }
-                HDnhap h = new HDnhap();
+                Hoadon h = new HDnhap();
                 h.TaoHoadon(MaHD, NgayTao, DSHH);
                 var kq = xulyHD.TaoHD(h);
                 Ketqua = kq.Message;

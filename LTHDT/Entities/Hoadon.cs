@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Entities
@@ -29,6 +30,7 @@ namespace Entities
         public string NgayTao { get; set; }
         public List<PhieuHH> DShanghoa { get; set; }
         public int ThanhTien { get; set; }
+
         public virtual void TaoHoadon(string mahd, string ngaytao, List<PhieuHH> dshanghoa)
         {
             dshanghoa = KiemtraDSHH(dshanghoa);
@@ -37,14 +39,15 @@ namespace Entities
                 throw new Exception("Dữ liệu phải khác rỗng, vui lòng nhập lại");
             }
 
-            this.MaHD = mahd;
-            this.NgayTao = ngaytao;
-            this.DShanghoa = dshanghoa;
-            this.ThanhTien = TinhThanhTien(dshanghoa);
+            MaHD = mahd;
+            NgayTao = ngaytao;
+            DShanghoa = dshanghoa;
+            ThanhTien = TinhThanhTien(dshanghoa);
         }
 
         protected List<PhieuHH> KiemtraDSHH(List<PhieuHH> dshh)
         {
+            
             List<PhieuHH> DS = new List<PhieuHH>();
             foreach (PhieuHH hh in dshh)
             {
@@ -60,6 +63,7 @@ namespace Entities
             {
                 throw new Exception("Lỗi dữ liệu, vui lòng thử lại");
             }
+            
         }
 
         protected int TinhThanhTien(List<PhieuHH> dshh)
@@ -83,11 +87,8 @@ namespace Entities
             }
         }
 
-        public virtual string LoaiHD()
-        {
-            return null;
-        }
+        public abstract string LoaiHD();
         
     }
-    
+   
 }

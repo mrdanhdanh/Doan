@@ -6,7 +6,6 @@ namespace Entities
 {
     public class HDxuat : Hoadon
     {
-        public HDxuat() { }
 
         public override void TaoHoadon(string mahd, string ngaytao, List<PhieuHH> dshanghoa)
         {
@@ -15,6 +14,7 @@ namespace Entities
         public override string LoaiHD()
         {
             return "Xuat";
+            
         }
     }
 }

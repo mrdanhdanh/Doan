@@ -7,6 +7,11 @@ using Entities;
 namespace Services
 {
     public abstract class XuLyHoaDon
+
+
+
+
+
     {
         public ServiceResult<List<Hoadon>> TimKiemHoadon(List<Hoadon> DSHD, string keyword, string keydate)
         {

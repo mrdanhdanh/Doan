@@ -5,80 +5,88 @@ using System.IO;
 
 namespace testcode
 {
-    public struct PhanSo
-    {
-        public int TuSo;
-        public int MauSo;
-    }
-
+  
     class Program
     {
-        public static PhanSo TaoPhanSo(int tuso, int mauso)
+        public class SanPham
         {
-            PhanSo P;
-            P.TuSo = tuso;
-            if (mauso != 0)
-            {
-                P.MauSo = mauso;
-            } else
-            {
-                while (mauso == 0)
-                {
-                    Console.Write("Vui long nhap lai mau so: ");
-                    mauso = int.Parse(Console.ReadLine());
-                }
-                P.MauSo = mauso;
-            }
-            return P;
-        }
-        public static PhanSo TinhTong(PhanSo A, PhanSo B)
-        {
-            var mauso = A.MauSo * B.MauSo;
-            var tuso = A.MauSo * B.TuSo + B.MauSo * A.TuSo;
-            return TaoPhanSo(tuso, mauso);
-        }
-        public static void XuatPhanSo(PhanSo P)
-        {
-            Console.WriteLine("{0}/{1}", P.TuSo, P.MauSo);
-        }
-        public static void Luu(PhanSo P)
-        {
-            StreamWriter file = new StreamWriter("D:\\phanso.txt");
-            file.Write("{0}/{1}", P.TuSo, P.MauSo);
-            file.Close();
-        }
-        public static List<PhanSo> Doc()
-        {
-            List<PhanSo> L = new List<PhanSo>();
-            StreamReader file = new StreamReader("D:\\phanso.txt");
-            while (file.EndOfStream == false)
-            {
-                string data = file.ReadLine();
-                string[] s = data.Split("/");
-                PhanSo P = TaoPhanSo(int.Parse(s[0]), int.Parse(s[1]));
-                L.Add(P);
-            }
-            file.Close();
-            return L;
-        }
+            public string MaSP { get; set; }
+            public string TenSP { get; set; }
+            public int Gia { get; set; }
+            public string NhanHang { get; set; }
+            public string HanSD { get; set; }
+            public string NgaySX { get; set; }
 
+            public void Nhap()
+            {
+                Console.WriteLine("Nhap Ma SP: ");
+                MaSP = Console.ReadLine();
+                Console.WriteLine("Nhap ten SP: ");
+                TenSP = Console.ReadLine();
+                Console.WriteLine("Nhap Gia: ");
+                Gia = int.Parse(Console.ReadLine());
+                Console.WriteLine("Nhap Nhan hang: ");
+                NhanHang = Console.ReadLine();
+                Console.WriteLine("Nhap han su dung: ");
+                HanSD = Console.ReadLine();
+                Console.WriteLine("Nhap ngay san xuat: ");
+                NgaySX = Console.ReadLine();
+            }
+            public bool HetHan()
+            {
+                DateTime dn = DateTime.Now;
+                DateTime d = DateTime.Parse(this.HanSD);
+                if (d.CompareTo(dn) > 0)
+                {
+                    return false;
+                } else
+                {
+                    return true;
+                }
+            }
+        }
+        public class XuLySanPham : IXuLySanPham
+        {
+            public List<SanPham> NhapSP()
+            {
+                List<SanPham> SP = new List<SanPham>();
+                Console.WriteLine("Nhap so luong sp: ");
+                int n = int.Parse(Console.ReadLine());
+                for (int i = 1; i<=n; i++)
+                {
+                    SanPham s = new SanPham();
+                    s.Nhap();
+                    SP.Add(s);
+                }
+                return SP;
+            }
+            public void TimSPHetHang(List<SanPham> SP)
+            {
+                Console.WriteLine("Cac sp het han la: ");
+                bool check = false;
+                foreach (SanPham s in SP)
+                {
+                    if (s.HetHan())
+                    {
+                        Console.Write(s.MaSP + " ");
+                        check = true;
+                    }
+                }
+                if(check == false) {
+                    Console.Write("Khong co");
+                }
+            }
+        }
+        public interface IXuLySanPham
+        {
+            public List<SanPham> NhapSP();
+            public void TimSPHetHang(List<SanPham> SP);
+        }
         static void Main(string[] args)
         {
-            //Console.WriteLine("Nhap Phan So 1: - Tu So: ");
-            //int tuso = int.Parse(Console.ReadLine());
-            //Console.WriteLine("- Mau So: ");
-            //int mauso = int.Parse(Console.ReadLine());
-            //PhanSo A = TaoPhanSo(tuso, mauso);
-            //Console.WriteLine("Nhap Phan So 2: - Tu So: ");
-            //tuso = int.Parse(Console.ReadLine());
-            //Console.WriteLine("- Mau So: ");
-            //mauso = int.Parse(Console.ReadLine());
-            //PhanSo B = TaoPhanSo(tuso, mauso);
-            //List<PhanSo> L = Doc();
-
-            //Console.WriteLine("Tong 2 phan so la : ");
-            //XuatPhanSo(TinhTong(L[0],L[1]));
-            Console.WriteLine(1 / 2);
+            IXuLySanPham xuly = new XuLySanPham();
+            List<SanPham> SP = xuly.NhapSP();
+            xuly.TimSPHetHang(SP);
             Console.ReadLine();
         }
     }
