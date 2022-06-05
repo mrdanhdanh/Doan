@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -8,86 +9,170 @@ namespace testcode
   
     class Program
     {
-        public class SanPham
+        public class PhanSo
         {
-            public string MaSP { get; set; }
-            public string TenSP { get; set; }
-            public int Gia { get; set; }
-            public string NhanHang { get; set; }
-            public string HanSD { get; set; }
-            public string NgaySX { get; set; }
-
+            public int TUSO { get; set; }
+            public int MAUSO { get; set; }
+            public PhanSo() { }
+            public PhanSo(int tuso, int mauso)
+            {
+                TUSO = tuso;
+                MAUSO = mauso;
+            }
             public void Nhap()
             {
-                Console.WriteLine("Nhap Ma SP: ");
-                MaSP = Console.ReadLine();
-                Console.WriteLine("Nhap ten SP: ");
-                TenSP = Console.ReadLine();
-                Console.WriteLine("Nhap Gia: ");
-                Gia = int.Parse(Console.ReadLine());
-                Console.WriteLine("Nhap Nhan hang: ");
-                NhanHang = Console.ReadLine();
-                Console.WriteLine("Nhap han su dung: ");
-                HanSD = Console.ReadLine();
-                Console.WriteLine("Nhap ngay san xuat: ");
-                NgaySX = Console.ReadLine();
-            }
-            public bool HetHan()
-            {
-                DateTime dn = DateTime.Now;
-                DateTime d = DateTime.Parse(this.HanSD);
-                if (d.CompareTo(dn) > 0)
+                Console.WriteLine("Nhap Tu So: ");
+                TUSO = int.Parse(Console.ReadLine());
+                MAUSO = 0;
+                while (MAUSO == 0)
                 {
-                    return false;
+                    Console.WriteLine("Nhap Mau So: ");
+                    MAUSO = int.Parse(Console.ReadLine());
+                }
+            }
+            public PhanSo LonHon(PhanSo P)
+            {
+                double a = (double)this.TUSO / this.MAUSO;
+                double b = (double)P.TUSO / P.MAUSO;
+                if (a>b)
+                {
+                    return this;
                 } else
                 {
-                    return true;
+                    return P;
                 }
             }
-        }
-        public class XuLySanPham : IXuLySanPham
-        {
-            public List<SanPham> NhapSP()
+            public void Xuat()
             {
-                List<SanPham> SP = new List<SanPham>();
-                Console.WriteLine("Nhap so luong sp: ");
+                //Các cách xuất 1 chuỗi ra màn hình
+                Console.WriteLine(this.TUSO + "/" + this.MAUSO);
+                Console.WriteLine($"{this.TUSO}/{this.MAUSO}");
+                Console.WriteLine("{0}/{1}", this.TUSO, this.MAUSO);
+                Console.ReadLine();
+            }
+        }
+        public class XuLyPhanSo : IXuLyPhanSo
+        {
+            private ILuuTruPhanSo luutru;
+            public XuLyPhanSo()
+            {
+                luutru = new LuuTruPhanSo();
+            }
+            public List<PhanSo> NhapMangPS()
+            {
+                List<PhanSo> DSPS = new List<PhanSo>();
+                Console.WriteLine("Nhap so luong PS: ");
                 int n = int.Parse(Console.ReadLine());
-                for (int i = 1; i<=n; i++)
+                for (int i=1; i <= n; i++)
                 {
-                    SanPham s = new SanPham();
-                    s.Nhap();
-                    SP.Add(s);
+                    PhanSo P = new PhanSo();
+                    P.Nhap();
+                    DSPS.Add(P);
+
                 }
-                return SP;
+                return DSPS;
             }
-            public void TimSPHetHang(List<SanPham> SP)
+            public PhanSo TimPSLonNhat(List<PhanSo> DSPS)
             {
-                Console.WriteLine("Cac sp het han la: ");
-                bool check = false;
-                foreach (SanPham s in SP)
+                PhanSo Max = DSPS[0];
+                for (int i = 1; i < DSPS.Count; i++)
                 {
-                    if (s.HetHan())
-                    {
-                        Console.Write(s.MaSP + " ");
-                        check = true;
-                    }
+                    Max = Max.LonHon(DSPS[i]);
                 }
-                if(check == false) {
-                    Console.Write("Khong co");
-                }
+                return Max;
+            }
+            public void Luu(PhanSo P)
+            {
+                luutru.LuuPS(P);
             }
         }
-        public interface IXuLySanPham
+        public class LuuTruPhanSo : ILuuTruPhanSo
         {
-            public List<SanPham> NhapSP();
-            public void TimSPHetHang(List<SanPham> SP);
+            //data: 1/2
+            public PhanSo DocPS()
+            {
+                StreamReader file = new StreamReader("D:/phanso.txt");
+                string data = file.ReadToEnd();
+                file.Close();
+                string[] s = data.Split("/");
+                PhanSo P = new PhanSo(int.Parse(s[0]), int.Parse(s[1]));
+                return P;
+            }
+            public void LuuPS(PhanSo P)
+            {
+                StreamWriter file = new StreamWriter("D:/phanso.txt");
+                file.Write(P.TUSO + "/" + P.MAUSO);
+                file.Close();
+            }
+
+            //data dạng xuống dòng
+            //1/2
+            //5/6
+            //3/4
+            public List<PhanSo> DocDSPStype1()
+            {
+                StreamReader file = new StreamReader("D:/phanso.txt");
+                List<PhanSo> DSPS = new List<PhanSo>();
+                while (file.EndOfStream == false) {
+                    string data = file.ReadLine();
+                    string[] s = data.Split("/");
+                    PhanSo P = new PhanSo(int.Parse(s[0]), int.Parse(s[1]));
+                    DSPS.Add(P);
+                }
+                file.Close();
+                return DSPS;
+            }
+            public void LuuDSPStype1(List<PhanSo> DSPS)
+            {
+                StreamWriter file = new StreamWriter("D:/phanso.txt");
+                foreach (PhanSo P in DSPS)
+                {
+                    file.WriteLine(P.TUSO + "/" + P.MAUSO);
+                }
+                file.Close();
+            }
+
+            //data dạng Json: using Newtonsoft.Json;
+            //[{"TUSO":1,"MAUSO":2},{"TUSO":5,"MAUSO":6},{"TUSO":3,"MAUSO":4}]
+            public List<PhanSo> DocDSPStype2()
+
+            {
+                StreamReader file = new StreamReader("D:/phanso.txt");
+                string data = file.ReadToEnd();
+                List<PhanSo> DSPS = JsonConvert.DeserializeObject<List<PhanSo>>(data);
+                file.Close();
+                return DSPS;
+            }
+            public void LuuDSPStype2(List<PhanSo> DSPS)
+            {
+                StreamWriter file = new StreamWriter("D:/phanso.txt");
+                string data = JsonConvert.SerializeObject(DSPS);
+                file.Write(data);
+                file.Close();
+            }
+        }
+        public interface IXuLyPhanSo
+        {
+            public List<PhanSo> NhapMangPS();
+            public PhanSo TimPSLonNhat(List<PhanSo> DSPS);
+            public void Luu(PhanSo P);
+        }
+        public interface ILuuTruPhanSo
+        {
+            public PhanSo DocPS();
+            public void LuuPS(PhanSo P);
+
+            public List<PhanSo> DocDSPStype1();
+            public void LuuDSPStype1(List<PhanSo> DSPS);
+            public List<PhanSo> DocDSPStype2();
+            public void LuuDSPStype2(List<PhanSo> DSPS);
         }
         static void Main(string[] args)
         {
-            IXuLySanPham xuly = new XuLySanPham();
-            List<SanPham> SP = xuly.NhapSP();
-            xuly.TimSPHetHang(SP);
-            Console.ReadLine();
+            IXuLyPhanSo xuly = new XuLyPhanSo();
+            List<PhanSo> DSPS = xuly.NhapMangPS();
+            PhanSo Max = xuly.TimPSLonNhat(DSPS);
+            xuly.Luu(Max);
         }
     }
 }

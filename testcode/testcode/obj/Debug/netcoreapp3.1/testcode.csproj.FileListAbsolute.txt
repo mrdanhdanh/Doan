@@ -24,3 +24,5 @@ D:\Bai tap HK 1\Doan\testcode\testcode\obj\Debug\netcoreapp3.1\testcode.csproj.C
 D:\Bai tap HK 1\Doan\testcode\testcode\obj\Debug\netcoreapp3.1\testcode.dll
 D:\Bai tap HK 1\Doan\testcode\testcode\obj\Debug\netcoreapp3.1\testcode.pdb
 D:\Bai tap HK 1\Doan\testcode\testcode\obj\Debug\netcoreapp3.1\testcode.genruntimeconfig.cache
+D:\Bai tap HK 1\Doan\testcode\testcode\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Bai tap HK 1\Doan\testcode\testcode\obj\Debug\netcoreapp3.1\testcode.csproj.CopyComplete
