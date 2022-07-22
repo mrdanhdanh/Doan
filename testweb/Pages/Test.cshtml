@@ -4,11 +4,14 @@
 }
 
 <form method="POST">
-    <input type="text" name="keyword" alt="Tu khoa"/><br />
-    <input type="submit" value="Tim kiem"/>
+    <label>Nhap Phan So 1: </label><br />
+    <input type="number" name="tuso1" /> / <input type="number" name="mauso1" /><br />
+    <label>Nhap Phan So 2: </label><br />
+    <input type="number" name="tuso2" /> / <input type="number" name="mauso2" /><br />
+    <input type="submit" value="Tinh Tong" />
 </form>
 
-<table class="table table-striped">
+@*<table class="table table-striped">
     <thead>
         <tr>
             <th>Sản Phẩm</th>
@@ -26,6 +29,6 @@
             </tr>
         }
     </tbody>
-</table>
+</table>*@
 
-@Model.Thongbao
+@Model.Ketqua
